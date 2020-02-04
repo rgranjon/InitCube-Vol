@@ -59,18 +59,20 @@ OK			+ unsigned char getIdentifiant() :
 OK			+ void setIdentifiant(unsigned char id) :
 				→ Affecter la valeur de id à identifiant
 --------Ordinateur :
-===			+ Ordinateur() :
-				→ 
-===			+ virtual ~Ordinateur() :
-				→ 
-===			+ void obtenirStatus() :
-				→ 
-===			+ Stockage * getStockage() :
-				→ 
-===			+ float getTemperatureProcessor() :
-				→ 
-===			+ Reboot* getReboot() :
-				→ 
+OK			+ Ordinateur() :
+				→ Construire un Ordinateur
+				→ Affecter la valeur de chaque constructeur à son attribut (ex:Affecter la valeur de calculMemoireUSD() à leStockage) 
+OK			+ virtual ~Ordinateur() :
+				→ Détruire un Ordinateur
+OK			+ void obtenirStatus() :
+				→ Appeler la méthode calculerStockage()
+				→ Appeler la méthode obtenirTemperature()
+OK			+ Stockage * getStockage() :
+				→ Retourner leStockage
+OK			+ float getTemperatureProcessor() :
+				→ Retourner temperatureProcessor
+OK			+ Reboot* getReboot() :
+				→ Retourner leReboot
 ===			- void calculerStockage() :
 				→ 
 ===			- void obtenirTemperature() :
