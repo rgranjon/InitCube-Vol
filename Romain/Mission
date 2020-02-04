@@ -1,22 +1,24 @@
+=== : A FAIRE
+
 Enregistrer les données de mission :
 	Analyser les classes SegmentVol, Ordinateur, Stockage et Reboot :
-//		SegmentVol :
+--------SegmentVol :
 OK			+ SegmentVol() :
 				→ Construire un SegmentVol
 				→ Affecter la valeur de chaque constructeur à son attribut (ex:Affecter la valeur de horloge() à horloge)
 OK			+ virtual ~SegmentVol() :
 				→ Détruire un SegmentVol
-/			+ void lancerMission() :
+===			+ void lancerMission() :
 				→ 
-/			+ void arretMission() :
+===			+ void arretMission() :
 				→ 
-/			+ void obtenirStatus(list<string>* appareil) :
+===			+ void obtenirStatus(list<string>* appareil) :
 				→ 
-/			+ void obtenirStatus() :
+===			+ void obtenirStatus() :
 				→ 
-/			+ void effectuerMesure(string mesure) :
+===			+ void effectuerMesure(string mesure) :
 				→ 
-/			+ void creerMission(short, short, string, string) :
+===			+ void creerMission(short, short, string, string) :
 				→ 
 OK			+ void activerModuleEmission() :
 				→ Appeler la méthode activerEmetteur() de emetteurRecepteur
@@ -26,9 +28,9 @@ OK			+ void desactiverInstrument() :
 				→ Appeler la méthode desactiver() de cameraIR
 OK			+ void desactiverModuleEmission() :
 				→ Appeler la méthode desactiverEmetteur() de emetteurRecepteur
-/			+ void setSegmentSol(SegmentSol* segmentSol) :
+===			+ void setSegmentSol(SegmentSol* segmentSol) :
 				→ 
-/			+ void configurerRecupEtat(short period, list<string> instrument) :
+===			+ void configurerRecupEtat(short period, list<string> instrument) :
 				→ 
 OK			+ thread recupEtat() :
 				→ Retourner le numéro du thread créé qui fait appel à la méthode obtenirStatus()
@@ -56,24 +58,24 @@ OK			+ unsigned char getIdentifiant() :
 				→ Retourner identifiant
 OK			+ void setIdentifiant(unsigned char id) :
 				→ Affecter la valeur de id à identifiant
-//		Ordinateur :
-/			+ Ordinateur() :
+--------Ordinateur :
+===			+ Ordinateur() :
 				→ 
-/			+ virtual ~Ordinateur() :
+===			+ virtual ~Ordinateur() :
 				→ 
-/			+ void obtenirStatus() :
+===			+ void obtenirStatus() :
 				→ 
-/			+ Stockage * getStockage() :
+===			+ Stockage * getStockage() :
 				→ 
-/			+ float getTemperatureProcessor() :
+===			+ float getTemperatureProcessor() :
 				→ 
-/			+ Reboot* getReboot() :
+===			+ Reboot* getReboot() :
 				→ 
-/			- void calculerStockage() :
+===			- void calculerStockage() :
 				→ 
-/			- void obtenirTemperature() :
+===			- void obtenirTemperature() :
 				→ 
-//		Stockage :
+--------Stockage :
 OK			+ Stockage() :
 				→ Affecter "666666" à memoireRam
 				→ Affecter "1888888" à memoireUSD
@@ -82,9 +84,9 @@ OK			+ Stockage() :
 				→ Affecter "ko" à unit
 OK			+ virtual ~Stockage() :
 				→ Détruire un stockage
-/			+ void calculMemoireUSD() :
+===			+ void calculMemoireUSD() :
 				→ 
-/			+ void calculMemoireRAM() :
+===			+ void calculMemoireRAM() :
 				→ 
 OK			+ string getMemoireRAM() :
 				→ Retourner memoireRAM
@@ -96,37 +98,119 @@ OK			+ string getOccupationRAM() :
 				→ Retourner occupationRAM
 OK			+ string getUnit() :
 				→ Retourner unit
-/			- FILE * ouvrirAccesUSD() :
+===			- FILE * ouvrirAccesUSD() :
 				→ 
-/			- FILE * ouvrirAccesRAM() :
+===			- FILE * ouvrirAccesRAM() :
 				→ 
-/			- string lectureLigneUSD(FILE * pFile) :
+===			- string lectureLigneUSD(FILE * pFile) :
 				→ 
-/			- string lectureLigneRAM(FILE * pFile) :
+===			- string lectureLigneRAM(FILE * pFile) :
 				→ 
-/			- string trouverPositionUSD(string str) :
+===			- string trouverPositionUSD(string str) :
 				→ 
-/			- string trouverPositionRAM(string str) :
+===			- string trouverPositionRAM(string str) :
 				→ 
-//		Reboot :
+--------Reboot :
 OK			+ Reboot() :
 				→ Affecter "0000/00/00 00:00:00" à dateHour
 				→ Affecter 0 à number
 OK			+ Reboot(int anbreReboot, string adateHeure) :
 				→ Affecter adateHeure à dateHour
 				→ Affecter anbreReboot à number
-/			+ int getNumber() :
+===			+ int getNumber() :
 				→ Retourner number
-/			+ string getDateHour() :
+===			+ string getDateHour() :
 				→ Retourner dateHour
-/			+ void setDateHour(string adateHour) :
+===			+ void setDateHour(string adateHour) :
 				→ Affecter la valeur de adateHour à dateHour
-/			+ void setNumber(int anumber) :
+===			+ void setNumber(int anumber) :
 				→ Affecter la valeur de anumber à number
 	Établir comment les classes interviendront dans le cas de la sauvegarde de missions avant envoi :
 	Identifier le format des données à enregistrer :
+--------Caméra :
+			- 
+--------Caméra IR :
+			- 
+--------Magnétomètre :
+			- 
 	Concevoir et réaliser le module de sauvegarde des données de mission :
 	Concevoir et réaliser le module de redémarrage du système sur commande ou sur incident :
 Transmettre les télémesures d’instrument :
 	Analyser la classe Protocole et vérifier l’adaptabilité des méthodes de transmission des télémesures aux différents modèles de capteurs :
+--------Protocole :
+===			+ Protocole() :
+				→ 
+===			+ Protocole(const Protocole& orig) :
+				→ 
+===			+ virtual ~Protocole() :
+				→ 
+===			+ char *getTableau() :
+				→ 
+===			+ int getNbrePaquets() :
+				→ 
+===			+ int getNumPaquet() :
+				→ 
+===			+ list<vector<char>> getReceived() :
+				→ 
+===			+ void setTableau(char laDataRecu[100]) :
+				→ 
+===			+ void setNbrePaquets(int n) :
+				→ 
+===			+ void setNumPaquet(int n) :
+				→ 
+===			+ void addReceived(char recu [100]) :
+				→ 
+===			+ void detramerMessage() :
+				→ 
+===			+ string extraireTypeMessage(int &pos) :
+				→ 
+===			+ void extraireNombrePaquets(int &pos) :
+				→ 
+===			+ int calculerNbrePaquetsSalve() :
+				→ 
+===			+ string extraireTypeDataMission(int &pos) :
+				→ 
+===			+ int extraireDataMission(list<float> &datas, list<string> &dateHours, int &pos, string typeMission) :
+				→ 
+===			+ void supprimerPaquet() :
+				→ 
+===			# static string ERR_CHECKSUM :
+				→
+===			# static string ERR_FORMAT :
+				→
+===			# static int pause :
+				→
+===			# int nbrePaquets :
+				→
+===			# int numPaquet :
+				→
+===			# char tableau[100] :
+				→
+===			# list<vector<char>> received :
+				→
+===			# void calculerChecksum(char & PF, char & pf) :
+				→
+===			# bool verifierChecksum() :
+				→
+===			# void tramerMission(Message* message, int nbrePaquets, int numPaquet) :
+				→
+===			# void tramerStatus(Message* message, int nbrePaquets, int numPaquet) :
+				→
+===			# void tramerMesure(Message* message, int nbrePaquets, int numPaquet) :
+				→
+===			# unsigned char calculerNombrePaquets(Message * message) :
+				→
+===			# void extraireCommande() :
+				→
+===			# void extraireParametres() :
+				→
+===			# void ajouterDataOrdiBord(Message* amessage, unsigned int &aposition) :
+				→
+===			# void ajouterDataBattery(Message* amessage, unsigned int &aposition) :
+				→
+===			# void ajouterStatusInst(Message* amessage, unsigned int &aposition) :
+				→
+===			# void ajouterStatusCube(Message* amessage, unsigned int &aposition) :
+				→
+
 	Concevoir et développer les nouvelles méthodes :
