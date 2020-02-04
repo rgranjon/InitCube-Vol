@@ -1,4 +1,5 @@
 === : A FAIRE
+@@@ : COMPLIQUÉ OU PROBLÈME
 
 Enregistrer les données de mission :
 	Analyser les classes SegmentVol, Ordinateur, Stockage et Reboot :
@@ -8,15 +9,15 @@ OK			+ SegmentVol() :
 				→ Affecter la valeur de chaque constructeur à son attribut (ex:Affecter la valeur de horloge() à horloge)
 OK			+ virtual ~SegmentVol() :
 				→ Détruire un SegmentVol
-===			+ void lancerMission() :
+@@@			+ void lancerMission() :
 				→ 
-===			+ void arretMission() :
+@@@			+ void arretMission() :
 				→ 
-===			+ void obtenirStatus(list<string>* appareil) :
+@@@			+ void obtenirStatus(list<string>* appareil) :
 				→ 
-===			+ void obtenirStatus() :
+@@@			+ void obtenirStatus() :
 				→ 
-===			+ void effectuerMesure(string mesure) :
+@@@			+ void effectuerMesure(string mesure) :
 				→ 
 ===			+ void creerMission(short, short, string, string) :
 				→ 
@@ -28,8 +29,8 @@ OK			+ void desactiverInstrument() :
 				→ Appeler la méthode desactiver() de cameraIR
 OK			+ void desactiverModuleEmission() :
 				→ Appeler la méthode desactiverEmetteur() de emetteurRecepteur
-===			+ void setSegmentSol(SegmentSol* segmentSol) :
-				→ 
+OK		+ void setSegmentSol(SegmentSol* segmentSol) :
+				→ Affecter la valeur de segmentSol à segmentSol
 ===			+ void configurerRecupEtat(short period, list<string> instrument) :
 				→ 
 OK			+ thread recupEtat() :
@@ -75,7 +76,7 @@ OK			+ Reboot* getReboot() :
 				→ Retourner leReboot
 ===			- void calculerStockage() :
 				→ 
-===			- void obtenirTemperature() :
+@@@			- void obtenirTemperature() :
 				→ 
 --------Stockage :
 OK			+ Stockage() :
