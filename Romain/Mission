@@ -138,22 +138,20 @@ OK			+ Reboot(int anbreReboot, string adateHeure) :
 Transmettre les télémesures d’instrument :
 	Analyser la classe Protocole et vérifier l’adaptabilité des méthodes de transmission des télémesures aux différents modèles de capteurs :
 --------Protocole :
-===			+ Protocole() :
-				→ 
-===			+ Protocole(const Protocole& orig) :
-				→ 
-===			+ virtual ~Protocole() :
-				→ 
+OK			+ Protocole() :
+				→ Construire un Protocole
+OK			+ virtual ~Protocole() :
+				→ Détruire un Protocole
 ===			+ char *getTableau() :
 				→ 
-===			+ int getNbrePaquets() :
-				→ 
-===			+ int getNumPaquet() :
-				→ 
-===			+ list<vector<char>> getReceived() :
-				→ 
-===			+ void setTableau(char laDataRecu[100]) :
-				→ 
+OK			+ int getNbrePaquets() :
+				→ Retourner nbrePaquets
+OK			+ int getNumPaquet() :
+				→ Retourner numPaquet
+OK			+ list<vector<char>> getReceived() :
+				→ Retourner received
+OK			+ void setTableau(char laDataRecu[100]) :
+				→ Remplir les 100 premières cases (0 à 99) du tableau tableau[i] avec les données laDataRecu[i]
 ===			+ void setNbrePaquets(int n) :
 				→ 
 ===			+ void setNumPaquet(int n) :
@@ -200,10 +198,10 @@ Transmettre les télémesures d’instrument :
 				→
 ===			# unsigned char calculerNombrePaquets(Message * message) :
 				→
-===			# void extraireCommande() :
-				→
-===			# void extraireParametres() :
-				→
+OK			# void extraireCommande() :
+				→ PAS CODÉ
+OK			# void extraireParametres() :
+				→ PAS CODÉ
 ===			# void ajouterDataOrdiBord(Message* amessage, unsigned int &aposition) :
 				→
 ===			# void ajouterDataBattery(Message* amessage, unsigned int &aposition) :
