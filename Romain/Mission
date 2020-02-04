@@ -1,0 +1,132 @@
+Enregistrer les données de mission :
+	Analyser les classes SegmentVol, Ordinateur, Stockage et Reboot :
+//		SegmentVol :
+OK			+ SegmentVol() :
+				→ Construire un SegmentVol
+				→ Affecter la valeur de chaque constructeur à son attribut (ex:Affecter la valeur de horloge() à horloge)
+OK			+ virtual ~SegmentVol() :
+				→ Détruire un SegmentVol
+/			+ void lancerMission() :
+				→ 
+/			+ void arretMission() :
+				→ 
+/			+ void obtenirStatus(list<string>* appareil) :
+				→ 
+/			+ void obtenirStatus() :
+				→ 
+/			+ void effectuerMesure(string mesure) :
+				→ 
+/			+ void creerMission(short, short, string, string) :
+				→ 
+OK			+ void activerModuleEmission() :
+				→ Appeler la méthode activerEmetteur() de emetteurRecepteur
+OK			+ void activerInstrument() :
+				→ Appeler la méthode activer() de cameraIR
+OK			+ void desactiverInstrument() :
+				→ Appeler la méthode desactiver() de cameraIR
+OK			+ void desactiverModuleEmission() :
+				→ Appeler la méthode desactiverEmetteur() de emetteurRecepteur
+/			+ void setSegmentSol(SegmentSol* segmentSol) :
+				→ 
+/			+ void configurerRecupEtat(short period, list<string> instrument) :
+				→ 
+OK			+ thread recupEtat() :
+				→ Retourner le numéro du thread créé qui fait appel à la méthode obtenirStatus()
+OK			+ thread tLancerMission() :
+				→ Retourner le numéro du thread créé qui fait appel à la méthode lancerMission()
+OK			+ thread tArretMission() :
+				→ Retourner le numéro du thread créé qui fait appel à la méthode arretMission()
+OK			+ Horloge* getHorloge() :
+				→ Retourner horloge
+OK			+ Temperature* getTemperature() :
+				→ Retourner temperature
+OK			+ CameraIR* getCameraIR() :
+				→ Retourner cameraIR
+OK			+ Batterie* getBatterie() :
+				→ Retourner batterie
+OK			+ EmetteurRecepteur* getEmetteurRecepteur() :
+				→ Retourner emetteurRecepteur
+OK			+ Mission* getMission() :
+				→ Retourner mission
+OK			+ Ordinateur* getOrdinateur() :
+				→ Retourner ordinateur
+OK			+ Etat* getEtat() :
+				→ Retourner etat
+OK			+ unsigned char getIdentifiant() :
+				→ Retourner identifiant
+OK			+ void setIdentifiant(unsigned char id) :
+				→ Affecter la valeur de id à identifiant
+//		Ordinateur :
+/			+ Ordinateur() :
+				→ 
+/			+ virtual ~Ordinateur() :
+				→ 
+/			+ void obtenirStatus() :
+				→ 
+/			+ Stockage * getStockage() :
+				→ 
+/			+ float getTemperatureProcessor() :
+				→ 
+/			+ Reboot* getReboot() :
+				→ 
+/			- void calculerStockage() :
+				→ 
+/			- void obtenirTemperature() :
+				→ 
+//		Stockage :
+OK			+ Stockage() :
+				→ Affecter "666666" à memoireRam
+				→ Affecter "1888888" à memoireUSD
+				→ Affecter "66" à pourcentageutilise
+				→ Affecter "77" à occupationRAM
+				→ Affecter "ko" à unit
+OK			+ virtual ~Stockage() :
+				→ Détruire un stockage
+/			+ void calculMemoireUSD() :
+				→ 
+/			+ void calculMemoireRAM() :
+				→ 
+OK			+ string getMemoireRAM() :
+				→ Retourner memoireRAM
+OK			+ string getMemoireUSD() :
+				→ Retourner memoireUSD
+OK			+ string getPourcentage() :
+				→ Retourner pourcentageutilise
+OK			+ string getOccupationRAM() :
+				→ Retourner occupationRAM
+OK			+ string getUnit() :
+				→ Retourner unit
+/			- FILE * ouvrirAccesUSD() :
+				→ 
+/			- FILE * ouvrirAccesRAM() :
+				→ 
+/			- string lectureLigneUSD(FILE * pFile) :
+				→ 
+/			- string lectureLigneRAM(FILE * pFile) :
+				→ 
+/			- string trouverPositionUSD(string str) :
+				→ 
+/			- string trouverPositionRAM(string str) :
+				→ 
+//		Reboot :
+OK			+ Reboot() :
+				→ Affecter "0000/00/00 00:00:00" à dateHour
+				→ Affecter 0 à number
+OK			+ Reboot(int anbreReboot, string adateHeure) :
+				→ Affecter adateHeure à dateHour
+				→ Affecter anbreReboot à number
+/			+ int getNumber() :
+				→ Retourner number
+/			+ string getDateHour() :
+				→ Retourner dateHour
+/			+ void setDateHour(string adateHour) :
+				→ Affecter la valeur de adateHour à dateHour
+/			+ void setNumber(int anumber) :
+				→ Affecter la valeur de anumber à number
+	Établir comment les classes interviendront dans le cas de la sauvegarde de missions avant envoi :
+	Identifier le format des données à enregistrer :
+	Concevoir et réaliser le module de sauvegarde des données de mission :
+	Concevoir et réaliser le module de redémarrage du système sur commande ou sur incident :
+Transmettre les télémesures d’instrument :
+	Analyser la classe Protocole et vérifier l’adaptabilité des méthodes de transmission des télémesures aux différents modèles de capteurs :
+	Concevoir et développer les nouvelles méthodes :
