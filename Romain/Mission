@@ -73,25 +73,25 @@ OK			+ thread tArretMission() :
 °°°			+ void setIdentifiant(unsigned char id) :
 				→ Affecter la valeur de id à identifiant
 --------Ordinateur :
-°°°			+ Ordinateur() :
+			+ Ordinateur() :
 				→ Construire un Ordinateur
 				→ Affecter la valeur du constructeur Stockage() à leStockage
 				→ Affecter la valeur du constructeur Reboot() à leReboot
-°°°			+ virtual ~Ordinateur() :
+			+ virtual ~Ordinateur() :
 				→ Détruire un Ordinateur
-°°°			+ void obtenirStatus() :
+			+ void obtenirStatus() :
 				→ Appeler la méthode calculerStockage()
 				→ Appeler la méthode obtenirTemperature()
-°°°			+ Stockage * getStockage() :
+			+ Stockage * getStockage() :
 				→ Retourner leStockage
-°°°			+ float getTemperatureProcessor() :
+			+ float getTemperatureProcessor() :
 				→ Retourner temperatureProcessor
-°°°			+ Reboot* getReboot() :
+			+ Reboot* getReboot() :
 				→ Retourner leReboot
-°°°			- void calculerStockage() :
+			- void calculerStockage() :
 				→ Appeler la méthode calculMemoireUSD() de leStockage
 				→ Appeler la méthode calculMemoireRAM() de leStockage
-°°°			- void obtenirTemperature() :
+			- void obtenirTemperature() :
 				→ Ouvrir le fichier contenant la température
 				→ Afficher un message d'erreur si le fichier ne peut pas être ouvert
 				→ Affecter la valeur de la température divisée par 1000 contenue dans le fichier contenant la température à temperatureProcessor
@@ -136,18 +136,18 @@ OK			+ thread tArretMission() :
 				→ /////
 				→ Retourner memoirefreeRAM
 --------Reboot :
-°°°			+ Reboot() :
+			+ Reboot() :
 				→ Construire un Reboot
 				→ Affecter "0000/00/00 00:00:00" à dateHour
 				→ Affecter 0 à number
-°°°			+ Reboot(int anbreReboot, string adateHeure) :
+			+ Reboot(int anbreReboot, string adateHeure) :
 				→ Affecter la valeur de adateHeure qui est le paramètre de la méthode Reboot à dateHour
 				→ Affecter la valeur de anbreReboot qui est le paramètre de la méthode Reboot à number
-°°°			+ int getNumber() :
+			+ int getNumber() :
 				→ Retourner number
-°°°			+ string getDateHour() :
+			+ string getDateHour() :
 				→ Retourner dateHour
-°°°			+ void setDateHour(string adateHour) :
+			+ void setDateHour(string adateHour) :
 				→ Affecter la valeur de adateHeure qui est le paramètre de la méthode setDateHour à dateHour
 °°°			+ void setNumber(int anumber) :
 				→ Affecter la valeur de anumber qui est le paramètre de la méthode setNumber à number
