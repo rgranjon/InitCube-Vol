@@ -153,10 +153,15 @@ OK			+ thread tArretMission() :
 				→ Affecter la valeur de anumber qui est le paramètre de la méthode setNumber à number
 	Établir comment les classes interviendront dans le cas de la sauvegarde de missions avant envoi :
 --------SegmentVol :
+			
 --------Ordinateur :
+			
 --------Stockage :
+			
 --------Reboot :
+			
 --------Protocole :
+			
 	Identifier le format des données à enregistrer :
 --------Caméra :
 			- PAS AU SPRINT 1
