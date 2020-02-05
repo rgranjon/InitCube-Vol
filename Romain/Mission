@@ -1,3 +1,4 @@
+°°° : FAIT
 === : A FAIRE
 @@@ : COMPLIQUÉ OU PROBLÈME
 
@@ -6,8 +7,16 @@ Enregistrer les données de mission :
 --------SegmentVol :
 OK			+ SegmentVol() :
 				→ Construire un SegmentVol
-				→ Affecter la valeur de chaque constructeur à son attribut (ex:Affecter la valeur de horloge() à horloge)
-OK			+ virtual ~SegmentVol() :
+				→ Affecter la valeur du constructeur Horloge() à horloge
+				→ Affecter la valeur du constructeur Temperature() à temperature
+				→ Affecter la valeur du constructeur CameraIR() à cameraIR
+				→ Affecter la valeur du constructeur Batterie() à batterie
+				→ Affecter la valeur du constructeur EmetteurRecepteur() à emetteurRecepteur
+				→ Affecter la valeur du constructeur Mission() à mission
+				→ Affecter la valeur du constructeur Ordinateur() à ordinateur
+				→ Affecter la valeur du constructeur Etat() à etat
+				→ Affecter la valeur du constructeur SegmentVol() à segmentVol
+°°°			+ virtual ~SegmentVol() :
 				→ Détruire un SegmentVol
 @@@			+ void lancerMission() :
 				→ 
@@ -19,115 +28,127 @@ OK			+ virtual ~SegmentVol() :
 				→ 
 @@@			+ void effectuerMesure(string mesure) :
 				→ 
-===			+ void creerMission(short, short, string, string) :
-				→ 
-OK			+ void activerModuleEmission() :
+°°°			+ void creerMission(short, short, string, string) :
+				→ Appeler la méthode setDuration() de mission prenant en paramètre le paramètre duree de la méthode configureRecupEtat
+				→ Appeler la méthode setPeriodicity() de mission prenant en paramètre le paramètre periode de la méthode configureRecupEtat
+				→ Appeler la méthode setStartTime() de mission prenant en paramètre le paramètre debut de la méthode configureRecupEtat
+				→ Appeler la méthode setMeasureType() de mission prenant en paramètre le paramètre type de la méthode configureRecupEtat
+°°°			+ void activerModuleEmission() :
 				→ Appeler la méthode activerEmetteur() de emetteurRecepteur
-OK			+ void activerInstrument() :
+°°°			+ void activerInstrument() :
 				→ Appeler la méthode activer() de cameraIR
-OK			+ void desactiverInstrument() :
+°°°			+ void desactiverInstrument() :
 				→ Appeler la méthode desactiver() de cameraIR
-OK			+ void desactiverModuleEmission() :
+°°°			+ void desactiverModuleEmission() :
 				→ Appeler la méthode desactiverEmetteur() de emetteurRecepteur
-OK		+ void setSegmentSol(SegmentSol* segmentSol) :
-				→ Affecter la valeur de segmentSol à segmentSol
-===			+ void configurerRecupEtat(short period, list<string> instrument) :
-				→ 
+°°°			+ void setSegmentSol(SegmentSol* segmentSol) : ( dans segmentVol.h )
+				→ Affecter la valeur de segmentSol qui est le paramètre de la méthode setSegmentSol à segmentSol
+°°°			+ void configurerRecupEtat(short period, list<string> instrument) :
+				→ Appeler la méthode setAppareil() de etat prenant en paramètre le paramètre instrument de la méthode configureRecupEtat
+				→ Appeler la méthode setPeriodicity() de etat prenant en paramètre le paramètre period de la méthode configureRecupEtat
 OK			+ thread recupEtat() :
 				→ Retourner le numéro du thread créé qui fait appel à la méthode obtenirStatus()
 OK			+ thread tLancerMission() :
 				→ Retourner le numéro du thread créé qui fait appel à la méthode lancerMission()
 OK			+ thread tArretMission() :
 				→ Retourner le numéro du thread créé qui fait appel à la méthode arretMission()
-OK			+ Horloge* getHorloge() :
+°°°			+ Horloge* getHorloge() :
 				→ Retourner horloge
-OK			+ Temperature* getTemperature() :
+°°°			+ Temperature* getTemperature() :
 				→ Retourner temperature
-OK			+ CameraIR* getCameraIR() :
+°°°			+ CameraIR* getCameraIR() :
 				→ Retourner cameraIR
-OK			+ Batterie* getBatterie() :
+°°°			+ Batterie* getBatterie() :
 				→ Retourner batterie
-OK			+ EmetteurRecepteur* getEmetteurRecepteur() :
+°°°			+ EmetteurRecepteur* getEmetteurRecepteur() :
 				→ Retourner emetteurRecepteur
-OK			+ Mission* getMission() :
+°°°			+ Mission* getMission() :
 				→ Retourner mission
-OK			+ Ordinateur* getOrdinateur() :
+°°°			+ Ordinateur* getOrdinateur() :
 				→ Retourner ordinateur
-OK			+ Etat* getEtat() :
+°°°			+ Etat* getEtat() :
 				→ Retourner etat
-OK			+ unsigned char getIdentifiant() :
+°°°			+ unsigned char getIdentifiant() :
 				→ Retourner identifiant
-OK			+ void setIdentifiant(unsigned char id) :
+°°°			+ void setIdentifiant(unsigned char id) :
 				→ Affecter la valeur de id à identifiant
 --------Ordinateur :
 OK			+ Ordinateur() :
 				→ Construire un Ordinateur
-				→ Affecter la valeur de chaque constructeur à son attribut (ex:Affecter la valeur de calculMemoireUSD() à leStockage) 
-OK			+ virtual ~Ordinateur() :
+				→ Affecter la valeur du constructeur Stockage() à leStockage
+				→ Affecter la valeur du constructeur Reboot() à leReboot
+°°°			+ virtual ~Ordinateur() :
 				→ Détruire un Ordinateur
-OK			+ void obtenirStatus() :
+°°°			+ void obtenirStatus() :
 				→ Appeler la méthode calculerStockage()
 				→ Appeler la méthode obtenirTemperature()
-OK			+ Stockage * getStockage() :
+°°°			+ Stockage * getStockage() :
 				→ Retourner leStockage
-OK			+ float getTemperatureProcessor() :
+°°°			+ float getTemperatureProcessor() :
 				→ Retourner temperatureProcessor
-OK			+ Reboot* getReboot() :
+°°°			+ Reboot* getReboot() :
 				→ Retourner leReboot
-===			- void calculerStockage() :
-				→ 
+°°°			- void calculerStockage() :
+				→ Appeler la méthode calculMemoireUSD() de leStockage
+				→ Appeler la méthode calculMemoireRAM() de leStockage
 @@@			- void obtenirTemperature() :
 				→ 
 --------Stockage :
-OK			+ Stockage() :
+°°°			+ Stockage() :
+				→ Construire un Stockage
 				→ Affecter "666666" à memoireRam
 				→ Affecter "1888888" à memoireUSD
 				→ Affecter "66" à pourcentageutilise
 				→ Affecter "77" à occupationRAM
 				→ Affecter "ko" à unit
-OK			+ virtual ~Stockage() :
+°°°			+ virtual ~Stockage() :
 				→ Détruire un stockage
-===			+ void calculMemoireUSD() :
+@@@			+ void calculMemoireUSD() :
 				→ 
-===			+ void calculMemoireRAM() :
+@@@			+ void calculMemoireRAM() :
 				→ 
-OK			+ string getMemoireRAM() :
+°°°			+ string getMemoireRAM() :
 				→ Retourner memoireRAM
-OK			+ string getMemoireUSD() :
+°°°			+ string getMemoireUSD() :
 				→ Retourner memoireUSD
-OK			+ string getPourcentage() :
+°°°			+ string getPourcentage() :
 				→ Retourner pourcentageutilise
-OK			+ string getOccupationRAM() :
+°°°			+ string getOccupationRAM() :
 				→ Retourner occupationRAM
-OK			+ string getUnit() :
+°°°			+ string getUnit() :
 				→ Retourner unit
 ===			- FILE * ouvrirAccesUSD() :
-				→ 
+				→ /////
+				→ Retourner fichierUSD
 ===			- FILE * ouvrirAccesRAM() :
+				→ /////
+				→ Retourner fichierRAM
+@@@			- string lectureLigneUSD(FILE * pFile) :
 				→ 
-===			- string lectureLigneUSD(FILE * pFile) :
-				→ 
-===			- string lectureLigneRAM(FILE * pFile) :
+@@@			- string lectureLigneRAM(FILE * pFile) :
 				→ 
 ===			- string trouverPositionUSD(string str) :
-				→ 
+				→ /////
+				→ Retourner memoirefreeUSD
 ===			- string trouverPositionRAM(string str) :
-				→ 
+				→ /////
+				→ Retourner memoirefreeRAM
 --------Reboot :
-OK			+ Reboot() :
+°°°			+ Reboot() :
+				→ Construire un Reboot
 				→ Affecter "0000/00/00 00:00:00" à dateHour
 				→ Affecter 0 à number
-OK			+ Reboot(int anbreReboot, string adateHeure) :
-				→ Affecter adateHeure à dateHour
-				→ Affecter anbreReboot à number
-===			+ int getNumber() :
+°°°			+ Reboot(int anbreReboot, string adateHeure) :
+				→ Affecter la valeur de adateHeure qui est le paramètre de la méthode Reboot à dateHour
+				→ Affecter la valeur de anbreReboot qui est le paramètre de la méthode Reboot à number
+°°°			+ int getNumber() :
 				→ Retourner number
-===			+ string getDateHour() :
+°°°			+ string getDateHour() :
 				→ Retourner dateHour
-===			+ void setDateHour(string adateHour) :
-				→ Affecter la valeur de adateHour à dateHour
-===			+ void setNumber(int anumber) :
-				→ Affecter la valeur de anumber à number
+°°°			+ void setDateHour(string adateHour) :
+				→ Affecter la valeur de adateHeure qui est le paramètre de la méthode setDateHour à dateHour
+°°°			+ void setNumber(int anumber) :
+				→ Affecter la valeur de anumber qui est le paramètre de la méthode setNumber à number
 	Établir comment les classes interviendront dans le cas de la sauvegarde de missions avant envoi :
 	Identifier le format des données à enregistrer :
 --------Caméra :
@@ -141,15 +162,15 @@ OK			+ Reboot(int anbreReboot, string adateHeure) :
 Transmettre les télémesures d’instrument :
 	Analyser la classe Protocole et vérifier l’adaptabilité des méthodes de transmission des télémesures aux différents modèles de capteurs :
 --------Protocole :
-OK			+ Protocole() :
+°°°			+ Protocole() :
 				→ Construire un Protocole
-OK			+ virtual ~Protocole() :
+°°°			+ virtual ~Protocole() :
 				→ Détruire un Protocole
 ===			+ char *getTableau() :
 				→ 
-OK			+ int getNbrePaquets() :
+°°°			+ int getNbrePaquets() :
 				→ Retourner nbrePaquets
-OK			+ int getNumPaquet() :
+°°°			+ int getNumPaquet() :
 				→ Retourner numPaquet
 OK			+ list<vector<char>> getReceived() :
 				→ Retourner received
