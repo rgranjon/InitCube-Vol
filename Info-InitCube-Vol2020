@@ -3,6 +3,7 @@ Répertoire projet sur le NAS (prj2020-initcube-vol) :
 	Mor de passe : cubevol2020
 Matériel :
 	R-pi Cube :
-		Addresse : 10.10.33.157
+		Addresse : 10.10.33.157 (ancienne)
+		Addresse : 10.10.33.189
 			Identifiant : pi
 			Mot de passe : raspebrry
