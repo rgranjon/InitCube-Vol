@@ -166,7 +166,7 @@ OK			+ thread tArretMission() :
 °°°			+ void setIdentifiant(unsigned char id) :
 				→ Affecter la valeur de id à identifiant
 		------------------------
-		Ordinateur---------FINI-
+		Ordinateur----------FINI
 		------------------------
 			+ Ordinateur() :
 				→ Construire un Ordinateur
