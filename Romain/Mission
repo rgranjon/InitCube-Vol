@@ -6,8 +6,9 @@
 
 Enregistrer les données de mission :
 	Analyser les classes SegmentVol, Ordinateur, Stockage et Reboot :
-
---------main :
+--------------------------------
+--------main--------------------
+--------------------------------
 			→ Construire un SegmentVol et le stocker dans segmentVol
 			→ Construire un SegmentSol prenant en paramètre segmentVol et le stocker dans segmentSol
 			→ Attribuer segmentSol à segmentVol
@@ -31,8 +32,8 @@ Enregistrer les données de mission :
 			→ Vérifier que le thread t1 soit bien terminé
 			→ Vérifier que le thread t2 soit bien terminé
 			→ Vérifier que le thread t3 soit bien terminé
-
---------SegmentVol :
+--------------------------------
+--------SegmentVol--------------
 --------------------------------
 ^^^			+ SegmentVol() :
 				→ Construire un SegmentVol
@@ -164,7 +165,8 @@ OK			+ thread tArretMission() :
 				→ Affecter la valeur de id à identifiant
 --------------------------------
 
---------Ordinateur :
+--------------------------------
+--------Ordinateur--------------
 --------------------------------
 			+ Ordinateur() :
 				→ Construire un Ordinateur
@@ -197,7 +199,8 @@ OK			+ thread tArretMission() :
 				→ Affecter la valeur de la température divisée par 1000 contenue dans le fichier contenant la température à temperatureProcessor
 --------------------------------
 
---------Stockage :
+--------------------------------
+--------Stockage----------------
 --------------------------------
 °°°			+ Stockage() :
 				→ Construire un Stockage
@@ -255,7 +258,8 @@ OK			+ thread tArretMission() :
 				→ Retourner memoirefreeRAM
 --------------------------------
 
---------Reboot :
+--------------------------------
+--------Reboot------------------
 --------------------------------
 			+ Reboot() :
 				→ Construire un Reboot
@@ -312,8 +316,8 @@ OK			+ thread tArretMission() :
 
 Transmettre les télémesures d’instrument :
 	Analyser la classe Protocole et vérifier l’adaptabilité des méthodes de transmission des télémesures aux différents modèles de capteurs :
-
---------Protocole :
+--------------------------------
+--------Protocole---------------
 --------------------------------
 °°°			+ Protocole() :
 				→ Construire un Protocole
