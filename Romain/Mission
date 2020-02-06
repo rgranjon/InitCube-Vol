@@ -1,101 +1,208 @@
-°°° : FAIT
+^^^ : FAIT
 === : A FAIRE
 @@@ : COMPLIQUÉ OU PROBLÈME
 
+----
+0000----
+00000000----
+0000----
+----
+
 Enregistrer les données de mission :
 	Analyser les classes SegmentVol, Ordinateur, Stockage et Reboot :
+
+--------main :
+			→ Construire un SegmentVol et le stocker dans segmentVol
+			→ Construire un SegmentSol prenant en paramètre segmentVol et le stocker dans segmentSol
+			→ Attribuer segmentSol à segmentVol
+			→ Attribuer l'identifiant 2 au segmentVol
+			→ Créer une collection d'instrument de type string
+			→ Ajout d'un nouvel instrument -BATT
+			→ Ajout d'un nouvel instrument -INST
+			→ Ajout d'un nouvel instrument -BORD
+			→ Ajout d'un nouvel instrument -CUBE
+			→ Appel de la méthode getHorloge() appartenant à segmentVol et faisant appel à la méthode setRdvTime prenant en paramètre '"2019/04/04 15:25:00"'
+			→ Appel de la méthode creerMission() prenant en paramètre '1, 4, "2019/07/04 15:25:00", "-TC"' et appartenant à segmentVol
+			→ Appel de la méthode tLancerMission() appartenant à segmentVol et retournant le résultat dans t1 qui est un thread
+			→ Appel de la méthode tArretMission() appartenant à segmentVol et retournant le résultat dans t2 qui est un thread
+			→ Appel de la méthode configurerRecupEtat() prenant en paramètre '3, instrument' et appartenant à segmentVol
+			→ Appel de la méthode recupEtat() appartenant à segmentVol et retournant le résultat dans t3 qui est un thread
+			→ Appel de la méthode obtenirStatus() prenant en paramètre '&instrument' et appartenant à segmentVol
+			→ Affecter la valeur '"-PIX"' à PIXEL de type string (chaine de caractère)
+			→ Affecter la valeur '"-TC"' à TEMPCELSIUS de type string (chaine de caractère)
+			→ Appel de la méthode effectuerMesure() prenant en paramètre 'TEMPCELSIUS' et appartenant à segmentVol
+			→ Appel de la méthode effectuerMesure() prenant en paramètre 'PIXEL' et appartenant à segmentVol
+			→ Vérifier que le thread t1 soit bien terminé
+			→ Vérifier que le thread t2 soit bien terminé
+			→ Vérifier que le thread t3 soit bien terminé
+
 --------SegmentVol :
-°°°			+ SegmentVol() :
+--------------------------------
+^^^			+ SegmentVol() :
 				→ Construire un SegmentVol
-				→ Affecter la valeur du constructeur Horloge() à horloge
-				→ Affecter la valeur du constructeur Temperature() à temperature
-				→ Affecter la valeur du constructeur CameraIR() à cameraIR
-				→ Affecter la valeur du constructeur Batterie() à batterie
-				→ Affecter la valeur du constructeur EmetteurRecepteur() à emetteurRecepteur
-				→ Affecter la valeur du constructeur Mission() à mission
-				→ Affecter la valeur du constructeur Ordinateur() à ordinateur
-				→ Affecter la valeur du constructeur Etat() à etat
-				→ Affecter la valeur du constructeur SegmentVol() à segmentVol
-°°°			+ virtual ~SegmentVol() :
+				→ Construire une Horloge et la stocker dans horloge
+				→ Construire une Tempearture et la stocker dans tempearture
+				→ Construire une CameraIR et la stocker dans cameraIR
+				→ Construire une Batterie et la stocker dans batterie
+				→ Construire un EmetteurRecepteur et le stocker dans emetteurRecepteur
+				→ Construire une Mission et la stocker dans mission
+				→ Construire un Ordinateur et le stocker dans ordinateur
+				→ Construire un Etat et le stocker dans etat
+				→ Construire un SegmentSol et le stocker dans segmentSol
+--------------------------------
+^^^			+ virtual ~SegmentVol() :
 				→ Détruire un SegmentVol
-@@@			+ void lancerMission() :
-				→ 
-@@@			+ void arretMission() :
-				→ 
-@@@			+ void obtenirStatus(list<string>* appareil) :
-				→ 
-@@@			+ void obtenirStatus() :
-				→ 
-@@@			+ void effectuerMesure(string mesure) :
-				→ 
+--------------------------------
+^^^			+ void lancerMission() :
+				→ Obtenir la périodicité et la stocker dans 'interval'
+				→ Rendre le thread actif
+				→ Tant que le thread est actif
+					→ Mettre en pause le thread pendant 'interval' minutes
+					→ Activer cameraIR (seul module présent pour le Sprint1)
+					→ Lire la température de caméraIR ayant pour rayon '2' (pixels)
+					→ Lire horloge
+					→ Synchroniser la date et l'heure de caméraIR en se basant sur celles de horloge
+					→ Désactiver cameraIR (seul module présent pour le Sprint1)
+				→ Activer le module d'émission
+				→ Envoyer le résultat de la mission à segmentSol
+--------------------------------
+^^^			+ void arretMission() :
+				→ Obtenir la durée et la stocker dans 'delay'
+				→ Mettre en pause le thread pendant 'delay' minutes
+				→ Rendre le thread inactif
+--------------------------------
+°°°			+ void obtenirStatus(list<string>* appareil) :
+				→ Lire l'horloge
+				→ Pour chaque appareil reconnu
+					→ Si l'appareil correspond à ordinateur, cameraIR ou batterie alors on obtient son status
+					→ Si l'appareil correspond à tempperature alors on récupère la température du système
+				→Activer le module d'émission
+				→ Envoyer les status reçus au segmentSol
+--------------------------------
+°°°			+ void obtenirStatus() :
+				→ Obtenir la périodicité et la stocker dans 'intervale'
+				→ Tant qu'il n'y a pas d'erreur
+					→ Mettre en pause le thread pendant 'intervale' minutes
+					→ Obtenir le status de ordinateur, cameraIR, batterie
+					→ Lire l'horloge
+					→ Récupérer la température du système
+					→ Activer le module d'émission
+					→ Envoyer les status reçus au segmentSol
+--------------------------------
+^^^			+ void effectuerMesure(string mesure) :
+				→ Si mesure correspond à TEMPCELSIUS (une température)
+					→ Activer cameraIR (seul module présent pour le Sprint1)
+					→ Lire la température de caméraIR ayant pour rayon '2' (pixels)
+					→ Lire horloge
+					→ Synchroniser la date et l'heure de caméraIR en se basant sur celles de horloge
+					→ Désactiver cameraIR (seul module présent pour le Sprint1)
+				→ Si mesure correspond à PIXEL (une image)
+					→ Activer cameraIR (seul module présent pour le Sprint1)
+					→ Obtenir les pixels de cameraIR
+					→ Désactiver cameraIR (seul module présent pour le Sprint1)
+				→ Activer le module d'émission
+				→ Envoyer les mesures reçus au segmentSol
+--------------------------------
 °°°			+ void creerMission(short, short, string, string) :
 				→ Appeler la méthode setDuration() de mission prenant en paramètre le paramètre duree de la méthode configureRecupEtat
 				→ Appeler la méthode setPeriodicity() de mission prenant en paramètre le paramètre periode de la méthode configureRecupEtat
 				→ Appeler la méthode setStartTime() de mission prenant en paramètre le paramètre debut de la méthode configureRecupEtat
 				→ Appeler la méthode setMeasureType() de mission prenant en paramètre le paramètre type de la méthode configureRecupEtat
+--------------------------------
 °°°			+ void activerModuleEmission() :
 				→ Appeler la méthode activerEmetteur() de emetteurRecepteur
+--------------------------------
 °°°			+ void activerInstrument() :
 				→ Appeler la méthode activer() de cameraIR
+--------------------------------
 °°°			+ void desactiverInstrument() :
 				→ Appeler la méthode desactiver() de cameraIR
+--------------------------------
 °°°			+ void desactiverModuleEmission() :
 				→ Appeler la méthode desactiverEmetteur() de emetteurRecepteur
+--------------------------------
 °°°			+ void setSegmentSol(SegmentSol* segmentSol) : ( dans segmentVol.h )
 				→ Affecter la valeur de segmentSol qui est le paramètre de la méthode setSegmentSol à segmentSol
+--------------------------------
 °°°			+ void configurerRecupEtat(short period, list<string> instrument) :
 				→ Appeler la méthode setAppareil() de etat prenant en paramètre le paramètre instrument de la méthode configureRecupEtat
 				→ Appeler la méthode setPeriodicity() de etat prenant en paramètre le paramètre period de la méthode configureRecupEtat
+--------------------------------
 OK			+ thread recupEtat() :
 				→ Retourner le numéro du thread créé qui fait appel à la méthode obtenirStatus()
+--------------------------------
 OK			+ thread tLancerMission() :
 				→ Retourner le numéro du thread créé qui fait appel à la méthode lancerMission()
+--------------------------------
 OK			+ thread tArretMission() :
 				→ Retourner le numéro du thread créé qui fait appel à la méthode arretMission()
+--------------------------------
 °°°			+ Horloge* getHorloge() :
 				→ Retourner horloge
+--------------------------------
 °°°			+ Temperature* getTemperature() :
 				→ Retourner temperature
+--------------------------------
 °°°			+ CameraIR* getCameraIR() :
 				→ Retourner cameraIR
+--------------------------------
 °°°			+ Batterie* getBatterie() :
 				→ Retourner batterie
+--------------------------------
 °°°			+ EmetteurRecepteur* getEmetteurRecepteur() :
 				→ Retourner emetteurRecepteur
+--------------------------------
 °°°			+ Mission* getMission() :
 				→ Retourner mission
+--------------------------------
 °°°			+ Ordinateur* getOrdinateur() :
 				→ Retourner ordinateur
+--------------------------------
 °°°			+ Etat* getEtat() :
 				→ Retourner etat
+--------------------------------
 °°°			+ unsigned char getIdentifiant() :
 				→ Retourner identifiant
+--------------------------------
 °°°			+ void setIdentifiant(unsigned char id) :
 				→ Affecter la valeur de id à identifiant
+--------------------------------
+
 --------Ordinateur :
+--------------------------------
 			+ Ordinateur() :
 				→ Construire un Ordinateur
 				→ Affecter la valeur du constructeur Stockage() à leStockage
 				→ Affecter la valeur du constructeur Reboot() à leReboot
+--------------------------------
 			+ virtual ~Ordinateur() :
 				→ Détruire un Ordinateur
+--------------------------------
 			+ void obtenirStatus() :
 				→ Appeler la méthode calculerStockage()
 				→ Appeler la méthode obtenirTemperature()
+--------------------------------
 			+ Stockage * getStockage() :
 				→ Retourner leStockage
+--------------------------------
 			+ float getTemperatureProcessor() :
 				→ Retourner temperatureProcessor
+--------------------------------
 			+ Reboot* getReboot() :
 				→ Retourner leReboot
+--------------------------------
 			- void calculerStockage() :
 				→ Appeler la méthode calculMemoireUSD() de leStockage
 				→ Appeler la méthode calculMemoireRAM() de leStockage
+--------------------------------
 			- void obtenirTemperature() :
 				→ Ouvrir le fichier contenant la température
 				→ Afficher un message d'erreur si le fichier ne peut pas être ouvert
 				→ Affecter la valeur de la température divisée par 1000 contenue dans le fichier contenant la température à temperatureProcessor
+--------------------------------
+
 --------Stockage :
+--------------------------------
 °°°			+ Stockage() :
 				→ Construire un Stockage
 				→ Affecter "666666" à memoireRam
@@ -103,148 +210,228 @@ OK			+ thread tArretMission() :
 				→ Affecter "66" à pourcentageutilise
 				→ Affecter "77" à occupationRAM
 				→ Affecter "ko" à unit
+--------------------------------
 °°°			+ virtual ~Stockage() :
 				→ Détruire un stockage
+--------------------------------
 @@@			+ void calculMemoireUSD() :
 				→ 
+--------------------------------
 @@@			+ void calculMemoireRAM() :
 				→ 
+--------------------------------
 °°°			+ string getMemoireRAM() :
 				→ Retourner memoireRAM
+--------------------------------
 °°°			+ string getMemoireUSD() :
 				→ Retourner memoireUSD
+--------------------------------
 °°°			+ string getPourcentage() :
 				→ Retourner pourcentageutilise
+--------------------------------
 °°°			+ string getOccupationRAM() :
 				→ Retourner occupationRAM
+--------------------------------
 °°°			+ string getUnit() :
 				→ Retourner unit
+--------------------------------
 ===			- FILE * ouvrirAccesUSD() :
 				→ /////
+--------------------------------
 				→ Retourner fichierUSD
 ===			- FILE * ouvrirAccesRAM() :
+--------------------------------
 				→ /////
 				→ Retourner fichierRAM
+--------------------------------
 @@@			- string lectureLigneUSD(FILE * pFile) :
 				→ 
+--------------------------------
 @@@			- string lectureLigneRAM(FILE * pFile) :
 				→ 
+--------------------------------
 ===			- string trouverPositionUSD(string str) :
 				→ /////
 				→ Retourner memoirefreeUSD
+--------------------------------
 ===			- string trouverPositionRAM(string str) :
 				→ /////
 				→ Retourner memoirefreeRAM
+--------------------------------
+
 --------Reboot :
+--------------------------------
 			+ Reboot() :
 				→ Construire un Reboot
 				→ Affecter "0000/00/00 00:00:00" à dateHour
 				→ Affecter 0 à number
+--------------------------------
 			+ Reboot(int anbreReboot, string adateHeure) :
 				→ Affecter la valeur de adateHeure qui est le paramètre de la méthode Reboot à dateHour
 				→ Affecter la valeur de anbreReboot qui est le paramètre de la méthode Reboot à number
+--------------------------------
 			+ int getNumber() :
 				→ Retourner number
+--------------------------------
 			+ string getDateHour() :
 				→ Retourner dateHour
+--------------------------------
 			+ void setDateHour(string adateHour) :
 				→ Affecter la valeur de adateHeure qui est le paramètre de la méthode setDateHour à dateHour
+--------------------------------
 °°°			+ void setNumber(int anumber) :
 				→ Affecter la valeur de anumber qui est le paramètre de la méthode setNumber à number
+--------------------------------
+
+
 	Établir comment les classes interviendront dans le cas de la sauvegarde de missions avant envoi :
 --------SegmentVol :
-			
 --------Ordinateur :
-			
 --------Stockage :
-			
 --------Reboot :
-			
 --------Protocole :
-			
+
+
+
 	Identifier le format des données à enregistrer :
+
 --------Caméra :
 			- PAS AU SPRINT 1
+
 --------Caméra IR :
 			- A FAIRE DURANT LE SPRINT 1
+
 --------Magnétomètre :
 			- PAS AU SPRINT 1
+
+
+
 	Concevoir et réaliser le module de sauvegarde des données de mission :
+
+
+
 	Concevoir et réaliser le module de redémarrage du système sur commande ou sur incident :
+
+----
+0000----
+00000000----
+0000----
+----
+
 Transmettre les télémesures d’instrument :
 	Analyser la classe Protocole et vérifier l’adaptabilité des méthodes de transmission des télémesures aux différents modèles de capteurs :
+
 --------Protocole :
+--------------------------------
 °°°			+ Protocole() :
 				→ Construire un Protocole
+--------------------------------
 °°°			+ virtual ~Protocole() :
 				→ Détruire un Protocole
+--------------------------------
 ===			+ char *getTableau() :
 				→ 
+--------------------------------
 °°°			+ int getNbrePaquets() :
 				→ Retourner nbrePaquets
+--------------------------------
 °°°			+ int getNumPaquet() :
 				→ Retourner numPaquet
+--------------------------------
 OK			+ list<vector<char>> getReceived() :
 				→ Retourner received
+--------------------------------
 OK			+ void setTableau(char laDataRecu[100]) :
 				→ Remplir les 100 premières cases (0 à 99) du tableau tableau[i] avec les données laDataRecu[i]
+--------------------------------
 ===			+ void setNbrePaquets(int n) :
 				→ 
+--------------------------------
 ===			+ void setNumPaquet(int n) :
 				→ 
+--------------------------------
 ===			+ void addReceived(char recu [100]) :
 				→ 
+--------------------------------
 ===			+ void detramerMessage() :
 				→ 
+--------------------------------
 ===			+ string extraireTypeMessage(int &pos) :
 				→ 
+--------------------------------
 ===			+ void extraireNombrePaquets(int &pos) :
 				→ 
+--------------------------------
 ===			+ int calculerNbrePaquetsSalve() :
 				→ 
+--------------------------------
 ===			+ string extraireTypeDataMission(int &pos) :
 				→ 
+--------------------------------
 ===			+ int extraireDataMission(list<float> &datas, list<string> &dateHours, int &pos, string typeMission) :
 				→ 
+--------------------------------
 ===			+ void supprimerPaquet() :
 				→ 
+--------------------------------
 ===			# static string ERR_CHECKSUM :
 				→
+--------------------------------
 ===			# static string ERR_FORMAT :
 				→
+--------------------------------
 ===			# static int pause :
 				→
+--------------------------------
 ===			# int nbrePaquets :
 				→
+--------------------------------
 ===			# int numPaquet :
 				→
+--------------------------------
 ===			# char tableau[100] :
 				→
+--------------------------------
 ===			# list<vector<char>> received :
 				→
+--------------------------------
 ===			# void calculerChecksum(char & PF, char & pf) :
 				→
+--------------------------------
 ===			# bool verifierChecksum() :
 				→
+--------------------------------
 ===			# void tramerMission(Message* message, int nbrePaquets, int numPaquet) :
 				→
+--------------------------------
 ===			# void tramerStatus(Message* message, int nbrePaquets, int numPaquet) :
 				→
+--------------------------------
 ===			# void tramerMesure(Message* message, int nbrePaquets, int numPaquet) :
 				→
+--------------------------------
 ===			# unsigned char calculerNombrePaquets(Message * message) :
 				→
+--------------------------------
 OK			# void extraireCommande() :
 				→ PAS CODÉ
+--------------------------------
 OK			# void extraireParametres() :
 				→ PAS CODÉ
+--------------------------------
 ===			# void ajouterDataOrdiBord(Message* amessage, unsigned int &aposition) :
 				→
+--------------------------------
 ===			# void ajouterDataBattery(Message* amessage, unsigned int &aposition) :
 				→
+--------------------------------
 ===			# void ajouterStatusInst(Message* amessage, unsigned int &aposition) :
 				→
+--------------------------------
 ===			# void ajouterStatusCube(Message* amessage, unsigned int &aposition) :
 				→
+--------------------------------
+
+
 
 	Concevoir et développer les nouvelles méthodes :
