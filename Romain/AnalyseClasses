@@ -8,9 +8,9 @@ Enregistrer les données de mission :
 	~~~~~~~~~~
 	Analyser les classes SegmentVol, Ordinateur, Stockage et Reboot :
 	~~~~~~~~~~
---------------------------------
---------main--------------------
---------------------------------
+		------------------------
+		main--------------------
+		------------------------
 			→ Construire un SegmentVol et le stocker dans segmentVol
 			→ Construire un SegmentSol prenant en paramètre segmentVol et le stocker dans segmentSol
 			→ Attribuer segmentSol à segmentVol
@@ -34,9 +34,9 @@ Enregistrer les données de mission :
 			→ Vérifier que le thread t1 soit bien terminé
 			→ Vérifier que le thread t2 soit bien terminé
 			→ Vérifier que le thread t3 soit bien terminé
---------------------------------
---------SegmentVol--------------
---------------------------------
+		------------------------
+		SegmentVol--------------
+		------------------------
 ^^^			+ SegmentVol() :
 				→ Construire un SegmentVol
 				→ Construire une Horloge et la stocker dans horloge
@@ -165,9 +165,9 @@ OK			+ thread tArretMission() :
 --------------------------------
 °°°			+ void setIdentifiant(unsigned char id) :
 				→ Affecter la valeur de id à identifiant
---------------------------------
---------Ordinateur---------FINI-
---------------------------------
+		------------------------
+		Ordinateur---------FINI-
+		------------------------
 			+ Ordinateur() :
 				→ Construire un Ordinateur
 				→ Construire un Stockage et le stocker dans leStockage
@@ -200,9 +200,9 @@ OK			+ thread tArretMission() :
 				→ Sinon
 					→ Charcher 'temp' dans le fichier contenant la température
 					→ Affecter 'temp' divisée par 1000 à temperatureProcessor
---------------------------------
---------Stockage----------------
---------------------------------
+		------------------------
+		Stockage----------------
+		------------------------
 °°°			+ Stockage() :
 				→ Construire un Stockage
 				→ Affecter "666666" à memoireRam
@@ -259,9 +259,9 @@ OK			+ thread tArretMission() :
 				→ Retourner memoirefreeRAM
 --------------------------------
 
---------------------------------
---------Reboot------------------
---------------------------------
+		------------------------
+		Reboot------------------
+		------------------------
 			+ Reboot() :
 				→ Construire un Reboot
 				→ Affecter "0000/00/00 00:00:00" à dateHour
@@ -287,12 +287,26 @@ OK			+ thread tArretMission() :
 	~~~~~~~~~~
 	Établir comment les classes interviendront dans le cas de la sauvegarde de missions avant envoi :
 	~~~~~~~~~~
---------SegmentVol :
---------Ordinateur :
---------Stockage :
---------Reboot :
---------Protocole :
 
+		------------------------
+		SegmentVol--------------
+		------------------------
+
+		------------------------
+		Ordinateur--------------
+		------------------------
+
+		------------------------
+		Stockage----------------
+		------------------------
+
+		------------------------
+		Reboot------------------
+		------------------------
+
+		------------------------
+		Protocole---------------
+		------------------------
 
 	~~~~~~~~~~
 	Identifier le format des données à enregistrer :
