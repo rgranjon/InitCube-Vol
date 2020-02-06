@@ -76,15 +76,15 @@ Enregistrer les données de mission :
 				→ Mettre en pause le thread pendant 'delay' minutes
 				→ Rendre le thread inactif
 --------------------------------
-°°°			+ void obtenirStatus(list<string>* appareil) :
+^^^			+ void obtenirStatus(list<string>* appareil) :
 				→ Lire l'horloge
 				→ Pour chaque appareil reconnu
 					→ Si l'appareil correspond à ordinateur, cameraIR ou batterie alors on obtient son status
 					→ Si l'appareil correspond à tempperature alors on récupère la température du système
-				→Activer le module d'émission
-				→ Envoyer les status reçus au segmentSol
+				→ Activer le module d'émission
+				→ Envoyer les status reçus à segmentSol
 --------------------------------
-°°°			+ void obtenirStatus() :
+^^^			+ void obtenirStatus() :
 				→ Obtenir la périodicité et la stocker dans 'intervale'
 				→ Tant qu'il n'y a pas d'erreur
 					→ Mettre en pause le thread pendant 'intervale' minutes
@@ -92,7 +92,7 @@ Enregistrer les données de mission :
 					→ Lire l'horloge
 					→ Récupérer la température du système
 					→ Activer le module d'émission
-					→ Envoyer les status reçus au segmentSol
+					→ Envoyer les status reçus à segmentSol
 --------------------------------
 ^^^			+ void effectuerMesure(string mesure) :
 				→ Si mesure correspond à TEMPCELSIUS (une température)
@@ -106,7 +106,7 @@ Enregistrer les données de mission :
 					→ Obtenir les pixels de cameraIR
 					→ Désactiver cameraIR (seul module présent pour le Sprint1)
 				→ Activer le module d'émission
-				→ Envoyer les mesures reçus au segmentSol
+				→ Envoyer les mesures reçus en fonction du type à segmentSol
 --------------------------------
 °°°			+ void creerMission(short, short, string, string) :
 				→ Appeler la méthode setDuration() de mission prenant en paramètre le paramètre duree de la méthode configureRecupEtat
@@ -217,7 +217,7 @@ OK			+ thread tArretMission() :
 		------------------------
 
 --------------------------------
-°°°			+ Stockage() :
+^^^			+ Stockage() :
 				→ Construire un Stockage
 				→ Affecter "666666" à memoireRam
 				→ Affecter "1888888" à memoireUSD
@@ -225,8 +225,8 @@ OK			+ thread tArretMission() :
 				→ Affecter "77" à occupationRAM
 				→ Affecter "ko" à unit
 --------------------------------
-°°°			+ virtual ~Stockage() :
-				→ Détruire un stockage
+^^^			+ virtual ~Stockage() :
+				→ Détruire un Stockage
 --------------------------------
 @@@			+ void calculMemoireUSD() :
 				→ 
@@ -234,27 +234,26 @@ OK			+ thread tArretMission() :
 @@@			+ void calculMemoireRAM() :
 				→ 
 --------------------------------
-°°°			+ string getMemoireRAM() :
+^^^			+ string getMemoireRAM() :
 				→ Retourner memoireRAM
 --------------------------------
-°°°			+ string getMemoireUSD() :
+^^^			+ string getMemoireUSD() :
 				→ Retourner memoireUSD
 --------------------------------
-°°°			+ string getPourcentage() :
+^^^			+ string getPourcentage() :
 				→ Retourner pourcentageutilise
 --------------------------------
-°°°			+ string getOccupationRAM() :
+^^^			+ string getOccupationRAM() :
 				→ Retourner occupationRAM
 --------------------------------
-°°°			+ string getUnit() :
+^^^			+ string getUnit() :
 				→ Retourner unit
 --------------------------------
-===			- FILE * ouvrirAccesUSD() :
+@@@			- FILE * ouvrirAccesUSD() :
 				→ /////
---------------------------------
 				→ Retourner fichierUSD
-===			- FILE * ouvrirAccesRAM() :
 --------------------------------
+@@@			- FILE * ouvrirAccesRAM() :
 				→ /////
 				→ Retourner fichierRAM
 --------------------------------
@@ -264,11 +263,11 @@ OK			+ thread tArretMission() :
 @@@			- string lectureLigneRAM(FILE * pFile) :
 				→ 
 --------------------------------
-===			- string trouverPositionUSD(string str) :
+@@@			- string trouverPositionUSD(string str) :
 				→ /////
 				→ Retourner memoirefreeUSD
 --------------------------------
-===			- string trouverPositionRAM(string str) :
+@@@			- string trouverPositionRAM(string str) :
 				→ /////
 				→ Retourner memoirefreeRAM
 --------------------------------
