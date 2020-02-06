@@ -274,7 +274,7 @@ OK			+ thread tArretMission() :
 --------------------------------
 
 		------------------------
-		Reboot------------------
+		Reboot--------------FINI
 		------------------------
 
 --------------------------------
@@ -296,7 +296,7 @@ OK			+ thread tArretMission() :
 			+ void setDateHour(string adateHour) :
 				→ Affecter la valeur de adateHeure qui est le paramètre de la méthode setDateHour à dateHour
 --------------------------------
-°°°			+ void setNumber(int anumber) :
+			+ void setNumber(int anumber) :
 				→ Affecter la valeur de anumber qui est le paramètre de la méthode setNumber à number
 --------------------------------
 
