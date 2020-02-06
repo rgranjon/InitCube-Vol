@@ -2,10 +2,12 @@
 === : A FAIRE
 @@@ : COMPLIQUÉ OU PROBLÈME
 
-
-
+~~~~~~~~~~~~~~~~~~~~
 Enregistrer les données de mission :
+~~~~~~~~~~~~~~~~~~~~
+	~~~~~~~~~~
 	Analyser les classes SegmentVol, Ordinateur, Stockage et Reboot :
+	~~~~~~~~~~
 --------------------------------
 --------main--------------------
 --------------------------------
@@ -164,41 +166,40 @@ OK			+ thread tArretMission() :
 °°°			+ void setIdentifiant(unsigned char id) :
 				→ Affecter la valeur de id à identifiant
 --------------------------------
-
---------------------------------
---------Ordinateur--------------
+--------Ordinateur---------FINI-
 --------------------------------
 			+ Ordinateur() :
 				→ Construire un Ordinateur
-				→ Affecter la valeur du constructeur Stockage() à leStockage
-				→ Affecter la valeur du constructeur Reboot() à leReboot
+				→ Construire un Stockage et le stocker dans leStockage
+				→ Construire un Reboot et le stocker dans leReboot
 --------------------------------
 			+ virtual ~Ordinateur() :
 				→ Détruire un Ordinateur
 --------------------------------
 			+ void obtenirStatus() :
-				→ Appeler la méthode calculerStockage()
-				→ Appeler la méthode obtenirTemperature()
+				→ Calculer le stockage
+				→ Obtenir la température
 --------------------------------
 			+ Stockage * getStockage() :
-				→ Retourner leStockage
+				→ Retourner la variable leStockage
 --------------------------------
 			+ float getTemperatureProcessor() :
-				→ Retourner temperatureProcessor
+				→ Retourner la variable temperatureProcessor
 --------------------------------
 			+ Reboot* getReboot() :
-				→ Retourner leReboot
+				→ Retourner la variable leReboot
 --------------------------------
 			- void calculerStockage() :
-				→ Appeler la méthode calculMemoireUSD() de leStockage
-				→ Appeler la méthode calculMemoireRAM() de leStockage
+				→ Calculer la mémoire USD
+				→ Calculer la mémoire RAM
 --------------------------------
 			- void obtenirTemperature() :
 				→ Ouvrir le fichier contenant la température
-				→ Afficher un message d'erreur si le fichier ne peut pas être ouvert
-				→ Affecter la valeur de la température divisée par 1000 contenue dans le fichier contenant la température à temperatureProcessor
---------------------------------
-
+				→ Si le fichier ne s'est pas ouvert
+					→ Afficher un message d'erreur '"temp"'
+				→ Sinon
+					→ Charcher 'temp' dans le fichier contenant la température
+					→ Affecter 'temp' divisée par 1000 à temperatureProcessor
 --------------------------------
 --------Stockage----------------
 --------------------------------
@@ -281,10 +282,11 @@ OK			+ thread tArretMission() :
 --------------------------------
 °°°			+ void setNumber(int anumber) :
 				→ Affecter la valeur de anumber qui est le paramètre de la méthode setNumber à number
---------------------------------
 
 
+	~~~~~~~~~~
 	Établir comment les classes interviendront dans le cas de la sauvegarde de missions avant envoi :
+	~~~~~~~~~~
 --------SegmentVol :
 --------Ordinateur :
 --------Stockage :
@@ -292,8 +294,9 @@ OK			+ thread tArretMission() :
 --------Protocole :
 
 
-
+	~~~~~~~~~~
 	Identifier le format des données à enregistrer :
+	~~~~~~~~~~
 
 --------Caméra :
 			- PAS AU SPRINT 1
@@ -305,17 +308,20 @@ OK			+ thread tArretMission() :
 			- PAS AU SPRINT 1
 
 
-
+	~~~~~~~~~~
 	Concevoir et réaliser le module de sauvegarde des données de mission :
+	~~~~~~~~~~
 
-
-
+	~~~~~~~~~~
 	Concevoir et réaliser le module de redémarrage du système sur commande ou sur incident :
+	~~~~~~~~~~
 
-
-
+~~~~~~~~~~~~~~~~~~~~
 Transmettre les télémesures d’instrument :
+~~~~~~~~~~~~~~~~~~~~
+	~~~~~~~~~~
 	Analyser la classe Protocole et vérifier l’adaptabilité des méthodes de transmission des télémesures aux différents modèles de capteurs :
+	~~~~~~~~~~
 --------------------------------
 --------Protocole---------------
 --------------------------------
@@ -429,5 +435,6 @@ OK			# void extraireParametres() :
 --------------------------------
 
 
-
+	~~~~~~~~~~
 	Concevoir et développer les nouvelles méthodes :
+	~~~~~~~~~~
