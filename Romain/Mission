@@ -2,11 +2,7 @@
 === : A FAIRE
 @@@ : COMPLIQUÉ OU PROBLÈME
 
-----
-0000----
-00000000----
-0000----
-----
+
 
 Enregistrer les données de mission :
 	Analyser les classes SegmentVol, Ordinateur, Stockage et Reboot :
@@ -312,11 +308,7 @@ OK			+ thread tArretMission() :
 
 	Concevoir et réaliser le module de redémarrage du système sur commande ou sur incident :
 
-----
-0000----
-00000000----
-0000----
-----
+
 
 Transmettre les télémesures d’instrument :
 	Analyser la classe Protocole et vérifier l’adaptabilité des méthodes de transmission des télémesures aux différents modèles de capteurs :
