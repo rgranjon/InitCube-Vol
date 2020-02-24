@@ -311,10 +311,10 @@ Enregistrer les données de mission :
 				→ Affecter la valeur de anbreReboot qui est le paramètre de la méthode Reboot à number
 --------------------------------
 			+ int getNumber() :
-				→ Retourner number
+				→ Retourner la valeur de 'number'
 --------------------------------
 			+ string getDateHour() :
-				→ Retourner dateHour
+				→ Retourner la valeur de 'dateHour'
 --------------------------------
 			+ void setDateHour(string adateHour) :
 				→ Affecter la valeur de adateHeure qui est le paramètre de la méthode setDateHour à dateHour
