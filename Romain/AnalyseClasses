@@ -9,7 +9,7 @@ Enregistrer les données de mission :
 	Analyser les classes SegmentVol, Ordinateur, Stockage et Reboot :
 	~~~~~~~~~~
 		------------------------
-		main--------------------
+		main----------------FINI
 		------------------------
 
 --------------------------------
@@ -39,11 +39,11 @@ Enregistrer les données de mission :
 --------------------------------
 
 		------------------------
-		SegmentVol--------------
+		SegmentVol----------FINI
 		------------------------
 
 --------------------------------
-^^^			+ SegmentVol() :
+			+ SegmentVol() :
 				→ Construire un SegmentVol
 				→ Construire une Horloge et la stocker dans horloge
 				→ Construire une Tempearture et la stocker dans tempearture
@@ -55,10 +55,10 @@ Enregistrer les données de mission :
 				→ Construire un Etat et le stocker dans etat
 				→ Construire un SegmentSol et le stocker dans segmentSol
 --------------------------------
-^^^			+ virtual ~SegmentVol() :
+			+ virtual ~SegmentVol() :
 				→ Détruire un SegmentVol
 --------------------------------
-^^^			+ void lancerMission() :
+			+ void lancerMission() :
 				→ Obtenir la périodicité et la stocker dans 'interval'
 				→ Rendre le thread actif
 				→ Tant que le thread est actif
@@ -71,12 +71,12 @@ Enregistrer les données de mission :
 				→ Activer le module d'émission
 				→ Envoyer le résultat de la mission à segmentSol
 --------------------------------
-^^^			+ void arretMission() :
+			+ void arretMission() :
 				→ Obtenir la durée et la stocker dans 'delay'
 				→ Mettre en pause le thread pendant 'delay' minutes
 				→ Rendre le thread inactif
 --------------------------------
-^^^			+ void obtenirStatus(list<string>* appareil) :
+			+ void obtenirStatus(list<string>* appareil) :
 				→ Lire l'horloge
 				→ Pour chaque appareil reconnu
 					→ Si l'appareil correspond à ordinateur, cameraIR ou batterie alors on obtient son status
@@ -84,7 +84,7 @@ Enregistrer les données de mission :
 				→ Activer le module d'émission
 				→ Envoyer les status reçus à segmentSol
 --------------------------------
-^^^			+ void obtenirStatus() :
+			+ void obtenirStatus() :
 				→ Obtenir la périodicité et la stocker dans 'intervale'
 				→ Tant qu'il n'y a pas d'erreur
 					→ Mettre en pause le thread pendant 'intervale' minutes
@@ -94,7 +94,7 @@ Enregistrer les données de mission :
 					→ Activer le module d'émission
 					→ Envoyer les status reçus à segmentSol
 --------------------------------
-^^^			+ void effectuerMesure(string mesure) :
+			+ void effectuerMesure(string mesure) :
 				→ Si mesure correspond à TEMPCELSIUS (une température)
 					→ Activer cameraIR (seul module présent pour le Sprint1)
 					→ Lire la température de caméraIR ayant pour rayon '2' (pixels)
@@ -108,69 +108,69 @@ Enregistrer les données de mission :
 				→ Activer le module d'émission
 				→ Envoyer les mesures reçus en fonction du type à segmentSol
 --------------------------------
-°°°			+ void creerMission(short, short, string, string) :
-				→ Appeler la méthode setDuration() de mission prenant en paramètre le paramètre duree de la méthode configureRecupEtat
-				→ Appeler la méthode setPeriodicity() de mission prenant en paramètre le paramètre periode de la méthode configureRecupEtat
-				→ Appeler la méthode setStartTime() de mission prenant en paramètre le paramètre debut de la méthode configureRecupEtat
-				→ Appeler la méthode setMeasureType() de mission prenant en paramètre le paramètre type de la méthode configureRecupEtat
+			+ void creerMission(short, short, string, string) :
+				→ Affecter la valeur de 'duree' qui est un des paramètre de la méthode creerMission à 'duration'
+				→ Affecter la valeur de 'periode' qui est un des paramètre de la méthode creerMission à 'periodicity'
+				→ Affecter la valeur de 'debut' qui est un des paramètre de la méthode creerMission à 'startTime'
+				→ Affecter la valeur de 'type' qui est un des paramètre de la méthode creerMission à 'measureType'
 --------------------------------
-°°°			+ void activerModuleEmission() :
-				→ Appeler la méthode activerEmetteur() de emetteurRecepteur
+			+ void activerModuleEmission() :
+				→ Activer 'emetteurRecepteur'
 --------------------------------
-°°°			+ void activerInstrument() :
-				→ Appeler la méthode activer() de cameraIR
+			+ void activerInstrument() :
+				→ Activer 'cameraIR'
 --------------------------------
-°°°			+ void desactiverInstrument() :
-				→ Appeler la méthode desactiver() de cameraIR
+			+ void desactiverInstrument() :
+				→ Desactiver 'cameraIR'
 --------------------------------
-°°°			+ void desactiverModuleEmission() :
-				→ Appeler la méthode desactiverEmetteur() de emetteurRecepteur
+			+ void desactiverModuleEmission() :
+				→ Desactiver 'emetteurRecepteur'
 --------------------------------
-°°°			+ void setSegmentSol(SegmentSol* segmentSol) : ( dans segmentVol.h )
+			+ void setSegmentSol(SegmentSol* segmentSol) : ( dans segmentVol.h )
 				→ Affecter la valeur de segmentSol qui est le paramètre de la méthode setSegmentSol à segmentSol
 --------------------------------
-°°°			+ void configurerRecupEtat(short period, list<string> instrument) :
-				→ Appeler la méthode setAppareil() de etat prenant en paramètre le paramètre instrument de la méthode configureRecupEtat
-				→ Appeler la méthode setPeriodicity() de etat prenant en paramètre le paramètre period de la méthode configureRecupEtat
+			+ void configurerRecupEtat(short period, list<string> instrument) :
+				→ Affecter la valeur de chaque 'instrument' de la collection qui est un des paramètre de la méthode configurerRecupEtat à 'appareil'
+				→ Affecter la valeur de 'period' qui est un des paramètre de la méthode configurerRecupEtat à 'periodicity'
 --------------------------------
-OK			+ thread recupEtat() :
+			+ thread recupEtat() :
 				→ Retourner le numéro du thread créé qui fait appel à la méthode obtenirStatus()
 --------------------------------
-OK			+ thread tLancerMission() :
+			+ thread tLancerMission() :
 				→ Retourner le numéro du thread créé qui fait appel à la méthode lancerMission()
 --------------------------------
-OK			+ thread tArretMission() :
+			+ thread tArretMission() :
 				→ Retourner le numéro du thread créé qui fait appel à la méthode arretMission()
 --------------------------------
-°°°			+ Horloge* getHorloge() :
-				→ Retourner horloge
+			+ Horloge* getHorloge() :
+				→ Retourner la valeur de 'horloge'
 --------------------------------
-°°°			+ Temperature* getTemperature() :
-				→ Retourner temperature
+			+ Temperature* getTemperature() :
+				→ Retourner la valeur de 'temperature'
 --------------------------------
-°°°			+ CameraIR* getCameraIR() :
-				→ Retourner cameraIR
+			+ CameraIR* getCameraIR() :
+				→ Retourner la valeur de 'cameraIR'
 --------------------------------
-°°°			+ Batterie* getBatterie() :
-				→ Retourner batterie
+			+ Batterie* getBatterie() :
+				→ Retourner la valeur de 'batterie'
 --------------------------------
-°°°			+ EmetteurRecepteur* getEmetteurRecepteur() :
-				→ Retourner emetteurRecepteur
+			+ EmetteurRecepteur* getEmetteurRecepteur() :
+				→ Retourner la valeur de 'emetteurRecepteur'
 --------------------------------
-°°°			+ Mission* getMission() :
-				→ Retourner mission
+			+ Mission* getMission() :
+				→ Retourner la valeur de 'mission'
 --------------------------------
-°°°			+ Ordinateur* getOrdinateur() :
-				→ Retourner ordinateur
+			+ Ordinateur* getOrdinateur() :
+				→ Retourner la valeur de 'ordinateur'
 --------------------------------
-°°°			+ Etat* getEtat() :
-				→ Retourner etat
+			+ Etat* getEtat() :
+				→ Retourner la valeur de 'etat'
 --------------------------------
-°°°			+ unsigned char getIdentifiant() :
-				→ Retourner identifiant
+			+ unsigned char getIdentifiant() :
+				→ Retourner la valeur de 'identifiant'
 --------------------------------
-°°°			+ void setIdentifiant(unsigned char id) :
-				→ Affecter la valeur de id à identifiant
+			+ void setIdentifiant(unsigned char id) :
+				→ Affecter la valeur de 'id' à 'identifiant'
 --------------------------------
 
 		------------------------
@@ -208,7 +208,7 @@ OK			+ thread tArretMission() :
 				→ Si le fichier ne s'est pas ouvert
 					→ Afficher un message d'erreur '"temp"'
 				→ Sinon
-					→ Charcher 'temp' dans le fichier contenant la température
+					→ Chercher 'temp' dans le fichier contenant la température
 					→ Affecter 'temp' divisée par 1000 à temperatureProcessor
 --------------------------------
 
