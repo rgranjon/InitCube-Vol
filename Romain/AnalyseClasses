@@ -8,10 +8,10 @@ Enregistrer les données de mission :
 	~~~~~~~~~~
 	Analyser les classes SegmentVol, Ordinateur, Stockage et Reboot :
 	~~~~~~~~~~
+--------------------------------
 		------------------------
 		main----------------FINI
 		------------------------
-
 --------------------------------
 			→ Construire un SegmentVol et le stocker dans segmentVol
 			→ Construire un SegmentSol prenant en paramètre segmentVol et le stocker dans segmentSol
@@ -37,11 +37,9 @@ Enregistrer les données de mission :
 			→ Vérifier que le thread t2 soit bien terminé
 			→ Vérifier que le thread t3 soit bien terminé
 --------------------------------
-
 		------------------------
 		SegmentVol----------FINI
 		------------------------
-
 --------------------------------
 			+ SegmentVol() :
 				→ Construire un SegmentVol
@@ -172,11 +170,9 @@ Enregistrer les données de mission :
 			+ void setIdentifiant(unsigned char id) :
 				→ Affecter la valeur de 'id' à 'identifiant'
 --------------------------------
-
 		------------------------
 		Ordinateur----------FINI
 		------------------------
-
 --------------------------------
 			+ Ordinateur() :
 				→ Construire un Ordinateur
@@ -211,11 +207,9 @@ Enregistrer les données de mission :
 					→ Chercher 'temp' dans le fichier contenant la température
 					→ Affecter 'temp' divisée par 1000 à temperatureProcessor
 --------------------------------
-
 		------------------------
 		Stockage------------FINI
 		------------------------
-
 --------------------------------
 			+ Stockage() :
 				→ Construire un Stockage
@@ -295,11 +289,9 @@ Enregistrer les données de mission :
 				→ Affecter les 80 caractères suivant 'posRAM' à 'memoirefreeRAM'
 				→ Retourner la valeur de 'memoirefreeRAM'
 --------------------------------
-
 		------------------------
 		Reboot--------------FINI
 		------------------------
-
 --------------------------------
 			+ Reboot() :
 				→ Construire un Reboot
@@ -323,11 +315,9 @@ Enregistrer les données de mission :
 				→ Affecter la valeur de anumber qui est le paramètre de la méthode setNumber à number
 --------------------------------
 
-
 	~~~~~~~~~~
 	Établir comment les classes interviendront dans le cas de la sauvegarde de missions avant envoi :
 	~~~~~~~~~~
-
 		------------------------
 		SegmentVol--------------
 		------------------------
@@ -351,23 +341,36 @@ Enregistrer les données de mission :
 	~~~~~~~~~~
 	Identifier le format des données à enregistrer :
 	~~~~~~~~~~
-
 --------Caméra :
 			- PAS AU SPRINT 1
 
 --------Caméra IR :
-			(o = octet) (_ = 0x20)
-			- [2o 1o 7o 1o 1o 4o _5o _5o _5o _5o _5o _5o _5o _7o_ 2o]
+			(_ = 0x20) (n = nombre qui dépend de la valeur transmise)
+			[1 2 3 4 5 6 _7 _8 _9 _10 _11 _12 _13 _14_ 15]
+				1 : Rien (2 octets)
+				2 : Nombre d'octets (1 octet)
+				3 : Code commande : MEASURE (7 octets)
+				4 : Nombre de paquets (1 octet)
+				5 : Numéro de paquet (1 octet)
+				6 : Type de mesure et son unité (4 octets)
+				7 : Pixel n°1 en °C (n octets)
+				8 : Pixel n°2 en °C (n octets)
+				9 : Pixel n°3 en °C (n octets)
+				10 : Pixel n°4 en °C (n octets)
+				11 : Pixel n°5 en °C (n octets)
+				12 : Pixel n°6 en °C (n octets)
+				13 : Pixel n°7 en °C (n octets)
+				14 : Pixel n°8 en °C (n octets)
+				15 : Rien (2 octets)
 
 --------Magnétomètre :
 			- PAS AU SPRINT 1
-
 
 	~~~~~~~~~~
 	Concevoir et réaliser le module de sauvegarde des données de mission :
 	~~~~~~~~~~
 			→ https://jekt.space/sauvegarder-automatiquement-le-syst%C3%A8me-de-votre-raspberry-pi-9ad0ea6848b
-			→ 
+
 	~~~~~~~~~~
 	Concevoir et réaliser le module de redémarrage du système sur commande ou sur incident :
 	~~~~~~~~~~
@@ -376,16 +379,17 @@ Enregistrer les données de mission :
 			→ https://howchoo.com/g/zmexnjbhmjb/dont-pull-the-plug-how-to-shut-down-or-restart-your-raspberry-pi-properly
 			→ https://raspberrypi.stackexchange.com/questions/74212/how-to-properly-reboot-pi-without-disconnecting-power
 			→ https://linuxfr.org/forums/linux-debutant/posts/programmer-une-extinction-et-un-redemarrage-quotidien-d-un-raspberry
+
 ~~~~~~~~~~~~~~~~~~~~
 Transmettre les télémesures d’instrument :
 ~~~~~~~~~~~~~~~~~~~~
 	~~~~~~~~~~
 	Analyser la classe Protocole et vérifier l’adaptabilité des méthodes de transmission des télémesures aux différents modèles de capteurs :
 	~~~~~~~~~~
+--------------------------------
 		------------------------
 		Protocole---------------
 		------------------------
-
 --------------------------------
 °°°			+ Protocole() :
 				→ Construire un Protocole
@@ -495,7 +499,6 @@ OK			# void extraireParametres() :
 ===			# void ajouterStatusCube(Message* amessage, unsigned int &aposition) :
 				→
 --------------------------------
-
 
 	~~~~~~~~~~
 	Concevoir et développer les nouvelles méthodes :
