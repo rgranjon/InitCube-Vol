@@ -365,14 +365,15 @@ Enregistrer les données de mission :
 	~~~~~~~~~~
 	Concevoir et réaliser le module de sauvegarde des données de mission :
 	~~~~~~~~~~
-
+			→ 
 	~~~~~~~~~~
 	Concevoir et réaliser le module de redémarrage du système sur commande ou sur incident :
 	~~~~~~~~~~
 		Liens utiles :
-			https://www.windtopik.fr/redemarrage-automatique-raspberry-pi/
-			https://howchoo.com/g/zmexnjbhmjb/dont-pull-the-plug-how-to-shut-down-or-restart-your-raspberry-pi-properly
-			https://raspberrypi.stackexchange.com/questions/74212/how-to-properly-reboot-pi-without-disconnecting-power
+			→ https://www.windtopik.fr/redemarrage-automatique-raspberry-pi/
+			→ https://howchoo.com/g/zmexnjbhmjb/dont-pull-the-plug-how-to-shut-down-or-restart-your-raspberry-pi-properly
+			→ https://raspberrypi.stackexchange.com/questions/74212/how-to-properly-reboot-pi-without-disconnecting-power
+			→ https://linuxfr.org/forums/linux-debutant/posts/programmer-une-extinction-et-un-redemarrage-quotidien-d-un-raspberry
 ~~~~~~~~~~~~~~~~~~~~
 Transmettre les télémesures d’instrument :
 ~~~~~~~~~~~~~~~~~~~~
