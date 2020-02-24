@@ -213,11 +213,11 @@ Enregistrer les données de mission :
 --------------------------------
 
 		------------------------
-		Stockage----------------
+		Stockage------------FINI
 		------------------------
 
 --------------------------------
-^^^			+ Stockage() :
+			+ Stockage() :
 				→ Construire un Stockage
 				→ Affecter "666666" à memoireRam
 				→ Affecter "1888888" à memoireUSD
@@ -225,50 +225,74 @@ Enregistrer les données de mission :
 				→ Affecter "77" à occupationRAM
 				→ Affecter "ko" à unit
 --------------------------------
-^^^			+ virtual ~Stockage() :
+			+ virtual ~Stockage() :
 				→ Détruire un Stockage
 --------------------------------
-@@@			+ void calculMemoireUSD() :
-				→ 
+			+ void calculMemoireUSD() :
+				→ Affecter la valeur retournée par la méthode ouvrirAccesUSD à 'fichierU'
+				→ Affecter la valeur retournée par la méthode lectureLigneUSD prenant en paramètre 'fichierU' à 'ligneU'
+				→ Affecter la valeur retournée par la méthode trouverPositionUSD prenant en paramètre 'ligneU' à 'memoirelibreUSD'
+				→ Tant que la ligne comporte un caractère
+					→ Si l'octet n'est pas vide
+						→ Si 'ndestringe' vaut 3
+							→ Affecter la valeur 'strUSD' à 'memoireUSD'
+						→ Si 'ndestringe' vaut 4
+							→ Affecter une partie de la chaîne de caractère à 'pourcentageutilise'
+						→ Incrémenter 'ndestringe' de 1
 --------------------------------
-@@@			+ void calculMemoireRAM() :
-				→ 
+			+ void calculMemoireRAM() :
+				→ Affecter la valeur retournée par la méthode ouvrirAccesRAM à 'fichierR'
+				→ Affecter la valeur retournée par la méthode lectureLigneRAM prenant en paramètre 'fichierR' à 'ligneR'
+				→ Affecter la valeur retournée par la méthode trouverPositionRAM prenant en paramètre 'ligneR' à 'memoirelibreRAM'
+				→ Tant que la ligne comporte un caractère
+					→ Si l'octet n'est pas vide
+						→ Si 'ndestringe' vaut 1
+							→ Affecter la valeur 'strRAM' à 'memoireRAMtotale'
+						→ Si 'ndestringe' vaut 2
+							→ Affecter la valeur 'strRAM' à 'occupRAM'
+						→ Si 'ndestringe' vaut 3
+							→ Affecter la valeur 'strRAM' à 'memoireRAM'
+						→ Incrémenter 'ndestringe' de 1
 --------------------------------
-^^^			+ string getMemoireRAM() :
+			+ string getMemoireRAM() :
 				→ Retourner la valeur de 'memoireRAM'
 --------------------------------
-^^^			+ string getMemoireUSD() :
+			+ string getMemoireUSD() :
 				→ Retourner la valeur de 'memoireUSD'
 --------------------------------
-^^^			+ string getPourcentage() :
+			+ string getPourcentage() :
 				→ Retourner la valeur de 'pourcentage'
 --------------------------------
-^^^			+ string getOccupationRAM() :
+			+ string getOccupationRAM() :
 				→ Retourner la valeur de 'occupationRAM'
 --------------------------------
-^^^			+ string getUnit() :
+			+ string getUnit() :
 				→ Retourner la valeur de 'unit'
 --------------------------------
-^^^			- FILE * ouvrirAccesUSD() :
-				→ Affecter la valeur de l'espace occupé du disque à 'fichierUSD'
+			- FILE * ouvrirAccesUSD() :
+				→ Affecter la valeur du fichier de l'espace occupé du disque à 'fichierUSD'
 				→ Retourner la valeur de 'fichierUSD'
 --------------------------------
-^^^			- FILE * ouvrirAccesRAM() :
-				→ Affecter la valeur de la disponibilité de la mémoire vive à 'fichierRAM'
+			- FILE * ouvrirAccesRAM() :
+				→ Affecter la valeur du fichier de la disponibilité de la mémoire vive à 'fichierRAM'
 				→ Retourner la valeur de 'fichierRAM'
 --------------------------------
-@@@			- string lectureLigneUSD(FILE * pFile) :
-				→ 
+			- string lectureLigneUSD(FILE * pFile) :
+				→ Lire le contenu du fichier à partir de 'memUSD' tant que la valeur de 'memUSD' comprend une valeur
+				→ Retourner la valeur de 'newstringUSD'
 --------------------------------
-@@@			- string lectureLigneRAM(FILE * pFile) :
-				→ 
+			- string lectureLigneRAM(FILE * pFile) :
+				→ Lire le contenu du fichier à partir de 'memram' tant que la valeur de 'memram' comprend une valeur
+				→ Retourner la valeur de 'newstringRAM'
 --------------------------------
-@@@			- string trouverPositionUSD(string str) :
-				→ /////
+			- string trouverPositionUSD(string str) :
+				→ Affecter la position de 'memUSD à 'posUSD'
+				→ Affecter les 150 caractères suivant 'posUSD' à 'memoirefreeUSD'
 				→ Retourner la valeur de 'memoirefreeUSD'
 --------------------------------
-@@@			- string trouverPositionRAM(string str) :
-				→ /////
+			- string trouverPositionRAM(string str) :
+				→ Affecter la position de 'memram' à 'posRAM'
+				→ Affecter les 80 caractères suivant 'posRAM' à 'memoirefreeRAM'
 				→ Retourner la valeur de 'memoirefreeRAM'
 --------------------------------
 
