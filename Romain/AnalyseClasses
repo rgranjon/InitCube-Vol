@@ -235,27 +235,27 @@ Enregistrer les données de mission :
 				→ 
 --------------------------------
 ^^^			+ string getMemoireRAM() :
-				→ Retourner memoireRAM
+				→ Retourner la valeur de 'memoireRAM'
 --------------------------------
 ^^^			+ string getMemoireUSD() :
-				→ Retourner memoireUSD
+				→ Retourner la valeur de 'memoireUSD'
 --------------------------------
 ^^^			+ string getPourcentage() :
-				→ Retourner pourcentageutilise
+				→ Retourner la valeur de 'pourcentage'
 --------------------------------
 ^^^			+ string getOccupationRAM() :
-				→ Retourner occupationRAM
+				→ Retourner la valeur de 'occupationRAM'
 --------------------------------
 ^^^			+ string getUnit() :
-				→ Retourner unit
+				→ Retourner la valeur de 'unit'
 --------------------------------
-@@@			- FILE * ouvrirAccesUSD() :
-				→ /////
-				→ Retourner fichierUSD
+^^^			- FILE * ouvrirAccesUSD() :
+				→ Affecter la valeur de l'espace occupé du disque à 'fichierUSD'
+				→ Retourner la valeur de 'fichierUSD'
 --------------------------------
-@@@			- FILE * ouvrirAccesRAM() :
-				→ /////
-				→ Retourner fichierRAM
+^^^			- FILE * ouvrirAccesRAM() :
+				→ Affecter la valeur de la disponibilité de la mémoire vive à 'fichierRAM'
+				→ Retourner la valeur de 'fichierRAM'
 --------------------------------
 @@@			- string lectureLigneUSD(FILE * pFile) :
 				→ 
@@ -265,11 +265,11 @@ Enregistrer les données de mission :
 --------------------------------
 @@@			- string trouverPositionUSD(string str) :
 				→ /////
-				→ Retourner memoirefreeUSD
+				→ Retourner la valeur de 'memoirefreeUSD'
 --------------------------------
 @@@			- string trouverPositionRAM(string str) :
 				→ /////
-				→ Retourner memoirefreeRAM
+				→ Retourner la valeur de 'memoirefreeRAM'
 --------------------------------
 
 		------------------------
