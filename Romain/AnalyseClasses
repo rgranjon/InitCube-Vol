@@ -356,7 +356,8 @@ Enregistrer les données de mission :
 			- PAS AU SPRINT 1
 
 --------Caméra IR :
-			- A FAIRE DURANT LE SPRINT 1
+			(o = octet) (_ = 0x20)
+			- [2o 1o 7o 1o 1o 4o _5o _5o _5o _5o _5o _5o _5o _7o_ 2o]
 
 --------Magnétomètre :
 			- PAS AU SPRINT 1
@@ -365,6 +366,7 @@ Enregistrer les données de mission :
 	~~~~~~~~~~
 	Concevoir et réaliser le module de sauvegarde des données de mission :
 	~~~~~~~~~~
+			→ https://jekt.space/sauvegarder-automatiquement-le-syst%C3%A8me-de-votre-raspberry-pi-9ad0ea6848b
 			→ 
 	~~~~~~~~~~
 	Concevoir et réaliser le module de redémarrage du système sur commande ou sur incident :
@@ -380,9 +382,9 @@ Transmettre les télémesures d’instrument :
 	~~~~~~~~~~
 	Analyser la classe Protocole et vérifier l’adaptabilité des méthodes de transmission des télémesures aux différents modèles de capteurs :
 	~~~~~~~~~~
---------------------------------
---------Protocole---------------
---------------------------------
+		------------------------
+		Protocole---------------
+		------------------------
 
 --------------------------------
 °°°			+ Protocole() :
@@ -498,3 +500,4 @@ OK			# void extraireParametres() :
 	~~~~~~~~~~
 	Concevoir et développer les nouvelles méthodes :
 	~~~~~~~~~~
+		
