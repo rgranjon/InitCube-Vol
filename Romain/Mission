@@ -64,6 +64,8 @@ Enregistrer les données de mission
 
 		Liens utiles :
 			→ https://jekt.space/sauvegarder-automatiquement-le-syst%C3%A8me-de-votre-raspberry-pi-9ad0ea6848b
+			→ https://fr.wikiversity.org/wiki/Fonctions_de_base_en_langage_C/stdlib.h
+			→ https://www.tutorialspoint.com/c_standard_library/c_function_system.htm
 
 	~~~~~~~~~~
 	Concevoir et réaliser le module de redémarrage du système sur commande ou sur incident
