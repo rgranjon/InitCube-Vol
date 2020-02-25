@@ -331,3 +331,121 @@
 			+ void setNumber(int anumber) :
 				→ Affecter la valeur de anumber qui est le paramètre de la méthode setNumber à number
 
+
+
+--------------------------------
+		------------------------
+		Protocole---------------
+		------------------------
+--------------------------------
+
+
+
+°°°			+ Protocole() :
+				→ Construire un Protocole
+--------------------------------
+°°°			+ virtual ~Protocole() :
+				→ Détruire un Protocole
+--------------------------------
+===			+ char *getTableau() :
+				→ 
+--------------------------------
+°°°			+ int getNbrePaquets() :
+				→ Retourner nbrePaquets
+--------------------------------
+°°°			+ int getNumPaquet() :
+				→ Retourner numPaquet
+--------------------------------
+OK			+ list<vector<char>> getReceived() :
+				→ Retourner received
+--------------------------------
+OK			+ void setTableau(char laDataRecu[100]) :
+				→ Remplir les 100 premières cases (0 à 99) du tableau tableau[i] avec les données laDataRecu[i]
+--------------------------------
+===			+ void setNbrePaquets(int n) :
+				→ 
+--------------------------------
+===			+ void setNumPaquet(int n) :
+				→ 
+--------------------------------
+===			+ void addReceived(char recu [100]) :
+				→ 
+--------------------------------
+===			+ void detramerMessage() :
+				→ 
+--------------------------------
+===			+ string extraireTypeMessage(int &pos) :
+				→ 
+--------------------------------
+===			+ void extraireNombrePaquets(int &pos) :
+				→ 
+--------------------------------
+===			+ int calculerNbrePaquetsSalve() :
+				→ 
+--------------------------------
+===			+ string extraireTypeDataMission(int &pos) :
+				→ 
+--------------------------------
+===			+ int extraireDataMission(list<float> &datas, list<string> &dateHours, int &pos, string typeMission) :
+				→ 
+--------------------------------
+===			+ void supprimerPaquet() :
+				→ 
+--------------------------------
+===			# static string ERR_CHECKSUM :
+				→
+--------------------------------
+===			# static string ERR_FORMAT :
+				→
+--------------------------------
+===			# static int pause :
+				→
+--------------------------------
+===			# int nbrePaquets :
+				→
+--------------------------------
+===			# int numPaquet :
+				→
+--------------------------------
+===			# char tableau[100] :
+				→
+--------------------------------
+===			# list<vector<char>> received :
+				→
+--------------------------------
+===			# void calculerChecksum(char & PF, char & pf) :
+				→
+--------------------------------
+===			# bool verifierChecksum() :
+				→
+--------------------------------
+===			# void tramerMission(Message* message, int nbrePaquets, int numPaquet) :
+				→
+--------------------------------
+===			# void tramerStatus(Message* message, int nbrePaquets, int numPaquet) :
+				→
+--------------------------------
+===			# void tramerMesure(Message* message, int nbrePaquets, int numPaquet) :
+				→
+--------------------------------
+===			# unsigned char calculerNombrePaquets(Message * message) :
+				→
+--------------------------------
+OK			# void extraireCommande() :
+				→ PAS CODÉ
+--------------------------------
+OK			# void extraireParametres() :
+				→ PAS CODÉ
+--------------------------------
+===			# void ajouterDataOrdiBord(Message* amessage, unsigned int &aposition) :
+				→
+--------------------------------
+===			# void ajouterDataBattery(Message* amessage, unsigned int &aposition) :
+				→
+--------------------------------
+===			# void ajouterStatusInst(Message* amessage, unsigned int &aposition) :
+				→
+--------------------------------
+===			# void ajouterStatusCube(Message* amessage, unsigned int &aposition) :
+				→
+--------------------------------
