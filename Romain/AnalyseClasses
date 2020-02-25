@@ -330,7 +330,7 @@ Enregistrer les données de mission :
 		Stockage----------------
 		------------------------
 						 ↗ USD ↘									 								 ↗ pourcentage et unité
-			Ouvrir accès 		 Lecture ligne → Trouver position → Calcul mémoire → Obtenir mémoire 
+			Ouvrir accès 		 Trouver position → Lecture ligne → Calcul mémoire → Obtenir mémoire 
 						 ↘ RAM ↗									 								 ↘ occupation
 		------------------------
 		Reboot------------------
