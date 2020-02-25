@@ -329,7 +329,9 @@ Enregistrer les données de mission :
 		------------------------
 		Stockage----------------
 		------------------------
-
+						 ↗ USD ↘									 								 ↗ pourcentage et unité
+			Ouvrir accès 		 Lecture ligne → Trouver position → Calcul mémoire → Obtenir mémoire 
+						 ↘ RAM ↗									 								 ↘ occupation
 		------------------------
 		Reboot------------------
 		------------------------
@@ -346,7 +348,7 @@ Enregistrer les données de mission :
 
 --------Caméra IR :
 			(_ = 0x20) (n = nombre qui dépend de la valeur transmise)
-			[1 2 3 4 5 6 _7 _8 _9 _10 _11 _12 _13 _14_ 15]
+			[1 2 3 4 5 6 _7 _8 _9 _10 _11 _12 _13 _14_ 15] (8x cette trame) 
 				1 : Rien (2 octets)
 				2 : Nombre d'octets (1 octet)
 				3 : Code commande : MEASURE (7 octets)
