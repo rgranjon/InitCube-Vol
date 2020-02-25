@@ -1,12 +1,12 @@
 ~~~~~~~~~~~~~~~~~~~~
-Enregistrer les données de mission :
+Enregistrer les données de mission
 ~~~~~~~~~~~~~~~~~~~~
 	~~~~~~~~~~
-	Analyser les classes SegmentVol, Ordinateur, Stockage et Reboot :
+	Analyser les classes SegmentVol, Ordinateur, Stockage et Reboot
 	~~~~~~~~~~
 
 	~~~~~~~~~~
-	Établir comment les classes interviendront dans le cas de la sauvegarde de missions avant envoi :
+	Établir comment les classes interviendront dans le cas de la sauvegarde de missions avant envoi
 	~~~~~~~~~~
 
 		------------------------
@@ -30,7 +30,7 @@ Enregistrer les données de mission :
 		------------------------
 
 	~~~~~~~~~~
-	Identifier le format des données à enregistrer :
+	Identifier le format des données à enregistrer
 	~~~~~~~~~~
 
 --------Caméra :
@@ -59,14 +59,14 @@ Enregistrer les données de mission :
 			- PAS AU SPRINT 1
 
 	~~~~~~~~~~
-	Concevoir et réaliser le module de sauvegarde des données de mission :
+	Concevoir et réaliser le module de sauvegarde des données de mission
 	~~~~~~~~~~
 
 		Liens utiles :
 			→ https://jekt.space/sauvegarder-automatiquement-le-syst%C3%A8me-de-votre-raspberry-pi-9ad0ea6848b
 
 	~~~~~~~~~~
-	Concevoir et réaliser le module de redémarrage du système sur commande ou sur incident :
+	Concevoir et réaliser le module de redémarrage du système sur commande ou sur incident
 	~~~~~~~~~~
 
 		Liens utiles :
@@ -76,14 +76,14 @@ Enregistrer les données de mission :
 			→ https://linuxfr.org/forums/linux-debutant/posts/programmer-une-extinction-et-un-redemarrage-quotidien-d-un-raspberry
 
 ~~~~~~~~~~~~~~~~~~~~
-Transmettre les télémesures d’instrument :
+Transmettre les télémesures d’instrument
 ~~~~~~~~~~~~~~~~~~~~
 
 	~~~~~~~~~~
-	Analyser la classe Protocole et vérifier l’adaptabilité des méthodes de transmission des télémesures aux différents modèles de capteurs :
+	Analyser la classe Protocole et vérifier l’adaptabilité des méthodes de transmission des télémesures aux différents modèles de capteurs
 	~~~~~~~~~~
 
 	~~~~~~~~~~
-	Concevoir et développer les nouvelles méthodes :
+	Concevoir et développer les nouvelles méthodes
 	~~~~~~~~~~
 		
