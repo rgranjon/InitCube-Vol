@@ -16,7 +16,7 @@
 			Appeler systemeReboot()
 	FinTantQue
 
-"ALGO SAUVEGARDE" (thread possible)
+"ALGO SAUVEGARDE"
 	...
 
 "A VOIR"
