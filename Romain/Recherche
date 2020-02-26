@@ -1,21 +1,19 @@
 "A JOUTER DANS LE CODE"
 	#include <stdlib.h>
 	reboot = 'system("sudo reboot")' ou 'system("sudo shutdown now")'
-	tempProcess = temperatureProcessor
-	tauxRadia = ?
-	memRamDispo = ?
-	demandeReboot = ?
 
 "ALGO REBOOT" (thread probable)
 	TantQue vrai alors
 		Si tempProcess > tempProcessAcceptable alors
-			reboot
+			Appeler fonction reboot
+		Si tempBatt > tempBattAcceptable alors
+			Appeler fonction reboot
 		Si tauxRadia > tauxRadiaAcceptable alors
-			reboot
+			Appeler fonction reboot
 		Si memRamDispo > memRamDispoAcceptable alors
-			reboot
+			Appeler fonction reboot
 		Si demandeReboot = vrai alors
-			reboot
+			Appeler fonction reboot
 	FinTantQue
 
 "ALGO SAUVEGARDE" (thread possible)
@@ -23,9 +21,14 @@
 
 "A VOIR"
 	VALEURS
-		tempProcess → float temperatureProcessor (de la classe Ordinateur)
-		tempProcessAcceptable → 
-		tauxRadia → 
-		tauxRadiaAcceptable → 
-		memRamDispo → 
-		memRamDispoAcceptable → 
+		tempProcess				float temperatureProcessor (de la classe Ordinateur)
+		tempProcessAcceptable	Pas déclarée
+		tempBatt				float temperature (de la classe Batterie)
+		tempBattAcceptable		Pas déclarée
+oui/non	tempCamIR				float TempInst (de la classe CameraIR)
+oui/non	tempCamIRAcceptable		Pas déclarée
+		tauxRadia				Pas déclarée
+		tauxRadiaAcceptable		Pas déclarée
+		memRamDispo				string occupationRAM (de la classe Stockage)
+								string pourcentageutilise (de la classe Stockage)
+		memRamDispoAcceptable	string memoireRAM (de la classe Stockage)
