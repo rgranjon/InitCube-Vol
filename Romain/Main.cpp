@@ -35,24 +35,3 @@ int main(int argc, char** argv) {
     return 0;
 }
 
-A JOUTER DANS LE CODE
-{
-	#include <stdlib.h>
-	reboot = 'system("sudo reboot")' ou 'system("sudo shutdown now")'
-	tempProcess = temperatureProcessor
-	tauxRadia = ?
-	memRamDispo = ?
-	demandeReboot = ?
-}
-	TantQue vrai alors
-		Si tempProcess > tempProcessAcceptable alors
-			reboot
-		Si tauxRadia > tauxRadiaAcceptable alors
-			reboot
-		Si memRamDispo > memRamDispoAcceptable alors
-			reboot
-		Si demandeReboot = vrai alors
-			reboot
-	FinTantQue
-
-
