@@ -1,14 +1,14 @@
-#ifndef REBOOT_H
-#define REBOOT_H
+#ifndef SURVEILLANCE_H
+#define SURVEILLANCE_H
 
-class Reboot {
+class Surveillance {
 public:
-    Reboot();
-    Reboot(const Reboot& orig);
-    virtual ~Reboot();
+    Surveillance();
+    Surveillance(const Surveillance& orig);
+    virtual ~Surveillance();
 private:
-
+	
 };
 
-#endif /* REBOOT_H */
+#endif /* SURVEILLANCE_H */
 
