@@ -8,3 +8,7 @@ Sauvegarde::Sauvegarde(const Sauvegarde& orig) {
 
 Sauvegarde::~Sauvegarde() {
 }
+
+Sauvegarde::SauvegardeDonnees() {
+	???
+}

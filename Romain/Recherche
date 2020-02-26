@@ -5,15 +5,15 @@
 "ALGO REBOOT" (thread probable)
 	TantQue vrai alors
 		Si tempProcess > tempProcessAcceptable alors
-			Appeler fonction reboot
+			Appeler systemeReboot()
 		Si tempBatt > tempBattAcceptable alors
-			Appeler fonction reboot
+			Appeler systemeReboot()
 		Si tauxRadia > tauxRadiaAcceptable alors
-			Appeler fonction reboot
+			Appeler systemeReboot()
 		Si memRamDispo > memRamDispoAcceptable alors
-			Appeler fonction reboot
+			Appeler systemeReboot()
 		Si demandeReboot = vrai alors
-			Appeler fonction reboot
+			Appeler systemeReboot()
 	FinTantQue
 
 "ALGO SAUVEGARDE" (thread possible)
