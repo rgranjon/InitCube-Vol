@@ -20,15 +20,28 @@
 	...
 
 "A VOIR"
-	VALEURS
+	VALEURS :
 		tempProcess				float temperatureProcessor (de la classe Ordinateur)
-		tempProcessAcceptable	Pas déclarée
+		tempProcessAcceptable	Pas déclarée (mais voir ligne 34)
 		tempBatt				float temperature (de la classe Batterie)
-		tempBattAcceptable		Pas déclarée
-oui/non	tempCamIR				float TempInst (de la classe CameraIR)
-oui/non	tempCamIRAcceptable		Pas déclarée
+		tempBattAcceptable		Pas déclarée (mais voir ligne 39)
 		tauxRadia				Pas déclarée
-		tauxRadiaAcceptable		Pas déclarée
+		tauxRadiaAcceptable		Pas déclarée (mais voir la ligne 46)
 		memRamDispo				string occupationRAM (de la classe Stockage)
 								string pourcentageutilise (de la classe Stockage)
 		memRamDispoAcceptable	string memoireRAM (de la classe Stockage)
+
+tempProcessAcceptable :
+	60 à 70 °C → Ralentissement de l'horloge : 1400MHz → 1200MHz
+	70+ °C → Instabilité possible
+	85+ °C → Température maximale supportée
+
+tempBattAcceptable :
+	Incertitude : 1 °C
+	Cold temperature: 1 °C
+	Cool temperature: 10 °C
+	Warm temperature: 45 °C
+	Hot temperature: 59 °C
+
+tauxRadiaAcceptable :
+	± 4800μT
