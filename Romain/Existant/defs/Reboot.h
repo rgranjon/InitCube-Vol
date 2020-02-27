@@ -1,6 +1,3 @@
-#include <string>
-
-
 using namespace std;
 
 #ifndef __Reboot_h__
@@ -20,6 +17,7 @@ public:
 
     void setDateHour(string adateHour);
     void setNumber(int anumber);
+    void systemeReboot(string probleme);
 
 private:
     string dateHour;

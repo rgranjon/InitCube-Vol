@@ -1,26 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/* 
- * File:   SegmentVol.h
- * Author: snir2g1
- *
- * Created on 21 mars 2019, 16:25
- */
-
 #ifndef SEGMENTVOL_H
 #define SEGMENTVOL_H
-#include <stdexcept>
-#include <unistd.h>
-#include <stdio.h>
-#include <string>
-#include <iostream>
-#include <list>
-#include <iterator>
-#include <thread>
+
+#include "../../Nouveau/defs/Librairie.h"
+
 #include "Horloge.h"
 #include "Temperature.h"
 #include "CameraIR.h"
@@ -32,6 +14,8 @@
 #include "Etat.h"
 #include "TypeMisEtat.h"
 #include "TypeAppareil.h"
+#include "../../Nouveau/defs/Sauvegarde.h"
+#include "../../Nouveau/defs/Surveillance.h"
 
 using namespace std;
 

@@ -1,16 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/* 
- * File:   SegmentVol.cpp
- * Author: snir2g1
- * 
- * Created on 21 mars 2019, 16:25
- */
-
 #include "../defs/SegmentVol.h"
 
 SegmentVol::SegmentVol() {

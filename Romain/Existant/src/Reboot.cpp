@@ -1,5 +1,3 @@
-#include <string>
-#include <iostream>
 using namespace std;
 
 #include "../defs/Reboot.h"
@@ -31,3 +29,7 @@ void Reboot::setNumber(int anumber) {
     this->number = anumber;
 }
 
+void Reboot::systemeReboot(string probleme) {
+	system("sudo reboot now");
+	cout << "Problème : " << probleme << endl;
+}
