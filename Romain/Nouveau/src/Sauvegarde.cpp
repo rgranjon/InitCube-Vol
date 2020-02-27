@@ -9,7 +9,7 @@ Sauvegarde::Sauvegarde(const Sauvegarde& orig) {
 Sauvegarde::~Sauvegarde() {
 }
 
-Sauvegarde::SauvegardeDonnees() {
+void Sauvegarde::SauvegardeDonnees() {
 }
 
 bool Sauvegarde::enregistrerMesure(Mesure mesure) {

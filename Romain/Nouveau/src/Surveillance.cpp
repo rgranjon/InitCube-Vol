@@ -1,5 +1,4 @@
 #include "Surveillance.h"
-#include <stdlib.h>
 
 Surveillance::Surveillance() {
 }

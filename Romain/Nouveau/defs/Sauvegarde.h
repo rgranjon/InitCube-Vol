@@ -6,7 +6,7 @@ public:
     Sauvegarde();
     Sauvegarde(const Sauvegarde& orig);
     virtual ~Sauvegarde();
-	void SauvegardeDonnees();
+    void SauvegardeDonnees();
     bool enregistrerMesure(Mesure mesure);
     bool ajouterAMission(Mesure mesure);
     unsigned char lireID();
