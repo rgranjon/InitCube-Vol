@@ -1,5 +1,3 @@
-using namespace std;
-
 #include "../defs/Reboot.h"
 
 Reboot::Reboot() {

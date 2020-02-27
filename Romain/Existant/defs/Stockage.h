@@ -1,7 +1,7 @@
 #ifndef STOCKAGE_H
 #define STOCKAGE_H
 
-using namespace std;
+#include "../../Nouveau/defs/Librairie.h"
 
 class Stockage {
 public:

@@ -1,6 +1,4 @@
 #include "../defs/Stockage.h"
-//#include "../defs/Ordinateur.h"
-
 
 string Stockage::memram = "Mem:";
 string Stockage::memUSD = "/dev/root";

@@ -1,7 +1,7 @@
-using namespace std;
+#ifndef REBOOT_H
+#define REBOOT_H
 
-#ifndef __Reboot_h__
-#define __Reboot_h__
+#include "../../Nouveau/defs/Librairie.h"
 
 class Reboot {
 public:
@@ -24,4 +24,4 @@ private:
     int number;
 };
 
-#endif
+#endif /* REBOOT_H */
