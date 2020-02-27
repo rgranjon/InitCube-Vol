@@ -6,6 +6,8 @@ public:
     Surveillance();
     Surveillance(const Surveillance& orig);
     virtual ~Surveillance();
+    thread tSurveillerConstantes();
+    void surveillerConstantes();
 private:
 	
 };
