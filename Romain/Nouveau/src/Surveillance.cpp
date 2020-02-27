@@ -19,16 +19,16 @@ void Surveillance::surveillerConstantes() {
     //float tauxRadia = ???;
     etatThread = true;
     while (etatThread) {
-        if (Ordinateur::temperatureProcessor > tempProcessAcceptable) {
-            //Reboot::systemeReboot(temperature processeur raspberry trop élevée);
-        } else if (Batterie::temperature > tempBattAcceptable) {
-            //Reboot::systemeReboot(temperature batterie trop élevée);
-        } else if (tauxRadia > tauxRadiaAcceptable) {
-            //Reboot::systemeReboot(taux électromagnétique trop important);
-        } else if (Stockage::occupationRAM > Stockage::memoireRAM) {
-            //Reboot::systemeReboot(mémoire RAM insuffisante);
+        if (Ordinateur::temperatureProcessor > tempProcessAcceptable) { // ou (Ordinateur->getTemperatureProcessor() > tempProcessAcceptable)
+            Reboot::systemeReboot("temperature processeur raspberry trop élevée");
+        } else if (Batterie::temperature > tempBattAcceptable) { // ou (Batterie->getTemperature() > tempBattAcceptable)
+            Reboot::systemeReboot("temperature batterie trop élevée");
+        } else if (tauxRadia > tauxRadiaAcceptable) { // ou (Magnetometre->getTauxRadia() > tauxRadiaAcceptable)
+            Reboot::systemeReboot("taux électromagnétique trop important");
+        } else if (Stockage::occupationRAM > Stockage::memoireRAM) { // ou (Stockage->getOccupationRAM() > Stockage->getMemoireRAM())
+            Reboot::systemeReboot("mémoire RAM insuffisante");
         } /*else if (demandeReboot = true) {
-			Reboot::systemeReboot(demande de reboot);
+            Reboot::systemeReboot(demande de reboot);
 	}*/
     }
 }
