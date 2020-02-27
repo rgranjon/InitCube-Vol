@@ -1,4 +1,3 @@
-#include "../defs/Stockage.h"
 #include "../defs/Ordinateur.h"
 
 Ordinateur::Ordinateur() {

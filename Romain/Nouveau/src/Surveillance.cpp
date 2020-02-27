@@ -16,7 +16,7 @@ thread Surveillance::tSurveillerConstantes() {
 }
 
 void Surveillance::surveillerConstantes() {
-    //float tauxRadia = ???;
+    float tauxRadia = 0.0; // TROUVER COMMENT RECUPERER LA VALEUR
     etatThread = true;
     while (etatThread) {
         if (Ordinateur::temperatureProcessor > tempProcessAcceptable) { // ou (Ordinateur->getTemperatureProcessor() > tempProcessAcceptable)

@@ -1,7 +1,7 @@
 #ifndef SAUVEGARDE_H
 #define SAUVEGARDE_H
 
-#include "../../Nouveau/defs/Librairie.h"
+#include "Librairie.h"
 
 class Sauvegarde {
 public:

@@ -1,7 +1,7 @@
 #ifndef SURVEILLANCE_H
 #define SURVEILLANCE_H
 
-#include "../../Nouveau/defs/Librairie.h"
+#include "Librairie.h"
 
 #define tempProcessAcceptable 70 // OU 85
 #define tempBattAcceptable 45 // OU 59

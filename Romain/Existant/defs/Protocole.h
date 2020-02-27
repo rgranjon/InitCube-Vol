@@ -1,31 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/* 
- * File:   Protocole.h
- * Author: snir2g2
- *
- * Created on 18 mars 2019, 08:36
- */
-
 #ifndef PROTOCOLE_H
 #define PROTOCOLE_H
 
-#include <stdio.h>
-#include <string>
-#include <chrono>
-#include <thread>
-#include <list>
-#include <vector>
+#include "../../Nouveau/defs/Librairie.h"
 
 #include "../defs/Message.h"
 #include "../defs/TypeMisEtat.h"
 #include "../defs/TypeAppareil.h"
 #include "../defs/TypeCommande.h"
 #include "../defs/TypeAck.h"
+#include "../defs/serialib.h"
+#include "../defs/Status.h"
 
 class Protocole : public TypeCommande, public TypeMisEtat, public TypeAppareil, public TypeAck {
 public:

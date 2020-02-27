@@ -1,23 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/* 
- * File:   Protocole.cpp
- * Author: snir2g2
- * 
- * Created on 18 mars 2019, 08:36
- */
-
-#include <iomanip>
-#include <sstream>
 #include "../defs/Protocole.h"
-#include "../defs/serialib.h"
-#include "../defs/Status.h"
-
-using namespace std;
 
 string Protocole::ERR_CHECKSUM = "ERR_C";
 string Protocole::ERR_FORMAT = "ERR_F";

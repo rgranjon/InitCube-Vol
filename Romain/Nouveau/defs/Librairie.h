@@ -1,9 +1,11 @@
 #ifndef LIBRAIRIE_H
 #define LIBRAIRIE_H
 
+#include <chrono>
 #include <cstdlib>
 #include <cstring>
 #include <fstream>
+#include <iomanip>
 #include <iostream>
 #include <iterator>
 #include <list>

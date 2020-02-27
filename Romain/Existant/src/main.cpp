@@ -26,9 +26,9 @@ int main(int argc, char** argv) {
     string PIXEL = "-PIX";
     segmentVol->effectuerMesure(TEMPCELSIUS);
     segmentVol->effectuerMesure(PIXEL);
-    t0.join(); // ---
     t1.join();
     t2.join();
     t3.join();
+    t0.join(); // ---
     return 0;
 }
