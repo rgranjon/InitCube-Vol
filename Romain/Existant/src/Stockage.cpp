@@ -31,7 +31,6 @@ string Stockage::lectureLigneUSD(FILE * pFile) {
 
 string Stockage::trouverPositionUSD(string str) {
     size_t posUSD;
-
     posUSD = str.find(memUSD);
     string memoirefreeUSD = str.substr(posUSD, 150);
     return memoirefreeUSD;
@@ -43,7 +42,6 @@ void Stockage::calculMemoireUSD() {
     string memoirelibreUSD = trouverPositionUSD(ligneU);
     int ndestringe = 0;
     string strUSD;
-
     istringstream issUSD(memoirelibreUSD);
     while (getline(issUSD, strUSD, ' '))
 
@@ -67,7 +65,6 @@ string Stockage::getUnit() {
     return unit;
 }
 
-
 //----------------------------------------------------//
 
 FILE * Stockage::ouvrirAccesRAM() {
@@ -81,7 +78,6 @@ FILE * Stockage::ouvrirAccesRAM() {
 string Stockage::lectureLigneRAM(FILE * pFile) {
     char bufferRAM[500];
     string newstringRAM;
-
     do {
         fscanf(pFile, "%200c", bufferRAM);
         newstringRAM = std::string(bufferRAM);
@@ -101,16 +97,12 @@ void Stockage::calculMemoireRAM() {
     FILE * fichierR = ouvrirAccesRAM();
     string ligneR = lectureLigneRAM(fichierR);
     string memoirelibreRAM = trouverPositionRAM(ligneR);
-
     int ndestring = 0;
     string strRAM;
     string occupRAM;
     string memoireRAMtotale;
-
     float fmemoireRAMtotale;
     float foccupRAM;
-
-
     istringstream issRAM(memoirelibreRAM);
     while (getline(issRAM, strRAM, ' '))
         if (strRAM != "") {
@@ -119,13 +111,11 @@ void Stockage::calculMemoireRAM() {
             if (ndestring == 3) memoireRAM = strRAM;
             ndestring += 1;
         }
-
     ostringstream occupacionRam;
     fmemoireRAMtotale = strtof(memoireRAMtotale.c_str(), 0);
     foccupRAM = strtof(occupRAM.c_str(), 0);
     occupacionRam << (int) (((foccupRAM) / (fmemoireRAMtotale)) * 100); //Pas de pourcent dans la valeur...
     this->occupationRAM = string(occupacionRam.str());
-
 }
 
 string Stockage::getMemoireRAM() {

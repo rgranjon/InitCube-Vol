@@ -13,14 +13,9 @@ public:
     Ordinateur();
     virtual ~Ordinateur();
     void obtenirStatus();
-
     Stockage * getStockage();
     float getTemperatureProcessor();
     Reboot* getReboot();
-
-
-protected:
-
 private:
     Stockage* leStockage;
     Reboot* leReboot;

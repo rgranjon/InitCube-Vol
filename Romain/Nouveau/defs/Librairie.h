@@ -7,6 +7,7 @@
 #include <iostream>
 #include <iterator>
 #include <list>
+#include <mutex>
 #include <sstream>
 #include <stdexcept>
 #include <stdio.h>

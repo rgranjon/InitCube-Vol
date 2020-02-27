@@ -17,8 +17,6 @@
 #include "../../Nouveau/defs/Sauvegarde.h"
 #include "../../Nouveau/defs/Surveillance.h"
 
-using namespace std;
-
 class SegmentSol;
 
 class SegmentVol : public TypeMisEtat, TypeAppareil {
@@ -35,7 +33,6 @@ public:
     void activerInstrument();
     void desactiverInstrument();
     void desactiverModuleEmission();
-
     void setSegmentSol(SegmentSol* segmentSol) {
         this->segmentSol = segmentSol;
     }

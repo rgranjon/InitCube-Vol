@@ -30,7 +30,6 @@ thread SegmentVol::tArretMission() {
 void SegmentVol::lancerMission() {
     short interval = mission->getPeriodicity();
     etatThread = true;
-
     while (etatThread) {
         this_thread::sleep_for(chrono::minutes(interval));
         activerInstrument();
@@ -101,7 +100,6 @@ void SegmentVol::effectuerMesure(string mesure) {
 }
 
 void SegmentVol::creerMission(short periode, short duree, string debut, string type) {
-
     mission->setDuration(duree);
     mission->setPeriodicity(periode);
     mission->setStartTime(debut);
@@ -109,22 +107,18 @@ void SegmentVol::creerMission(short periode, short duree, string debut, string t
 }
 
 void SegmentVol::activerModuleEmission() {
-
     emetteurRecepteur->activerEmetteur();
 }
 
 void SegmentVol::activerInstrument() {
-
     cameraIR->activer();
 }
 
 void SegmentVol::desactiverInstrument() {
-
     cameraIR->desactiver();
 }
 
 void SegmentVol::desactiverModuleEmission() {
-
     emetteurRecepteur->desativerEmetteur();
 }
 
