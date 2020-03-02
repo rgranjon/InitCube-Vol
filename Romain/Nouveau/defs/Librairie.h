@@ -1,6 +1,8 @@
 #ifndef LIBRAIRIE_H
 #define LIBRAIRIE_H
 
+using namespace std;
+
 #include <chrono>
 #include <cstdlib>
 #include <cstring>

@@ -12,6 +12,11 @@ public:
     bool enregistrerMesure(Mesure mesure);
     bool ajouterAMission(Mesure mesure);
     unsigned char lireID();
+/*
+    struct Mesure {
+        Mesure mesure;
+    } mesure;
+*/
 private:
 };
 
