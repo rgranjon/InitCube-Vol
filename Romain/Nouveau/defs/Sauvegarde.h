@@ -3,6 +3,9 @@
 
 #include "Librairie.h"
 
+#include "../../Existant/defs/Mesure.h"
+#include "../../Existant/defs/SegmentVol.h"
+
 class Sauvegarde {
 public:
     Sauvegarde();
@@ -13,12 +16,6 @@ public:
     bool ajouterAMission(Mesure mesure);
     unsigned char lireID();
 private:
-//    struct Mesure {
-//        Mesure mesure;
-//    } mesure;
-//    
-//    typedef Mesure;
-//    Mesure mesure;
 };
 
 #endif /* SAUVEGARDE_H */
