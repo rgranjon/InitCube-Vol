@@ -12,12 +12,10 @@ public:
     bool enregistrerMesure(Mesure mesure);
     bool ajouterAMission(Mesure mesure);
     unsigned char lireID();
-/*
+private:
     struct Mesure {
         Mesure mesure;
     } mesure;
-*/
-private:
 };
 
 #endif /* SAUVEGARDE_H */
