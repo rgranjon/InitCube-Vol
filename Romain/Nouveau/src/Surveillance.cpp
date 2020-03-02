@@ -19,13 +19,13 @@ void Surveillance::surveillerConstantes() {
     float tauxRadia = 0.0; // TROUVER COMMENT RECUPERER LA VALEUR
     etatThread = true;
     while (etatThread) {
-        if (Ordinateur::temperatureProcessor > tempProcessAcceptable) { // ou (Ordinateur->getTemperatureProcessor() > tempProcessAcceptable)
+        if (Ordinateur->getTemperatureProcessor() > tempProcessAcceptable) {
             Reboot::systemeReboot();
-        } else if (Batterie::temperature > tempBattAcceptable) { // ou (Batterie->getTemperature() > tempBattAcceptable)
+        } else if (Batterie->getTemperature() > tempBattAcceptable) {
             Reboot::systemeReboot();
         } else if (tauxRadia > tauxRadiaAcceptable) { // ou (Magnetometre->getTauxRadia() > tauxRadiaAcceptable)
             Reboot::systemeReboot();
-        } else if (Stockage::occupationRAM > Stockage::memoireRAM) { // ou (Stockage->getOccupationRAM() > Stockage->getMemoireRAM())
+        } else if (Stockage->getOccupationRAM() > Stockage->getMemoireRAM()) { // ou (Stockage->getOccupationRAM() > Stockage->getMemoireRAM())
             Reboot::systemeReboot();
         } /*else if (demandeReboot = true) {
             Reboot::systemeReboot(demande de reboot);
