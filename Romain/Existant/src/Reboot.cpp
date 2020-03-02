@@ -27,7 +27,7 @@ void Reboot::setNumber(int anumber) {
     this->number = anumber;
 }
 
-void Reboot::systemeReboot(string probleme) {
+void Reboot::systemeReboot() {
     //Sauvegarde->lireID()
     //Sauvegarde->SauvegardeDonnees() ou Sauvegarde->enregistrerMesure()
     system("sudo reboot now");

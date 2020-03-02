@@ -20,13 +20,13 @@ void Surveillance::surveillerConstantes() {
     etatThread = true;
     while (etatThread) {
         if (Ordinateur->getTemperatureProcessor() > tempProcessAcceptable) {
-            Reboot::systemeReboot();
+            Reboot->systemeReboot();
         } else if (Batterie->getTemperature() > tempBattAcceptable) {
-            Reboot::systemeReboot();
+            Reboot->systemeReboot();
         } else if (tauxRadia > tauxRadiaAcceptable) { // ou (Magnetometre->getTauxRadia() > tauxRadiaAcceptable)
-            Reboot::systemeReboot();
+            Reboot->systemeReboot();
         } else if (Stockage->getOccupationRAM() > Stockage->getMemoireRAM()) { // ou (Stockage->getOccupationRAM() > Stockage->getMemoireRAM())
-            Reboot::systemeReboot();
+            Reboot->systemeReboot();
         } /*else if (demandeReboot = true) {
             Reboot::systemeReboot(demande de reboot);
 	}*/

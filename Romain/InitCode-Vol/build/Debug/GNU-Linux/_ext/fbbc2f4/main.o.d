@@ -30,6 +30,9 @@ build/Debug/GNU-Linux/_ext/fbbc2f4/main.o: ../Existant/src/main.cpp \
  ../Existant/src/../defs/../../Nouveau/defs/../../Existant/defs/Mesure.h \
  ../Existant/src/../defs/../../Nouveau/defs/../../Existant/defs/SegmentVol.h \
  ../Existant/src/../defs/../../Nouveau/defs/Surveillance.h \
+ ../Existant/src/../defs/../../Nouveau/defs/../../Existant/defs/Ordinateur.h \
+ ../Existant/src/../defs/../../Nouveau/defs/../../Existant/defs/Batterie.h \
+ ../Existant/src/../defs/../../Nouveau/defs/../../Existant/defs/Stockage.h \
  ../Existant/src/../defs/SegmentSol.h
 
 ../Existant/src/../defs/SegmentVol.h:
@@ -107,5 +110,11 @@ build/Debug/GNU-Linux/_ext/fbbc2f4/main.o: ../Existant/src/main.cpp \
 ../Existant/src/../defs/../../Nouveau/defs/../../Existant/defs/SegmentVol.h:
 
 ../Existant/src/../defs/../../Nouveau/defs/Surveillance.h:
+
+../Existant/src/../defs/../../Nouveau/defs/../../Existant/defs/Ordinateur.h:
+
+../Existant/src/../defs/../../Nouveau/defs/../../Existant/defs/Batterie.h:
+
+../Existant/src/../defs/../../Nouveau/defs/../../Existant/defs/Stockage.h:
 
 ../Existant/src/../defs/SegmentSol.h:

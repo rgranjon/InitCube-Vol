@@ -13,7 +13,7 @@ public:
     string getDateHour();
     void setDateHour(string adateHour);
     void setNumber(int anumber);
-    void systemeReboot(string probleme);
+    void systemeReboot();
 private:
     string dateHour;
     int number;
