@@ -35,6 +35,10 @@ void Instrument::clearMesures() {
 	this->listedemesures.clear();
 }
 
+void Instrument::clearLastMesures() {
+	this->listedemesures.pop_back();
+}
+
 int Instrument::obtenirStatus() {
     obtenirMode();
     obtenirTempInst();

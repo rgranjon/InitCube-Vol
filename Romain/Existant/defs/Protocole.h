@@ -1,146 +1,162 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/* 
+ * File:   Protocole.h
+ * Author: snir2g2
+ *
+ * Created on 18 mars 2019, 08:36
+ */
+
 #ifndef PROTOCOLE_H
 #define PROTOCOLE_H
 
-#include "../../Nouveau/defs/Librairie.h"
+#include <stdio.h>
+#include <string>
+#include <chrono>
+#include <thread>
+#include <list>
+#include <vector>
 
 #include "../defs/Message.h"
 #include "../defs/TypeMisEtat.h"
 #include "../defs/TypeAppareil.h"
 #include "../defs/TypeCommande.h"
 #include "../defs/TypeAck.h"
-#include "../defs/serialib.h"
-#include "../defs/Status.h"
 
 class Protocole : public TypeCommande, public TypeMisEtat, public TypeAppareil, public TypeAck {
-public:
-    Protocole();
-    Protocole(const Protocole& orig);
-    virtual ~Protocole();
-    /**
-     * accesseur au tableau de 100 octets ï¿½ transmettre ou reï¿½us
-     */
-    char *getTableau();
-    int getNbrePaquets();
-    int getNumPaquet();
-    list<vector<char>> getReceived();
-    /**
-     * modificateur au tableau de 100 octets ï¿½ transmettre ou reï¿½us
-     * complï¿½tï¿½ par des 0 si nï¿½cessaire
-     * 
-     */
-    void setTableau(char laDataRecu[100]);
-    void setNbrePaquets(int n);
-    void setNumPaquet(int n);
-    /// <param name="arecu">Mï¿½thode permettant d'ajouter un paquet de donnï¿½es ï¿½ la liste des donnï¿½es reï¿½ues.</param>
-    void addReceived(char recu [100]);
-    void detramerMessage();
+	public:
+		Protocole();
+		Protocole(const Protocole& orig);
+		virtual ~Protocole();
+	/**
+	 * accesseur au tableau de 100 octets à transmettre ou reçus
+	 */
+		char *getTableau();
+		int getNbrePaquets();
+		int getNumPaquet();
+		list<vector<char>> getReceived();
+	/**
+	 * modificateur au tableau de 100 octets à transmettre ou reçus
+	 * complété par des 0 si nécessaire
+	 * 
+	 */
+		void setTableau(char laDataRecu[100]);
+		void setNbrePaquets(int n);
+		void setNumPaquet(int n);
+		/// <param name="arecu">Méthode permettant d'ajouter un paquet de données à la liste des données reçues.</param>
+   		void addReceived(char recu [100]);
+		void detramerMessage();
 
-    /// <summary>
-    /// mï¿½thode d'extraction du code message dans le tableau d'octets reï¿½us
-    /// premiï¿½re mï¿½thode appelï¿½e lors de la rï¿½ception d'une salve.
-    /// retourne le code message si OK
-    /// retourne le code erreur ERR_CHECKSUM si problï¿½me de checksum
-    /// retourne le code erreur ERR_FORMAT si la trame de commence pas par ~
-    /// Le type Message est soit :
-    /// -TypeCommande::MISSION
-    /// -TypeCommande::MEASURE
-    /// -TypeCommande::STATUS
-    /// </summary>
-    string extraireTypeMessage(int &pos);
+	/// <summary>
+	/// méthode d'extraction du code message dans le tableau d'octets reçus
+	/// première méthode appelée lors de la réception d'une salve.
+	/// retourne le code message si OK
+	/// retourne le code erreur ERR_CHECKSUM si problème de checksum
+	/// retourne le code erreur ERR_FORMAT si la trame de commence pas par ~
+	/// Le type Message est soit :
+	/// -TypeCommande::MISSION
+	/// -TypeCommande::MEASURE
+	/// -TypeCommande::STATUS
+	/// </summary>
+		string extraireTypeMessage(int &pos);
 
-    /// <summary>
-    /// Mï¿½thode d'extraction du nombre de paquets et du numï¿½ro de paquet.
-    /// Complï¿½te les attributs correspondants de Protocole.
-    /// </summary>
-    /// <param name="apos">Position du dernier caractï¿½re du code message.</param>
-    void extraireNombrePaquets(int &pos);
+	/// <summary>
+	/// Méthode d'extraction du nombre de paquets et du numéro de paquet.
+	/// Complète les attributs correspondants de Protocole.
+	/// </summary>
+	/// <param name="apos">Position du dernier caractère du code message.</param>
+		void extraireNombrePaquets(int &pos);
 
-    /// <summary>
-    /// Mï¿½thode qui calcule le nombre de paquets dans une salve reï¿½ue.
-    /// </summary>
-    int calculerNbrePaquetsSalve();
+	/// <summary>
+	/// Méthode qui calcule le nombre de paquets dans une salve reçue.
+	/// </summary>
+		int calculerNbrePaquetsSalve();
 
-    /// <summary>
-    /// Mï¿½thode d'extraction du type de donnï¿½es dans le tableau d'octets reï¿½us
-    /// ï¿½ exï¿½cuter aprï¿½s extraireTypeMessage et test de la valeur de retour
-    /// Le type de donnï¿½es dï¿½pend du type de message :
-    /// Si TypeMessage = TypeCommande::MISSION, le type de donnï¿½es est, pour cet incrï¿½ment TypeMisEtat::TEMPCELSIUS.
-    /// Si TypeMessage = TypeCommande::MEASURE, le type de donnï¿½es peut ï¿½tre, pour cet incrï¿½ment :
-    /// - TypeMisEtat::TEMPCELSIUS,
-    /// - TypeMisEtat::PIXEL.
-    /// </summary>
-    /// <param name="pos">position du type de donnï¿½es de Mission</param>
-    string extraireTypeDataMission(int &pos);
+	/// <summary>
+	/// Méthode d'extraction du type de données dans le tableau d'octets reçus
+	/// à exécuter après extraireTypeMessage et test de la valeur de retour
+	/// Le type de données dépend du type de message :
+	/// Si TypeMessage = TypeCommande::MISSION, le type de données est, pour cet incrément TypeMisEtat::TEMPCELSIUS.
+	/// Si TypeMessage = TypeCommande::MEASURE, le type de données peut être, pour cet incrément :
+	/// - TypeMisEtat::TEMPCELSIUS,
+	/// - TypeMisEtat::PIXEL.
+	/// </summary>
+	/// <param name="pos">position du type de données de Mission</param>
+		string extraireTypeDataMission(int &pos);
 
-    /// Mï¿½thode d'extraction des donnï¿½es d'une mission dans le tableau d'octets reï¿½us
-    /// ï¿½ utiliser aprï¿½s  extraireTypeDataMission
-    /// <param name="datas"> liste des donnï¿½es de la mission</param>
-    /// <param name="dateHours"> liste des dates/heures de prï¿½lï¿½vement</param>
-    /// <param name="dateHours"> position des donnï¿½es de Mission</param>
-    int extraireDataMission(list<float> &datas, list<string> &dateHours, int &pos, string typeMission);
+	 /// Méthode d'extraction des données d'une mission dans le tableau d'octets reçus
+	 /// à utiliser après  extraireTypeDataMission
+	 /// <param name="datas"> liste des données de la mission</param>
+	 /// <param name="dateHours"> liste des dates/heures de prélèvement</param>
+	 /// <param name="dateHours"> position des données de Mission</param>
+		int extraireDataMission(list<float> &datas , list<string> &dateHours,int &pos, string typeMission);
 
-    /// Mï¿½thode permettant de supprimer le paquet traitï¿½ dans la liste des paquets
-    /// recus
-    /// Elle DOIT ï¿½tre utilisï¿½e aprï¿½s traitement du paquet.
-    void supprimerPaquet();
+	 /// Méthode permettant de supprimer le paquet traité dans la liste des paquets
+	 /// recus
+	 /// Elle DOIT être utilisée après traitement du paquet.
+		void supprimerPaquet();
 
 
-protected:
-    /**
-     * dï¿½claration des constantes d'erreur
-     */
-    static string ERR_CHECKSUM;
-    static string ERR_FORMAT;
-    /**
-     * dï¿½claration de constantes protocole
-     */
-    static int pause;
+    protected:
+	/**
+	 * déclaration des constantes d'erreur
+	 */
+		static string ERR_CHECKSUM;
+		static string ERR_FORMAT;
+	/**
+	 * déclaration de constantes protocole
+	*/
+		static int pause;
 
-    /**
-     * nombre de paquets constituant l'information
-     */
-    int nbrePaquets;
-    /**
-     * numï¿½ro du paquet vï¿½hiculant l'information
-     */
-    int numPaquet;
-    /**
-     * tableau de 100 octets ï¿½ transmettre (complï¿½tï¿½ par des 0)
-     */
-    char tableau[100];
-    list<vector<char>> received;
+	/**
+	 * nombre de paquets constituant l'information
+	 */
+		int nbrePaquets;
+	/**
+	 * numéro du paquet véhiculant l'information
+	 */
+		int numPaquet;
+	/**
+	 * tableau de 100 octets à transmettre (complété par des 0)
+	 */
+		char tableau[100]; 
+		list<vector<char>> received;
 
-    void calculerChecksum(char & PF, char & pf);
-    bool verifierChecksum();
-    void tramerMission(Message* message, int nbrePaquets, int numPaquet);
-    void tramerStatus(Message* message, int nbrePaquets, int numPaquet);
-    void tramerMesure(Message* message, int nbrePaquets, int numPaquet);
-    unsigned char calculerNombrePaquets(Message * message);
-    void extraireCommande();
-    void extraireParametres();
-    /// Cette mï¿½thode permet d'ajouter les donnï¿½es de l'ordinateur de bord ï¿½ la trame.
-    /// </summary>
-    /// <param name="aposition">Position oï¿½ doivent ï¿½tre insï¿½rï¿½es les informations.</param>
-    void ajouterDataOrdiBord(Message* amessage, unsigned int &aposition);
+		void calculerChecksum(char & PF, char & pf);
+		bool verifierChecksum();
+		void tramerMission(Message* message, int nbrePaquets, int numPaquet);
+		void tramerStatus(Message* message, int nbrePaquets, int numPaquet);
+		void tramerMesure(Message* message, int nbrePaquets, int numPaquet);
+		unsigned char calculerNombrePaquets(Message * message);
+		void extraireCommande();
+		void extraireParametres();
+		/// Cette méthode permet d'ajouter les données de l'ordinateur de bord à la trame.
+		/// </summary>
+		/// <param name="aposition">Position où doivent être insérées les informations.</param>
+		void ajouterDataOrdiBord(Message* amessage, unsigned int &aposition);
 
-    /// <summary>
-    /// Cette mï¿½thode permet d'ajouter les donnï¿½es de la batterie ï¿½ la trame.
-    /// </summary>
-    /// <param name="aposition">Position oï¿½ doivent ï¿½tre insï¿½rï¿½es les informations.</param>
-    void ajouterDataBattery(Message* amessage, unsigned int &aposition);
+		/// <summary>
+		/// Cette méthode permet d'ajouter les données de la batterie à la trame.
+		/// </summary>
+		/// <param name="aposition">Position où doivent être insérées les informations.</param>
+		void ajouterDataBattery(Message* amessage, unsigned int &aposition);
 
-    /// <summary>
-    /// Cette mï¿½thode permet d'ajouter les donnï¿½es d'ï¿½tat de l'instrument ï¿½ la trame.
-    /// </summary>
-    /// <param name="aposition">Position oï¿½ doivent ï¿½tre insï¿½rï¿½es les informations.</param>
-    void ajouterStatusInst(Message* amessage, unsigned int &aposition);
+		/// <summary>
+		/// Cette méthode permet d'ajouter les données d'état de l'instrument à la trame.
+		/// </summary>
+		/// <param name="aposition">Position où doivent être insérées les informations.</param>
+		void ajouterStatusInst(Message* amessage, unsigned int &aposition);
 
-    /// <summary>
-    /// Cette mï¿½thode permet d'ajouter les donnï¿½es de tempï¿½rature du cube et de reboot (nombre et date du dernier) ï¿½ la trame.
-    /// </summary>
-    /// <param name="amessage">Contenant des informations.</param>
-    /// <param name="aposition">Position oï¿½ doivent ï¿½tre insï¿½rï¿½es les informations.</param>
-    void ajouterStatusCube(Message* amessage, unsigned int &aposition);
+		/// <summary>
+		/// Cette méthode permet d'ajouter les données de température du cube et de reboot (nombre et date du dernier) à la trame.
+		/// </summary>
+		/// <param name="amessage">Contenant des informations.</param>
+		/// <param name="aposition">Position où doivent être insérées les informations.</param>
+		void ajouterStatusCube(Message* amessage, unsigned int &aposition);
 
 };
 

@@ -109,6 +109,7 @@ void SegmentSol::envoyerMission(){
 void SegmentSol::envoyerMesure(string type){
     serialib LS;
 	int Ret;
+	CameraIR* camera=leSegment->getCameraIR();
     unsigned char idSegment=leSegment->getIdentifiant();
 
     message->setIdSegment(idSegment);
@@ -119,6 +120,16 @@ void SegmentSol::envoyerMesure(string type){
 
 		list<Mesure*> mesures=leSegment->getCameraIR()->getMesures();
 		message->setMesures(mesures);
+		int nbrePaquets = 1;
+		for (int i=0;i<nbrePaquets;i++)
+		{
+			Ret=LS.Open(DEVICE_PORT,9600); 
+			tramerMesure(message, nbrePaquets, 1);
+			Ret=LS.Write(tableau,tableau[2]+6);
+			LS.Close();
+		} 
+		message->clearMesures();
+		camera->clearLastMesures();
 	}
 	else if (type.find(Protocole::PIXEL)!= string::npos) {
 
@@ -128,17 +139,19 @@ void SegmentSol::envoyerMesure(string type){
 			message->addPixel(*(mesures+i));
 
 		}
+
+		int nbrePaquets = 8;
+		for (int i=0;i<nbrePaquets;i++)
+		{
+			Ret=LS.Open(DEVICE_PORT,9600); 
+			tramerMesure(message, nbrePaquets, i+1);
+			Ret=LS.Write(tableau,tableau[2]+6);
+			LS.Close();
+		} 
+		message->clearPixels();
 	}
 
-	int nbrePaquets = 8;
-	for (int i=0;i<nbrePaquets;i++)
-	{
-		Ret=LS.Open(DEVICE_PORT,9600); 
-		tramerMesure(message, nbrePaquets, i+1);
-		Ret=LS.Write(tableau,tableau[2]+6);
-		LS.Close();
-	} 
-	message->clearPixels();
+
 }
 
 
