@@ -37,7 +37,10 @@ build/Debug/GNU-Linux/_ext/547dfddd/Sauvegarde.o: \
  ../Nouveau/src/../defs/../../Existant/defs/TypeAppareil.h \
  ../Nouveau/src/../defs/../../Existant/defs/../../Nouveau/defs/Sauvegarde.h \
  ../Nouveau/src/../defs/../../Existant/defs/../../Nouveau/defs/Surveillance.h \
- ../Nouveau/src/../defs/../../Existant/defs/../../Nouveau/defs/Librairie.h
+ ../Nouveau/src/../defs/../../Existant/defs/../../Nouveau/defs/Librairie.h \
+ ../Nouveau/src/../defs/../../Existant/defs/../../Nouveau/defs/../../Existant/defs/Ordinateur.h \
+ ../Nouveau/src/../defs/../../Existant/defs/../../Nouveau/defs/../../Existant/defs/Batterie.h \
+ ../Nouveau/src/../defs/../../Existant/defs/../../Nouveau/defs/../../Existant/defs/Stockage.h
 
 ../Nouveau/src/../defs/Sauvegarde.h:
 
@@ -116,3 +119,9 @@ build/Debug/GNU-Linux/_ext/547dfddd/Sauvegarde.o: \
 ../Nouveau/src/../defs/../../Existant/defs/../../Nouveau/defs/Surveillance.h:
 
 ../Nouveau/src/../defs/../../Existant/defs/../../Nouveau/defs/Librairie.h:
+
+../Nouveau/src/../defs/../../Existant/defs/../../Nouveau/defs/../../Existant/defs/Ordinateur.h:
+
+../Nouveau/src/../defs/../../Existant/defs/../../Nouveau/defs/../../Existant/defs/Batterie.h:
+
+../Nouveau/src/../defs/../../Existant/defs/../../Nouveau/defs/../../Existant/defs/Stockage.h:
