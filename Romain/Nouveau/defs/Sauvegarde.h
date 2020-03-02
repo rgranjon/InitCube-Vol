@@ -13,9 +13,12 @@ public:
     bool ajouterAMission(Mesure mesure);
     unsigned char lireID();
 private:
-    struct Mesure {
-        Mesure mesure;
-    } mesure;
+//    struct Mesure {
+//        Mesure mesure;
+//    } mesure;
+//    
+//    typedef Mesure;
+//    Mesure mesure;
 };
 
 #endif /* SAUVEGARDE_H */
