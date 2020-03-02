@@ -28,6 +28,5 @@ void Reboot::setNumber(int anumber) {
 }
 
 void Reboot::systemeReboot(string probleme) {
-    cout << "Problème : " << probleme << endl;
     system("sudo reboot now");
 }
