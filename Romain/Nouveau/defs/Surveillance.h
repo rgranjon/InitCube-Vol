@@ -20,9 +20,11 @@ public:
     void surveillerConstantes();
 private:
     bool etatThread;
-    Ordinateur ordinateur;
-    Batterie batterie;
-    Stockage stockage;
+    Ordinateur* ordinateur;
+    Batterie* batterie;
+    Stockage* stockage;
+    Reboot* reboot;
+    
 };
 
 #endif /* SURVEILLANCE_H */
