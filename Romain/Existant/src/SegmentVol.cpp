@@ -40,6 +40,7 @@ void SegmentVol::lancerMission() {
         cameraIR->setDateMesure(horloge->getDateHeure());
         desactiverInstrument();
     }
+    //sauvegarde->enregistrerMesure(TEMPCELSIUS);
     activerModuleEmission();
     segmentSol->envoyerMission();
 }
@@ -56,15 +57,19 @@ void SegmentVol::obtenirStatus(list<string>* appareil) {
     for (it = appareil->begin(); it != appareil->end(); it++) {
         if (*it == TypeAppareil::ORDIBORD) {
             ordinateur->obtenirStatus();
+            //sauvegarde->enregistrerMesure(ORDIBORD);
         }
         if (*it == TypeAppareil::INSTRUMENT) {
             cameraIR->obtenirStatus();
+            //sauvegarde->enregistrerMesure(INSTRUMENT);
         }
         if (*it == TypeAppareil::BATTERIE) {
             batterie->obtenirStatus();
+            //sauvegarde->enregistrerMesure(BATTERIE);
         }
         if (*it == TypeAppareil::CUBE) {
             temperature->recupTempSys();
+            //sauvegarde->enregistrerMesure(CUBE);
         }
     }
     activerModuleEmission();
@@ -97,6 +102,7 @@ void SegmentVol::effectuerMesure(string mesure) {
         cameraIR->obtenirPixels();
         desactiverInstrument();
     }
+    //sauvegarde->enregistrerMesure(PIXEL);
     activerModuleEmission();
     segmentSol->envoyerMesure(mesure);
 }

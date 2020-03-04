@@ -62,20 +62,12 @@ Enregistrer les données de mission
 	Concevoir et réaliser le module de sauvegarde des données de mission
 	~~~~~~~~~~
 
-		Liens utiles :
+		Lien utile :
 			→ https://jekt.space/sauvegarder-automatiquement-le-syst%C3%A8me-de-votre-raspberry-pi-9ad0ea6848b
-			→ https://fr.wikiversity.org/wiki/Fonctions_de_base_en_langage_C/stdlib.h
-			→ https://www.tutorialspoint.com/c_standard_library/c_function_system.htm
 
 	~~~~~~~~~~
 	Concevoir et réaliser le module de redémarrage du système sur commande ou sur incident
 	~~~~~~~~~~
-
-		Liens utiles :
-			→ https://www.windtopik.fr/redemarrage-automatique-raspberry-pi/
-			→ https://howchoo.com/g/zmexnjbhmjb/dont-pull-the-plug-how-to-shut-down-or-restart-your-raspberry-pi-properly
-			→ https://raspberrypi.stackexchange.com/questions/74212/how-to-properly-reboot-pi-without-disconnecting-power
-			→ https://linuxfr.org/forums/linux-debutant/posts/programmer-une-extinction-et-un-redemarrage-quotidien-d-un-raspberry
 
 ~~~~~~~~~~~~~~~~~~~~
 Transmettre les télémesures d’instrument
