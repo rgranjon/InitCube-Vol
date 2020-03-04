@@ -14,6 +14,7 @@
 ****1.5 - Coder la classe Surveillance.cpp
 			- Demande utilsiateur depuis l'IHM
 			- En cas d'attaque photonique (magnétomètre)
+----1.6 - Modifier la classe Mesure afin de prendre en compte plusieures images
 2 - DIAGRAMME
 ++++2.1 - Ajouter les classes aux diagrammes
 

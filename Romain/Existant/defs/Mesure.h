@@ -16,7 +16,6 @@ private:
     float value;
     string dateHour;
     string unit;
-
 };
 
 #endif /* MESURE_H */

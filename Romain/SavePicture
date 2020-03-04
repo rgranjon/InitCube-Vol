@@ -1,5 +1,5 @@
 --------------------------------------------------
-Code n°1------------------------------------------
+Code python 3-------------------------------------
 --------------------------------------------------
 
 #!/usr/bin/python3
@@ -25,30 +25,45 @@ chemin_photo = '/home/pi/Pictures/photos-compteur/'+nom_image+'.jpeg'
 PrisePhoto(chemin_photo) #Déclenchement de la prise de photo
 
 --------------------------------------------------
-Code n°2------------------------------------------
+Code c++------------------------------------------
 --------------------------------------------------
 
-# -*- coding: utf-8 -*
-import time
-from datetime import datetime
-import os
+#include <ctime> // ou time.h
+#include <datetime>
+#include <os> // ou stdlib.h / vérifier si os existe en c++
 
 
-def PrisePhoto(NomPhoto): #prendre une photo avec Raspistill avec délai de 5 secondes avant photo
-    command = "sudo raspistill -t 5000 -w 1200 -h 675 -o "+ NomPhoto +" -q 100"
-    os.system(command)
 
+--------------------------------------------------
+Tests et idées------------------------------------
+--------------------------------------------------
 
-if (os.path.isdir("/home/pi/Desktop/photos-compteur") == False): # si le dossier pour stocker les photos n'existe pas       
-   os.mkdir("/home/pi/Desktop/photos-compteur")                  # alors on crée le dossier (sur le bureau)
-   os.chmod("/home/pi/Desktop/photos-compteur",0o777)            # et on change les droits pour pouvoir effacer des photos
+Struct tm {
+    tm_sec int; // secondes de 0 à 61
+    int tm_min; // minutes de 0 à 59
+    int tm_hour; // heures de 0 à 24
+    int tm_mday; // jour 1 à 31
+    int tm_mon; // mois de 0 à 11
+    int tm_year; // année depuis 1900
+    int tm_wday; // jours depuis dimanche
+    int tm_yday; // jours depuis le 1er janvier
+    int tm_isdst; // heure d'été
+}
 
-        
-#on génère le nom de la photo avec heure_min_sec
-date_today = datetime.now()
-nom_image = date_today.strftime('%d_%m_%H_%M_%S')
+struct tm * localtime (const time_t * time);
 
-        
-#on déclenche la prise de photo
-chemin_photo = '/home/pi/Desktop/photos-compteur/'+nom_image+'.jpeg'
-PrisePhoto(chemin_photo) #Déclenchement de la prise de photo
+#include <iostream>
+#include <ctime>
+using namespace std;
+int main( ) {
+   // date / heure actuelle basée sur le système actuel
+   time_t tmm = time(0);
+   
+   // convertir en forme de chaîne
+   char* dt = ctime(&tmm);
+   cout << "La date et l'heure locales sont: " << dt << endl;
+   // convertir en tm struct pour UTC
+   tm *g = gmtime(&tmm);
+   dt = asctime(g);
+   cout << "La date et l'heure UTC sont:"<< dt << endl;
+}

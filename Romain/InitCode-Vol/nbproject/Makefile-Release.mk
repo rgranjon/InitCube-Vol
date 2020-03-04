@@ -35,6 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/_ext/fbbc2f4/Mesure.o \
 	${OBJECTDIR}/_ext/fbbc2f4/Ordinateur.o \
 	${OBJECTDIR}/_ext/fbbc2f4/Protocole.o \
 	${OBJECTDIR}/_ext/fbbc2f4/Reboot.o \
@@ -68,6 +69,11 @@ LDLIBSOPTIONS=
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/initcode-vol: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/initcode-vol ${OBJECTFILES} ${LDLIBSOPTIONS}
+
+${OBJECTDIR}/_ext/fbbc2f4/Mesure.o: ../Existant/src/Mesure.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/fbbc2f4
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/fbbc2f4/Mesure.o ../Existant/src/Mesure.cpp
 
 ${OBJECTDIR}/_ext/fbbc2f4/Ordinateur.o: ../Existant/src/Ordinateur.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/fbbc2f4
