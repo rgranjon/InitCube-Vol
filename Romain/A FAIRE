@@ -9,6 +9,9 @@
 ----1.3 - Trouver comment récupérer les valeurs du magnétomètre
 ****1.4 - Coder la classe Sauvegarde.cpp
 ****1.5 - Coder la classe Surveillance.cpp
+			Il manque deux cas possible :
+				- Demande utilsiateur depuis l'IHM
+				- En cas d'attaque photonique (magnétomètre)
 2 - DIAGRAMME
 ++++2.1 - Ajouter les classes aux diagrammes
 

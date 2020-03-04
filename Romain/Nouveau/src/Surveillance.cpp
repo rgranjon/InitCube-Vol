@@ -15,7 +15,7 @@ thread Surveillance::tSurveillerConstantes() {
     });
 }
 
-void Surveillance::surveillerConstantes() {
+void Surveillance::surveillerConstantes() { // SAUF POUR MAGNETO ET DEMANDE UTILISATEUR
     float tauxRadia = 0.0; // TROUVER COMMENT RECUPERER LA VALEUR
     etatThread = true;
     while (etatThread) {
