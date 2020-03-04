@@ -25,9 +25,9 @@ void Surveillance::surveillerConstantes() {
             reboot->systemeReboot();
         } else if (tauxRadia > tauxRadiaAcceptable) { // ou (Magnetometre->getTauxRadia() > tauxRadiaAcceptable)
             reboot->systemeReboot();
-        } else if (stockage->getOccupationRAM() > stockage->getMemoireRAM()) { // ou (Stockage->getOccupationRAM() > Stockage->getMemoireRAM())
+        } else if (stockage->getOccupationRAM() > stockage->getMemoireRAM()) {
             reboot->systemeReboot();
-        } /*else if (demandeReboot = true) {
+        } /*else if (demandeReboot = true) { // TROUVER PARAMETRE
             Reboot::systemeReboot(demande de reboot);
 	}*/
     }

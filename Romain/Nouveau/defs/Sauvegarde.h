@@ -15,6 +15,7 @@ public:
     bool ajouterAMission(Mesure mesure);
     unsigned char lireID();
 private:
+    SegmentVol* segmentVol;
 };
 
 #endif /* SAUVEGARDE_H */
