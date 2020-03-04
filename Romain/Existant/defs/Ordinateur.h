@@ -6,6 +6,7 @@
 #include "../defs/Stockage.h"
 #include "../defs/Reboot.h"
 
+
 using namespace std;
 
 class Ordinateur {

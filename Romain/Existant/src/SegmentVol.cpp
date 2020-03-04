@@ -10,6 +10,8 @@ SegmentVol::SegmentVol() {
     ordinateur = new Ordinateur();
     etat = new Etat();
     segmentSol = new SegmentSol(this);
+    surveillance = new Surveillance();
+    sauvegarde = new Sauvegarde();
 }
 
 SegmentVol::~SegmentVol() {

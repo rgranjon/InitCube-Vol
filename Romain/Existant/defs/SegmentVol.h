@@ -60,6 +60,8 @@ private:
     Mission* mission;
     Ordinateur* ordinateur;
     SegmentSol* segmentSol;
+    Surveillance* surveillance;
+    Sauvegarde* sauvegarde;
     Etat* etat;
     bool etatThread;
 };

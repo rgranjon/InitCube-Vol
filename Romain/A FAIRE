@@ -5,12 +5,11 @@
 
 1 - CODE
 ++++1.1 - Inclure le thread dans le main.cpp
-----1.2 - Faire le tri dans les includes de Librairie.h
-++++1.3 - Vérifier que Librairie.h soit bien incluse dans chaque librairie
-----1.4 - Trouver comment récupérer les valeurs du magnétomètre
-****1.5 - Coder la classe Sauvegarde.cpp
-****1.6 - Coder la classe Surveillance.cpp
+++++1.2 - Vérifier que Librairie.h soit bien incluse dans chaque librairie
+----1.3 - Trouver comment récupérer les valeurs du magnétomètre
+****1.4 - Coder la classe Sauvegarde.cpp
+****1.5 - Coder la classe Surveillance.cpp
 2 - DIAGRAMME
-****2.1 - Ajouter les classes aux diagrammes
+++++2.1 - Ajouter les classes aux diagrammes
 
 
