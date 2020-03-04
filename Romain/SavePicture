@@ -1,3 +1,7 @@
+--------------------------------------------------
+Code n°1------------------------------------------
+--------------------------------------------------
+
 #!/usr/bin/python3
 # -*- coding: utf-8 -*
 import time
@@ -18,4 +22,33 @@ nom_image = date_today.strftime('%y_%m_%d_%H_%M_%S')
      
 #on déclenche la prise de photo
 chemin_photo = '/home/pi/Pictures/photos-compteur/'+nom_image+'.jpeg'
+PrisePhoto(chemin_photo) #Déclenchement de la prise de photo
+
+--------------------------------------------------
+Code n°2------------------------------------------
+--------------------------------------------------
+
+# -*- coding: utf-8 -*
+import time
+from datetime import datetime
+import os
+
+
+def PrisePhoto(NomPhoto): #prendre une photo avec Raspistill avec délai de 5 secondes avant photo
+    command = "sudo raspistill -t 5000 -w 1200 -h 675 -o "+ NomPhoto +" -q 100"
+    os.system(command)
+
+
+if (os.path.isdir("/home/pi/Desktop/photos-compteur") == False): # si le dossier pour stocker les photos n'existe pas       
+   os.mkdir("/home/pi/Desktop/photos-compteur")                  # alors on crée le dossier (sur le bureau)
+   os.chmod("/home/pi/Desktop/photos-compteur",0o777)            # et on change les droits pour pouvoir effacer des photos
+
+        
+#on génère le nom de la photo avec heure_min_sec
+date_today = datetime.now()
+nom_image = date_today.strftime('%d_%m_%H_%M_%S')
+
+        
+#on déclenche la prise de photo
+chemin_photo = '/home/pi/Desktop/photos-compteur/'+nom_image+'.jpeg'
 PrisePhoto(chemin_photo) #Déclenchement de la prise de photo
