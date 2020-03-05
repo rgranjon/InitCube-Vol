@@ -30,7 +30,7 @@ Code c++------------------------------------------
 
 #include <ctime> // ou time.h
 #include <datetime>
-#include <os> // ou stdlib.h / vérifier si os existe en c++
+#include <os> // ou stdlib.h et iostream / vérifier si os existe en c++
 
 
 

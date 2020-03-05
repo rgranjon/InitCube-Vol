@@ -56,20 +56,16 @@ void SegmentVol::obtenirStatus(list<string>* appareil) {
     horloge->lire();
     for (it = appareil->begin(); it != appareil->end(); it++) {
         if (*it == TypeAppareil::ORDIBORD) {
-            ordinateur->obtenirStatus();
-            //sauvegarde->enregistrerMesure(ORDIBORD);
+            ordinateur->obtenirStatus(); // ou sauvegarde->enregistrerMesure(ordinateur->obtenirStatus());
         }
         if (*it == TypeAppareil::INSTRUMENT) {
-            cameraIR->obtenirStatus();
-            //sauvegarde->enregistrerMesure(INSTRUMENT);
+            cameraIR->obtenirStatus(); // ou sauvegarde->enregistrerMesure(cameraIR->obtenirStatus());
         }
         if (*it == TypeAppareil::BATTERIE) {
-            batterie->obtenirStatus();
-            //sauvegarde->enregistrerMesure(BATTERIE);
+            batterie->obtenirStatus(); // ou sauvegarde->enregistrerMesure(batterie->obtenirStatus());
         }
         if (*it == TypeAppareil::CUBE) {
-            temperature->recupTempSys();
-            //sauvegarde->enregistrerMesure(CUBE);
+            temperature->recupTempSys(); // ou sauvegarde->enregistrerMesure(temperature->recupTempSys());
         }
     }
     activerModuleEmission();
@@ -99,7 +95,7 @@ void SegmentVol::effectuerMesure(string mesure) {
         desactiverInstrument();
     } else if (mesure == TypeMisEtat::PIXEL) {
         activerInstrument();
-        cameraIR->obtenirPixels();
+        cameraIR->obtenirPixels(); // ou sauvegarde->enregistrerMesure(cameraIR->obtenirPixels());
         desactiverInstrument();
     }
     //sauvegarde->enregistrerMesure(PIXEL);
