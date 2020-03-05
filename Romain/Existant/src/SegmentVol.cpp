@@ -40,7 +40,6 @@ void SegmentVol::lancerMission() {
         cameraIR->setDateMesure(horloge->getDateHeure());
         desactiverInstrument();
     }
-    //sauvegarde->enregistrerMesure(TEMPCELSIUS);
     activerModuleEmission();
     segmentSol->envoyerMission();
 }
@@ -56,16 +55,16 @@ void SegmentVol::obtenirStatus(list<string>* appareil) {
     horloge->lire();
     for (it = appareil->begin(); it != appareil->end(); it++) {
         if (*it == TypeAppareil::ORDIBORD) {
-            ordinateur->obtenirStatus(); // ou sauvegarde->enregistrerMesure(ordinateur->obtenirStatus());
+            ordinateur->obtenirStatus();
         }
         if (*it == TypeAppareil::INSTRUMENT) {
-            cameraIR->obtenirStatus(); // ou sauvegarde->enregistrerMesure(cameraIR->obtenirStatus());
+            cameraIR->obtenirStatus();
         }
         if (*it == TypeAppareil::BATTERIE) {
-            batterie->obtenirStatus(); // ou sauvegarde->enregistrerMesure(batterie->obtenirStatus());
+            batterie->obtenirStatus();
         }
         if (*it == TypeAppareil::CUBE) {
-            temperature->recupTempSys(); // ou sauvegarde->enregistrerMesure(temperature->recupTempSys());
+            temperature->recupTempSys();
         }
     }
     activerModuleEmission();
@@ -89,7 +88,7 @@ void SegmentVol::obtenirStatus() {
 void SegmentVol::effectuerMesure(string mesure) {
     if (mesure == TypeMisEtat::TEMPCELSIUS) {
         activerInstrument();
-        cameraIR->lireTemperature(2);
+        cameraIR->lireTemperature(2); // ou sauvegarde->enregistrerMesure(cameraIR->lireTemperature(2));
         horloge->lire();
         cameraIR->setDateMesure(horloge->getDateHeure());
         desactiverInstrument();
@@ -98,7 +97,6 @@ void SegmentVol::effectuerMesure(string mesure) {
         cameraIR->obtenirPixels(); // ou sauvegarde->enregistrerMesure(cameraIR->obtenirPixels());
         desactiverInstrument();
     }
-    //sauvegarde->enregistrerMesure(PIXEL);
     activerModuleEmission();
     segmentSol->envoyerMesure(mesure);
 }

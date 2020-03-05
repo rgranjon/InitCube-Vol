@@ -15,20 +15,20 @@ thread Surveillance::tSurveillerConstantes() {
     });
 }
 
-void Surveillance::surveillerConstantes() { // SAUF POUR MAGNETO ET DEMANDE UTILISATEUR
-    float tauxRadia = 0.0; // TROUVER COMMENT RECUPERER LA VALEUR
+void Surveillance::surveillerConstantes() { // AJOUTER POUR MAGNETO ET POUR DEMANDE UTILISATEUR
+    float tauxRadia = 0.0; // TROUVER COMMENT RECUPERER LA VALEUR ET MODIFIER LA LIGNE 26
     etatThread = true;
     while (etatThread) {
         if (ordinateur->getTemperatureProcessor() > tempProcessAcceptable) {
             reboot->systemeReboot();
         } else if (batterie->getTemperature() > tempBattAcceptable) {
             reboot->systemeReboot();
-        } else if (tauxRadia > tauxRadiaAcceptable) { // ou (Magnetometre->getTauxRadia() > tauxRadiaAcceptable)
+        } else if (tauxRadia > tauxRadiaAcceptable) { // ou (magnetometre->getTauxRadia() > tauxRadiaAcceptable)
             reboot->systemeReboot();
         } else if (stockage->getOccupationRAM() > stockage->getMemoireRAM()) {
             reboot->systemeReboot();
         } /*else if (demandeReboot = true) { // TROUVER PARAMETRE
-            Reboot::systemeReboot(demande de reboot);
+            reboot->systemeReboot();
 	}*/
     }
 }

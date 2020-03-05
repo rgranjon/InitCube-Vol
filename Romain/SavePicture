@@ -25,7 +25,7 @@ chemin_photo = '/home/pi/Pictures/photos-compteur/'+nom_image+'.jpeg'
 PrisePhoto(chemin_photo) #Déclenchement de la prise de photo
 
 --------------------------------------------------
-Code c++------------------------------------------
+Code c++ 1----------------------------------------
 --------------------------------------------------
 
 #include <ctime> // ou time.h
@@ -39,6 +39,32 @@ void prisePhoto(NomPhoto) {
 
 string chemin = "/home/pi/Picture/photoInitCube";
 prisePhoto(chemin);
+
+--------------------------------------------------
+Code c++ 2----------------------------------------
+--------------------------------------------------
+
+ByteArrayOutputStream out = new ByteArrayOutputStream();
+ImageIO.write(img, "JPEG", out); // or "JPG", or whatever
+byte[] bytes = out.toByteArray();
+
+--------------------------------------------------
+Code c++ 3---------------------------------------- // Exemple de code pour changer une image en un tableau d’octets 
+--------------------------------------------------
+
+public byte[] ImageToByteArray(System.Drawing.Image imageIn) { using (var ms = new MemoryStream()) { imageIn.Save(ms,imageIn.RawFormat); return ms.ToArray(); } } 
+
+--------------------------------------------------
+Code c++ 4---------------------------------------- // Pour convertir un object image en byte[] vous pouvez procéder comme suit: 
+--------------------------------------------------
+
+public static byte[] converterDemo(Image x) { ImageConverter _imageConverter = new ImageConverter(); byte[] xByte = (byte[])_imageConverter.ConvertTo(x, typeof(byte[])); return xByte; }
+
+-------------------------------------------------- // Method to "convert" an Image object into a byte array, formatted in PNG file format, which provides lossless compression
+Code c++ 5---------------------------------------- // This can be used together with the GetImageFromByteArray() method to provide a kind of serialization deserialization
+-------------------------------------------------- // Image object, must be convertable to PNG format /// byte array image of a PNG file containing the image
+
+public static byte[] CopyImageToByteArray(Image theImage) { using (MemoryStream memoryStream = new MemoryStream()) { theImage.Save(memoryStream, ImageFormat.Png); return memoryStream.ToArray(); } } 
 
 --------------------------------------------------
 Tests et idées------------------------------------
