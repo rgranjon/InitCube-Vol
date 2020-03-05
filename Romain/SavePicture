@@ -32,7 +32,13 @@ Code c++------------------------------------------
 #include <datetime>
 #include <os> // ou stdlib.h et iostream / vérifier si os existe en c++
 
+void prisePhoto(NomPhoto) {
+	string commande = "sudo raspistill -vf -hf -t 1000 -w 1200 -h 675 -o "+ NomPhoto +" -q 100";
+	system(commande);
+}
 
+string chemin = "/home/pi/Picture/photoInitCube";
+prisePhoto(chemin);
 
 --------------------------------------------------
 Tests et idées------------------------------------
