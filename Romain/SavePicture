@@ -55,14 +55,14 @@ Code c++ 3---------------------------------------- // Exemple de code pour chang
 public byte[] ImageToByteArray(System.Drawing.Image imageIn) { using (var ms = new MemoryStream()) { imageIn.Save(ms,imageIn.RawFormat); return ms.ToArray(); } }
 
 --------------------------------------------------
-Code c++ 4---------------------------------------- // Pour convertir un object image en byte[] vous pouvez procéder comme suit: 
+Code c++ 4---------------------------------------- // Exemple de code pour convertir un object image en byte[]
 --------------------------------------------------
 
 public static byte[] converterDemo(Image x) { ImageConverter _imageConverter = new ImageConverter(); byte[] xByte = (byte[])_imageConverter.ConvertTo(x, typeof(byte[])); return xByte; }
 
--------------------------------------------------- // Method to "convert" an Image object into a byte array, formatted in PNG file format, which provides lossless compression
-Code c++ 5---------------------------------------- // This can be used together with the GetImageFromByteArray() method to provide a kind of serialization deserialization
--------------------------------------------------- // Image object, must be convertable to PNG format /// byte array image of a PNG file containing the image
+-------------------------------------------------- // Méthode pour convertir un objet image en un tableau d'octets, sous le format PNG, qui fournit une compression sans perte
+Code c++ 5---------------------------------------- // Cette méthode peut être utilisée avec la méthode Getimagefrombytearray() pour fournir une sorte de compression sans perte
+--------------------------------------------------// Objet image, doit être converti au format PNG pour obtenir un tableau d'octet d’un fichier PNG contenant l’image
 
 public static byte[] CopyImageToByteArray(Image theImage) { using (MemoryStream memoryStream = new MemoryStream()) { theImage.Save(memoryStream, ImageFormat.Png); return memoryStream.ToArray(); } }
 
