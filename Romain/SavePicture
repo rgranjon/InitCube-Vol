@@ -62,7 +62,7 @@ public static byte[] converterDemo(Image x) { ImageConverter _imageConverter = n
 
 -------------------------------------------------- // Méthode pour convertir un objet image en un tableau d'octets, sous le format PNG, qui fournit une compression sans perte
 Code c++ 5---------------------------------------- // Cette méthode peut être utilisée avec la méthode Getimagefrombytearray() pour fournir une sorte de compression sans perte
---------------------------------------------------// Objet image, doit être converti au format PNG pour obtenir un tableau d'octet d’un fichier PNG contenant l’image
+-------------------------------------------------- // Objet image, doit être converti au format PNG pour obtenir un tableau d'octet d’un fichier PNG contenant l’image
 
 public static byte[] CopyImageToByteArray(Image theImage) { using (MemoryStream memoryStream = new MemoryStream()) { theImage.Save(memoryStream, ImageFormat.Png); return memoryStream.ToArray(); } }
 
