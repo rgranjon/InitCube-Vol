@@ -140,5 +140,15 @@ ReadString 78
 
 ReadString 78
 ~HMISSION-TC -T19.9 -DT2020/03/09 08:22:12 -T20.1 -DT2020/03/09 08:23:133E
-
+// ID : ~
+// Nombre d’octets commande comprise (hors checksum) : H (Ascii) = 72 (Decimal)
+// Configuration de mission : MISSION
+// Nb paquets : 
+// Num paquet : 
+// Température (°C) : -TC
+// Température processeur (°C) : -T = 19.9
+// Date / heure : -DT = 2020/03/09 08:22:12
+// Température processeur (°C) : -T = 20.1
+// Date / heure : -DT = 2020/03/09 08:23:13
+// Checksum (Ascii) = 3E
 
