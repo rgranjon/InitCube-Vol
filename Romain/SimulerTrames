@@ -1,0 +1,8 @@
+- Ouvrir un premier terminal (1)
+- (1) Entrer la commande : ssh pi@10.10.33.177
+- (1) Entrer le mdp : raspberry
+- (1) Entrer la commande : ./NetBeansProjects/TestServeur/segmentsol
+- Ouvrir un second terminal (2)
+- (2) Entrer la commande : ssh pi@segmentVol2.local
+- (2) Entrer le mdp : raspberry
+- (2) Entrer la commande : ./Integration/bin/main
