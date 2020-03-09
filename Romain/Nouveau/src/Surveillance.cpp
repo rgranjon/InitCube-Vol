@@ -27,7 +27,7 @@ void Surveillance::surveillerConstantes() { // AJOUTER POUR MAGNETO ET POUR DEMA
             reboot->systemeReboot();
         } else if (stockage->getOccupationRAM() > stockage->getMemoireRAM()) {
             reboot->systemeReboot();
-        } /*else if (demandeReboot = true) { // TROUVER PARAMETRE
+        } /*else if (demandeReboot = true) {
             reboot->systemeReboot();
 	}*/
     }
