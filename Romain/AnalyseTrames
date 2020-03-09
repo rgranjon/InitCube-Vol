@@ -1,0 +1,144 @@
+ReadString 86
+~PSTATUS-BORD-SMo6133-R%3 -T40.8 -DT2020/03/09 08:19:09-BATT-C63-V3.9-A0 -T29.0 1E
+// ID : ~
+// Nombre d’octets commande comprise (hors checksum) : P (Ascii) = 80 (Decimal)
+// Demande ou transmission d’état du système : STATUS
+// Nb paquets : 
+// Num paquet : 
+// Ordinateur de bord : -BORD
+// Stockage SD libre (Mo) : -SMo = 6133
+// Occupation RAM (%) : -R% = 3
+// Température processeur (°C) = 40.8
+// Date / heure : -DT =  2020/03/09 08:19:09
+// Batterie : -BATT
+// Niveau charge (%) : -C = 63
+// Tension (V) : -V = 3.9
+// Courant (mA) : -A = 0
+// Température (°C) : -T = 29.0
+// Checksum (Ascii) = 1E
+
+ReadString 49
+~+STATUS-INST-ON-SLEEP -T22.7 -CUBE -T21.0 66
+// ID : ~
+// Nombre d’octets commande comprise (hors checksum) : + (Ascii) = 43 (Decimal)
+// Demande ou transmission d’état du système : STATUS
+// Nb paquets : 
+// Num paquet : 
+// Instrument : -INST
+// Allumé : -ON
+// Mode sleep : -SLEEP
+// Température caméra : -T = 22.7
+// Cube : -CUBE
+// Température cube (°C) : -T = 21.0
+// Checksum (Ascii) = 66
+
+ReadString 24
+~MEASURE-TC 22.3 6F
+// ID : ~
+// Nombre d’octets commande comprise (hors checksum) :  (Ascii) = ? (Decimal)
+// Demande ou transmission de mesure : MEASURE
+// Nb paquets : 
+// Num paquet : 
+// Température (°C) : -TC = 22.3
+// Checksum (Ascii) = 6F
+
+ReadString 60
+~6MEASUR-PIX 23.0 23.2 23.0 23.2 23.5 23.5 24.0 24.0 29
+// ID : ~
+// Nombre d’octets commande comprise (hors checksum) : 6 (Ascii) = 54 (Decimal)
+// Demande ou transmission de mesure : MEASURE
+// Num paquet : 
+// Pixels caméra : -PIX
+// Pixel 1 (°C) = 23.0
+// Pixel 2 (°C) = 23.2
+// .
+// .
+// .
+// Pixel 8 (°C) = 24.0
+// Checksum (Ascii) = 29
+
+ReadString 60
+~6MEASUR-PIX 22.2 23.0 23.2 23.2 23.0 23.5 23.2 23.5 2B
+// ID : ~
+// Nombre d’octets commande comprise (hors checksum) : 6 (Ascii) = 54 (Decimal)
+// Demande ou transmission de mesure : MEASURE
+// Num paquet : 
+// Pixels caméra : -PIX
+// Pixel 1 (°C) = 22.2
+// Pixel 2 (°C) = 23.0
+// .
+// .
+// .
+// Pixel 8 (°C) = 23.5
+// Checksum (Ascii) = 2B
+
+ReadString 60
+~6MEASUR-PIX 22.5 22.5 22.8 22.8 23.0 23.0 22.2 22.8 21
+
+ReadString 60
+~6MEASUR-PIX 22.0 22.2 22.5 23.0 22.8 22.2 22.5 22.5 20
+
+ReadString 60
+~6MEASUR-PIX 21.5 22.5 22.8 22.5 22.8 22.5 22.2 22.2 2E
+
+ReadString 60
+~6MEASUR-PIX 21.8 21.8 21.5 22.8 22.5 22.2 22.2 22.5 20
+
+ReadString 60
+~6MEASUR-PIX 21.2 21.5 21.8 21.5 22.0 21.8 22.2 21.5 2A
+
+ReadString 60
+~6MEASU-PIX 21.5 21.0 20.8 21.5 20.8 21.8 21.5 21.5 28
+
+ReadString 86
+~PSTATUS-BORD-SMo6133-R%3 -T40.8 -DT2020/03/09 08:22:10-BATT-C61-V3.9-A0 -T29.0 1C
+// ID : ~
+// Nombre d’octets commande comprise (hors checksum) : P (Ascii) = 80 (Decimal)
+// Demande ou transmission d’état du système : STATUS
+// Nb paquets : 
+// Num paquet : 
+// Ordinateur de bord : -BORD
+// Stockage SD libre (Mo) : -SMo = 6133
+// Occupation RAM (%) : -R% = 3
+// Température processeur (°C) = 40.8
+// Date / heure : -DT =  2020/03/09 08:22:10
+// Batterie : -BATT
+// Niveau charge (%) : -C = 61
+// Tension (V) : -V = 3.9
+// Courant (mA) : -A = 0
+// Température (°C) : -T = 29.0
+// Checksum (Ascii) = 1C
+
+ReadString 49
+~+STATUS-INST-ON-SLEEP -T22.8 -CUBE -T21.3 6A
+// ID : ~
+// Nombre d’octets commande comprise (hors checksum) : + (Ascii) = 43 (Decimal)
+// Demande ou transmission d’état du système : STATUS
+// Nb paquets : 
+// Num paquet : 
+// Instrument : -INST
+// Allumé : -ON
+// Mode sleep : -SLEEP
+// Température caméra : -T = 22.8
+// Cube : -CUBE
+// Température cube (°C) : -T = 21.3
+// Checksum (Ascii) = 6A
+
+ReadString 78
+~HMISSION-TC -T19.5 -DT2020/03/09 08:20:10 -T19.5 -DT2020/03/09 08:21:113F
+// ID : ~
+// Nombre d’octets commande comprise (hors checksum) : H (Ascii) = 72 (Decimal)
+// Configuration de mission : MISSION
+// Nb paquets : 
+// Num paquet : 
+// Température (°C) : -TC
+// Température processeur (°C) : -T = 19.5
+// Date / heure : -DT = 2020/03/09 08:20:10
+// Température processeur (°C) : -T = 19.5
+// Date / heure : -DT = 2020/03/09 08:21:11
+// Checksum (Ascii) = 3F
+
+ReadString 78
+~HMISSION-TC -T19.9 -DT2020/03/09 08:22:12 -T20.1 -DT2020/03/09 08:23:133E
+
+
