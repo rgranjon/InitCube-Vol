@@ -1,0 +1,20 @@
+--------------------
+Reboot--------------
+--------------------
+----------
+Démarche--
+----------
+Enregistrer le projet Netbeans dans l'arborescence suivante :
+	/home/snir2g2/Bureau/InitCube_Test/InitCube_TestReboot/
+Depuis le bureau, transférer le répertoire contenant le programme et les classes :
+	[snir2g2@localhost Bureau]$ scp -r InitCube_Test/ pi@UnityJ3.local:
+Se connecter en ssh à la raspberry :
+	ssh pi@UnityJ3.local
+Entrer le mot de passe :
+	raspberry
+Se déplacer dans le répertoire contenant le programme et les classes :
+	pi@UnityJ3:~ $ cd InitCube_Test/InitCube_TestReboot/
+Compiler le programme :
+	g++ mainTest.cpp -o mainTest -std=c++11
+Lancer l'exécutable :
+	./mainTest
