@@ -1,29 +1,107 @@
+----------------------------------------
+"RebootClassique"-----------------------
+----------------------------------------
 --------------------
-Reboot--------------
+Branchements--------
 --------------------
-Enregistrer le projet Netbeans dans l'arborescence suivante :
+- Alimenter la raspberry (J3)
+- Connecter le raspberry au réseau de la section (RJ45)
+--------------------
+Commandes-----------
+--------------------
+Sur le bureau (0)
+- (0) Enregistrer le projet Netbeans dans l'arborescence suivante :
 	/home/snir2g2/Bureau/InitCube_Test/InitCube_TestReboot/
-Depuis le bureau, transférer le répertoire contenant le programme et les classes :
+Dans un premier terminal (1)
+- (1) Se déplacer dans le bureau puis transférer le répertoire (contenant le programme et les classes) :
 	[snir2g2@localhost Bureau]$ scp -r InitCube_Test/ pi@UnityJ3.local:
-Se connecter en ssh à la raspberry :
+Dans un second terminal (2)
+- (2) Se connecter en ssh à la raspberry :
 	ssh pi@UnityJ3.local
-Entrer le mot de passe :
+- (2) Entrer le mot de passe :
 	raspberry
-Se déplacer dans le répertoire contenant le programme et les classes :
+- (2) Se déplacer dans le répertoire contenant le programme et les classes :
 	pi@UnityJ3:~ $ cd InitCube_Test/InitCube_TestReboot/
-Compiler le programme :
-	g++ mainTest.cpp -o mainTest -std=c++11
-Lancer l'exécutable :
+- (2) Compiler le programme :
+	g++ mainTest.cpp -std=c++11 -o mainTest
+- (2) Lancer l'exécutable :
 	./mainTest
 
+----------------------------------------
+"RebootFonction"------------------------
+----------------------------------------
 --------------------
-SimulerTames--------
+Branchements--------
 --------------------
-- Ouvrir un premier terminal (1)
+- Alimenter la raspberry (J3)
+- Connecter le raspberry au réseau de la section (RJ45)
+--------------------
+Commandes-----------
+--------------------
+Sur le bureau (0)
+- (0) Enregistrer le projet Netbeans dans l'arborescence suivante :
+	/home/snir2g2/Bureau/InitCube_Test/InitCube_TestReboot/
+- Depuis le bureau, transférer le répertoire contenant le programme et les classes :
+	[snir2g2@localhost Bureau]$ scp -r InitCube_Test/ pi@UnityJ3.local:
+- Se connecter en ssh à la raspberry :
+	ssh pi@UnityJ3.local
+- Entrer le mot de passe :
+	raspberry
+- Se déplacer dans le répertoire contenant le programme et les classes :
+	pi@UnityJ3:~ $ cd InitCube_Test/InitCube_TestReboot/
+- Compiler le programme :
+	g++ mainTest.cpp ../Existant/src/Reboot.cpp -std=c++11 -o mainTest 
+- Lancer l'exécutable :
+	./mainTest
+
+----------------------------------------
+"RebootTemperature"---------------------
+----------------------------------------
+--------------------
+Branchements--------
+--------------------
+- Alimenter la raspberry (J3)
+- Connecter le raspberry au réseau de la section (RJ45)
+--------------------
+Commandes-----------
+--------------------
+Sur le bureau (0)
+- (0) Enregistrer le projet Netbeans dans l'arborescence suivante :
+	/home/snir2g2/Bureau/InitCube_Test/InitCube_TestReboot/
+- Depuis le bureau, transférer le répertoire contenant le programme et les classes :
+	[snir2g2@localhost Bureau]$ scp -r InitCube_Test/ pi@UnityJ3.local:
+- Se connecter en ssh à la raspberry :
+	ssh pi@UnityJ3.local
+- Entrer le mot de passe :
+	raspberry
+- Se déplacer dans le répertoire contenant le programme et les classes :
+	pi@UnityJ3:~ $ cd InitCube_Test/InitCube_TestReboot/
+- Compiler le programme :
+	g++ mainTest.cpp ../Existant/src/Reboot.cpp -std=c++11 -o mainTest 
+- Lancer l'exécutable :
+	./mainTest
+
+----------------------------------------
+"SimulerTames"--------------------------
+----------------------------------------
+--------------------
+Branchements--------
+--------------------
+- ///// DEMANDER PRECISION ET CONFIRMATION A MME BOUYSSONNADE
+- Connecter le cube au réseau de la section (RJ45)
+- Alimenter la raspberry conprenant le serveur de réception (MCP7)
+- Connecter le raspberry au réseau de la section (RJ45)
+- Alimenter le simulateur (SegmentVol2)
+- Connecter le port DB9 femelle au port USB de la raspberry (MCP7)
+- Allumer le simulateur
+--------------------
+Commandes-----------
+--------------------
+Dans un premier terminal (1)
 - (1) Entrer la commande : ssh pi@10.10.33.177
 - (1) Entrer le mdp : raspberry
 - (1) Entrer la commande : ./NetBeansProjects/TestServeur/segmentsol
-- Ouvrir un second terminal (2)
+Dans un second terminal (2)
 - (2) Entrer la commande : ssh pi@segmentVol2.local
 - (2) Entrer le mdp : raspberry
 - (2) Entrer la commande : ./Integration/bin/main

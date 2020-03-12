@@ -4,7 +4,7 @@
 int main(int argc, char** argv) {
     SegmentVol* segmentVol = new SegmentVol();
     SegmentSol* segmentSol = new SegmentSol(segmentVol);
-    Surveillance* surveillance = new Surveillance(); // --- ou retirer cette ligne et utiliser segmentVol à la ligne 17
+//    Surveillance* surveillance = new Surveillance(); // --- ou retirer cette ligne et utiliser segmentVol à la ligne 17
     segmentVol->setSegmentSol(segmentSol);
     segmentVol->setIdentifiant(2);
     list<string> instrument;
@@ -14,7 +14,7 @@ int main(int argc, char** argv) {
     instrument.push_back("-CUBE");
     segmentVol->getHorloge()->setRdvTime("2019/04/04 15:25:00");
     segmentVol->creerMission(1, 4, "2019/07/04 15:25:00", "-TC");
-    thread t0 = surveillance->tSurveillerConstantes(); // --- surveillance OU segmentVol
+//    thread t0 = surveillance->tSurveillerConstantes(); // --- surveillance OU segmentVol
     thread t1 = segmentVol->tLancerMission();
     thread t2 = segmentVol->tArretMission();
     segmentVol->configurerRecupEtat(3, instrument);
@@ -27,6 +27,6 @@ int main(int argc, char** argv) {
     t1.join();
     t2.join();
     t3.join();
-    t0.join(); // ---
+//    t0.join(); // ---
     return 0;
 }
