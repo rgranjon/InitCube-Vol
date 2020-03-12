@@ -87,7 +87,6 @@ Sur le bureau (0)
 --------------------
 Branchements--------
 --------------------
-- ///// DEMANDER PRECISION ET CONFIRMATION A MME BOUYSSONNADE
 - Connecter le cube au réseau de la section (RJ45)
 - Alimenter la raspberry conprenant le serveur de réception (MCP7)
 - Connecter le raspberry au réseau de la section (RJ45)
