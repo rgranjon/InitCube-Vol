@@ -4,12 +4,12 @@
  * and open the template in the editor.
  */
 
-/* 
- * File:   Temperature.cpp
- * Author: Lucas MARYNUS
- * 
- * Created on 14 mars 2019, 15:08
- */
+ /*
+  * File:   Temperature.cpp
+  * Author: Lucas MARYNUS
+  *
+  * Created on 14 mars 2019, 15:08
+  */
 
 #include "../defs/Temperature.h"
 #include "../defs/I2C.h"
@@ -29,27 +29,28 @@ Temperature::Temperature(const Temperature& orig) {
 Temperature::~Temperature() {
 }
 
-void Temperature::recupTempSys(){
-    float temperatureHigh, temperatureLow;
-    setAddrEsclave(adressecapteuri2c);
-    setAddrRegistre(pointeurderegistre);
-    ecrire();
-    char* valeurLue = lire();
-    temperatureHigh = valeurLue[0] & bithuitadouze;
-    temperatureLow = valeurLue[1];
-    if((valeurLue[0] & bitdesigne) == bitdesigne){
-			
-        //TEMPERATURE NÉGATIVE
-        temperaturesys = (float) ( 256.0 - ( ( temperatureHigh * 16.0 ) + (temperatureLow / 16.0 ) ) );
-	temperaturesys = -1 * temperaturesys;	
-    }else{
-			
-        //TEMPERATURE POSITIVE
-        temperaturesys = (float) ( temperatureHigh * 16.0  + temperatureLow/ 16.0  );
-			
-    }
+void Temperature::recupTempSys() {
+	float temperatureHigh, temperatureLow;
+	setAddrEsclave(adressecapteuri2c);
+	setAddrRegistre(pointeurderegistre);
+	ecrire();
+	char* valeurLue = lire();
+	temperatureHigh = valeurLue[0] & bithuitadouze;
+	temperatureLow = valeurLue[1];
+	if ((valeurLue[0] & bitdesigne) == bitdesigne) {
+
+		//TEMPERATURE NÉGATIVE
+		temperaturesys = (float)(256.0 - ((temperatureHigh * 16.0) + (temperatureLow / 16.0)));
+		temperaturesys = -1 * temperaturesys;
+	}
+	else {
+
+		//TEMPERATURE POSITIVE
+		temperaturesys = (float)(temperatureHigh * 16.0 + temperatureLow / 16.0);
+
+	}
 }
 
-float Temperature::getTemperature(){
-    return this->temperaturesys;
+float Temperature::getTemperature() {
+	return this->temperaturesys;
 }

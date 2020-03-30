@@ -3,9 +3,9 @@
 
 #include "../../Nouveau/defs/Librairie.h"
 
-#include "../defs/Stockage.h"
+//#include "../defs/Stockage.h"
+#include "Stockage.h"
 #include "../defs/Reboot.h"
-
 
 using namespace std;
 

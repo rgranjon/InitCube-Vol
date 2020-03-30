@@ -4,6 +4,7 @@
 using namespace std;
 
 #include <chrono>
+#include <cstdio>
 #include <cstdlib>
 #include <cstring>
 #include <fstream>
@@ -19,7 +20,7 @@ using namespace std;
 #include <string>
 #include <string.h>
 #include <thread>
-#include <unistd.h>
+#include <unistd.h> // erreur sur le include
 #include <vector>
 
-#endif /* SAUVEGARDE_H */
+#endif /* LIBRAIRIE_H */

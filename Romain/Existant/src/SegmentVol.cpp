@@ -8,10 +8,11 @@ SegmentVol::SegmentVol() {
     emetteurRecepteur = new EmetteurRecepteur();
     mission = new Mission();
     ordinateur = new Ordinateur();
-    etat = new Etat();
     segmentSol = new SegmentSol(this);
+    etat = new Etat();
+    reboot = new Reboot();
     surveillance = new Surveillance();
-    sauvegarde = new Sauvegarde();
+//    sauvegarde = new Sauvegarde();
 }
 
 SegmentVol::~SegmentVol() {
@@ -173,4 +174,8 @@ unsigned char SegmentVol::getIdentifiant() {
 
 void SegmentVol::setIdentifiant(unsigned char id) {
     identifiant = id;
+}
+
+void SegmentVol::surveillerConstantes() {
+    surveillance->surveillerConstantes();
 }

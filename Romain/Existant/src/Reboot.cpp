@@ -10,6 +10,10 @@ Reboot::Reboot(int anbreReboot, string adateHeure) {
     number = anbreReboot;
 }
 
+Reboot::~Reboot() {
+
+}
+
 string Reboot::getDateHour() {
     return this->dateHour;
 }
@@ -19,7 +23,6 @@ void Reboot::setDateHour(string adateHour) {
 }
 
 int Reboot::getNumber() {
-
     return this->number;
 }
 
@@ -28,7 +31,5 @@ void Reboot::setNumber(int anumber) {
 }
 
 void Reboot::systemeReboot() {
-    //Sauvegarde->lireID()
-    //Sauvegarde->SauvegardeDonnees() ou Sauvegarde->enregistrerMesure()
-    system("sudo reboot now");
+    system("sudo reboot");
 }

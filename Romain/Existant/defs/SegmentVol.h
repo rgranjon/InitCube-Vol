@@ -14,8 +14,9 @@
 #include "Etat.h"
 #include "TypeMisEtat.h"
 #include "TypeAppareil.h"
-#include "../../Nouveau/defs/Sauvegarde.h"
+#include "Reboot.h"
 #include "../../Nouveau/defs/Surveillance.h"
+//#include "../../Nouveau/defs/Sauvegarde.h"
 
 class SegmentSol;
 
@@ -50,6 +51,7 @@ public:
     Etat* getEtat();
     unsigned char getIdentifiant();
     void setIdentifiant(unsigned char id);
+    void surveillerConstantes();
 private:
     unsigned char identifiant;
     Horloge* horloge;
@@ -60,8 +62,9 @@ private:
     Mission* mission;
     Ordinateur* ordinateur;
     SegmentSol* segmentSol;
+    Reboot* reboot;
     Surveillance* surveillance;
-    Sauvegarde* sauvegarde;
+//    Sauvegarde* sauvegarde;
     Etat* etat;
     bool etatThread;
 };

@@ -4,10 +4,10 @@
 #include "Librairie.h"
 
 #include "../../Existant/defs/Ordinateur.h"
-#include "../../Existant/defs/Batterie.h"
-#include "../../Existant/defs/Stockage.h"
+//#include "../../Existant/defs/Batterie.h"
+//#include "../../Existant/defs/Stockage.h"
 
-#define tempProcessAcceptable 70 // OU 85
+#define tempProcessAcceptable 70 // 70 OU 85 MAIS 40 POUR TEST
 #define tempBattAcceptable 45 // OU 59
 #define tauxRadiaAcceptable 4800 // A MODIFIER
 
@@ -16,14 +16,16 @@ public:
     Surveillance();
     Surveillance(const Surveillance& orig);
     virtual ~Surveillance();
-    thread tSurveillerConstantes();
+//    thread tSurveillerConstantes();
     void surveillerConstantes();
 private:
     bool etatThread;
+//    float tauxRadia;
     Ordinateur* ordinateur;
-    Batterie* batterie;
-    Stockage* stockage;
     Reboot* reboot;
+//    Batterie* batterie;
+//    Stockage* stockage;
+//    Reboot* reboot;
     //Magnetometre* magnetometre;
     
 };
