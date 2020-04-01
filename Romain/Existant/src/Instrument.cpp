@@ -27,6 +27,7 @@ void Instrument::clearLastMesures() {
 int Instrument::obtenirStatus() {
     obtenirMode();
     obtenirTempInst();
+    return 0;
 }
 
 Status * Instrument::getStatus() {

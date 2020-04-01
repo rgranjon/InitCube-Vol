@@ -9,43 +9,44 @@ Surveillance::Surveillance(const Surveillance& orig) {
 Surveillance::~Surveillance() {
 }
 
-//thread Surveillance::tSurveillerConstantes() {
-//    return thread([this] {
-//        surveillerConstantes();
-//    });
-//}
+//////////TEST APPEL METHODE//////////
 
-void Surveillance::surveillerConstantes() { // AJOUTER POUR MAGNETO ET POUR DEMANDE UTILISATEUR
-    etatThread = true;
-    while (etatThread) {
-        if (ordinateur->getTemperatureProcessor() > tempProcessAcceptable) {
-            reboot->systemeReboot();
-        } else {
-            cout << ordinateur->getTemperatureProcessor() << endl;
-        }
-        sleep(1);
-        //        if (ordinateur->getTemperatureProcessor() > tempProcessAcceptable) {
-        //            reboot->systemeReboot();
-
-        //        } else if (batterie->getTemperature() > tempBattAcceptable) {
-        //            reboot->systemeReboot();
-        //        } else if (tauxRadia > tauxRadiaAcceptable) { // ou (magnetometre->getTauxRadia() > tauxRadiaAcceptable)
-        //            reboot->systemeReboot();
-        //        } else if (stockage->getOccupationRAM() > stockage->getMemoireRAM()) {
-        //            reboot->systemeReboot();
-        //        } else if (demandeReboot = true) {
-        //            reboot->systemeReboot();
-        //	}
-    }
+void Surveillance::surveillerConstantes() {
+    cout << "TEST-VALIDE : APPEL DE METHODE" << endl;
 }
 
-//void Reboot::surveillerConstantes() {
-//    tempProcessAcceptable = 42.0;
-//    while (true) {
-//        cout << ordinateur->getTemperatureProcessor() << endl;
+//////////TEST TEMPERATURE R-PI//////////
+
+//void Surveillance::surveillerConstantes() {
+//    etatThread = true;
+//    while (etatThread) {
 //        sleep(1);
 //        if (ordinateur->getTemperatureProcessor() > tempProcessAcceptable) {
-//            systemeReboot();
+//            etatThread = false;
+//            reboot->systemeReboot();
+//        } else {
+//            cout << ordinateur->getTemperatureProcessor() << endl;
+//        }
+//    }
+//}
+
+//////////TEST CONDITIONS//////////
+
+//void Surveillance::surveillerConstantes() { // AJOUTER POUR MAGNETO ET POUR DEMANDE UTILISATEUR
+//    etatThread = true;
+//    while (etatThread) {
+//        sleep(1);
+//        if (ordinateur->getTemperatureProcessor() > tempProcessAcceptable) {
+//            etatThread = false;
+//            reboot->systemeReboot();
+//        } else if (batterie->getTemperature() > tempBattAcceptable) {
+//            reboot->systemeReboot();
+//        } else if (tauxRadia > tauxRadiaAcceptable) { // ou (magnetometre->getTauxRadia() > tauxRadiaAcceptable)
+//            reboot->systemeReboot();
+//        } else if (stockage->getOccupationRAM() > stockage->getMemoireRAM()) {
+//            reboot->systemeReboot();
+//        } else if (demandeReboot = true) {
+//            reboot->systemeReboot();
 //        }
 //    }
 //}

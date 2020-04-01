@@ -20,7 +20,7 @@ using namespace std;
 #include <string>
 #include <string.h>
 #include <thread>
-#include <unistd.h> // erreur sur le include
+#include <unistd.h> // erreur sur le include lors de la compilation sous Windows
 #include <vector>
 
 #endif /* LIBRAIRIE_H */

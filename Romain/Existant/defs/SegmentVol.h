@@ -41,6 +41,7 @@ public:
     thread recupEtat();
     thread tLancerMission();
     thread tArretMission();
+    thread tSurveillerConstantes(); // AJOUTE
     Horloge* getHorloge();
     Temperature* getTemperature();
     CameraIR* getCameraIR();

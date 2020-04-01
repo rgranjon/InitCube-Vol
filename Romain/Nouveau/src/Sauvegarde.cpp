@@ -9,12 +9,12 @@ Sauvegarde::Sauvegarde(const Sauvegarde& orig) {
 Sauvegarde::~Sauvegarde() {
 }
 
-bool Sauvegarde::enregistrerMesure(Mesure mesure) {
-}
+//bool Sauvegarde::enregistrerMesure(Mesure mesure) {
+//}
 
-bool Sauvegarde::ajouterAMission(Mesure mesure) {
-}
+//bool Sauvegarde::ajouterAMission(Mesure mesure) {
+//}
 
-unsigned char Sauvegarde::lireID() {
-    segmentVol->getIdentifiant();
-} 
+//unsigned char Sauvegarde::lireID() {
+//    segmentVol->getIdentifiant();
+//} 

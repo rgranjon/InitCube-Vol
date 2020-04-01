@@ -26,7 +26,7 @@ private:
 //    Batterie* batterie;
 //    Stockage* stockage;
 //    Reboot* reboot;
-    //Magnetometre* magnetometre;
+//    Magnetometre* magnetometre;
     
 };
 

@@ -12,7 +12,7 @@ SegmentVol::SegmentVol() {
     etat = new Etat();
     reboot = new Reboot();
     surveillance = new Surveillance();
-//    sauvegarde = new Sauvegarde();
+    //    sauvegarde = new Sauvegarde();
 }
 
 SegmentVol::~SegmentVol() {
@@ -27,6 +27,14 @@ thread SegmentVol::tLancerMission() {
 thread SegmentVol::tArretMission() {
     return thread([this] {
         arretMission();
+    });
+}
+
+//AJOUTE
+
+thread SegmentVol::tSurveillerConstantes() {
+    return thread([this] {
+        surveillerConstantes();
     });
 }
 
