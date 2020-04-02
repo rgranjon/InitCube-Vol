@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="100">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+      <itemPath>../Existant/defs/Batterie.h</itemPath>
+      <itemPath>../Existant/defs/CameraIR.h</itemPath>
+      <itemPath>../Existant/defs/Commande.h</itemPath>
+      <itemPath>../Existant/defs/EmetteurRecepteur.h</itemPath>
+      <itemPath>../Existant/defs/Etat.h</itemPath>
+      <itemPath>../Existant/defs/Horloge.h</itemPath>
+      <itemPath>../Existant/defs/I2C.h</itemPath>
+      <itemPath>../Existant/defs/Instrument.h</itemPath>
+      <itemPath>../Nouveau/defs/Librairie.h</itemPath>
+      <itemPath>../Existant/defs/Message.h</itemPath>
+      <itemPath>../Existant/defs/Mesure.h</itemPath>
+      <itemPath>../Existant/defs/Mission.h</itemPath>
+      <itemPath>../Existant/defs/Mode.h</itemPath>
+      <itemPath>../Existant/defs/Ordinateur.h</itemPath>
+      <itemPath>../Existant/defs/Protocole.h</itemPath>
+      <itemPath>../Existant/defs/Reboot.h</itemPath>
+      <itemPath>../Nouveau/defs/Sauvegarde.h</itemPath>
+      <itemPath>../Existant/defs/SegmentSol.h</itemPath>
+      <itemPath>../Existant/defs/SegmentVol.h</itemPath>
+      <itemPath>../Existant/defs/Status.h</itemPath>
+      <itemPath>../Existant/defs/Stockage.h</itemPath>
+      <itemPath>../Nouveau/defs/Surveillance.h</itemPath>
+      <itemPath>../Existant/defs/Temperature.h</itemPath>
+      <itemPath>../Existant/defs/TypeAck.h</itemPath>
+      <itemPath>../Existant/defs/TypeAppareil.h</itemPath>
+      <itemPath>../Existant/defs/TypeCommande.h</itemPath>
+      <itemPath>../Existant/defs/TypeMisEtat.h</itemPath>
+      <itemPath>../Existant/defs/serialib.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <itemPath>../Existant/src/Batterie.cpp</itemPath>
+      <itemPath>../Existant/src/CameraIR.cpp</itemPath>
+      <itemPath>../Existant/src/Commande.cpp</itemPath>
+      <itemPath>../Existant/src/EmetteurRecepteur.cpp</itemPath>
+      <itemPath>../Existant/src/Etat.cpp</itemPath>
+      <itemPath>../Existant/src/Horloge.cpp</itemPath>
+      <itemPath>../Existant/src/I2C.cpp</itemPath>
+      <itemPath>../Existant/src/Instrument.cpp</itemPath>
+      <itemPath>../Existant/src/Message.cpp</itemPath>
+      <itemPath>../Existant/src/Mesure.cpp</itemPath>
+      <itemPath>../Existant/src/Mission.cpp</itemPath>
+      <itemPath>../Existant/src/Ordinateur.cpp</itemPath>
+      <itemPath>../Existant/src/Protocole.cpp</itemPath>
+      <itemPath>../Existant/src/Reboot.cpp</itemPath>
+      <itemPath>../Nouveau/src/Sauvegarde.cpp</itemPath>
+      <itemPath>../Existant/src/SegmentSol.cpp</itemPath>
+      <itemPath>../Existant/src/SegmentVol.cpp</itemPath>
+      <itemPath>../Existant/src/Status.cpp</itemPath>
+      <itemPath>../Existant/src/Stockage.cpp</itemPath>
+      <itemPath>../Nouveau/src/Surveillance.cpp</itemPath>
+      <itemPath>../Existant/src/Temperature.cpp</itemPath>
+      <itemPath>../Existant/src/TypeAck.cpp</itemPath>
+      <itemPath>../Existant/src/TypeAppareil.cpp</itemPath>
+      <itemPath>../Existant/src/TypeCommande.cpp</itemPath>
+      <itemPath>../Existant/src/TypeMisEtat.cpp</itemPath>
+      <itemPath>mainTest.cpp</itemPath>
+      <itemPath>../Existant/src/serialib.cpp</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <ccTool>
+          <standard>8</standard>
+        </ccTool>
+      </compileType>
+      <item path="../Existant/defs/Batterie.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Existant/defs/CameraIR.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Existant/defs/Commande.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Existant/defs/EmetteurRecepteur.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../Existant/defs/Etat.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Existant/defs/Horloge.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Existant/defs/I2C.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Existant/defs/Instrument.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Existant/defs/Message.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Existant/defs/Mesure.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Existant/defs/Mission.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Existant/defs/Mode.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Existant/defs/Ordinateur.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Existant/defs/Protocole.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Existant/defs/Reboot.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Existant/defs/SegmentSol.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Existant/defs/SegmentVol.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Existant/defs/Status.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Existant/defs/Stockage.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Existant/defs/Temperature.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Existant/defs/TypeAck.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Existant/defs/TypeAppareil.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Existant/defs/TypeCommande.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Existant/defs/TypeMisEtat.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Existant/defs/serialib.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Existant/src/Batterie.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Existant/src/CameraIR.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Existant/src/Commande.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Existant/src/EmetteurRecepteur.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../Existant/src/Etat.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Existant/src/Horloge.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Existant/src/I2C.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Existant/src/Instrument.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Existant/src/Message.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Existant/src/Mesure.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Existant/src/Mission.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Existant/src/Ordinateur.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Existant/src/Protocole.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Existant/src/Reboot.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Existant/src/SegmentSol.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Existant/src/SegmentVol.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Existant/src/Status.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Existant/src/Stockage.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Existant/src/Temperature.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Existant/src/TypeAck.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Existant/src/TypeAppareil.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Existant/src/TypeCommande.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Existant/src/TypeMisEtat.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Existant/src/serialib.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Nouveau/defs/Librairie.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Nouveau/defs/Sauvegarde.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Nouveau/defs/Surveillance.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Nouveau/src/Sauvegarde.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Nouveau/src/Surveillance.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="mainTest.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+      </compileType>
+      <item path="../Existant/defs/Batterie.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Existant/defs/CameraIR.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Existant/defs/Commande.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Existant/defs/EmetteurRecepteur.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../Existant/defs/Etat.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Existant/defs/Horloge.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Existant/defs/I2C.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Existant/defs/Instrument.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Existant/defs/Message.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Existant/defs/Mesure.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Existant/defs/Mission.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Existant/defs/Mode.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Existant/defs/Ordinateur.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Existant/defs/Protocole.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Existant/defs/Reboot.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Existant/defs/SegmentSol.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Existant/defs/SegmentVol.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Existant/defs/Status.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Existant/defs/Stockage.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Existant/defs/Temperature.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Existant/defs/TypeAck.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Existant/defs/TypeAppareil.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Existant/defs/TypeCommande.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Existant/defs/TypeMisEtat.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Existant/defs/serialib.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Existant/src/Batterie.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Existant/src/CameraIR.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Existant/src/Commande.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Existant/src/EmetteurRecepteur.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../Existant/src/Etat.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Existant/src/Horloge.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Existant/src/I2C.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Existant/src/Instrument.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Existant/src/Message.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Existant/src/Mesure.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Existant/src/Mission.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Existant/src/Ordinateur.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Existant/src/Protocole.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Existant/src/Reboot.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Existant/src/SegmentSol.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Existant/src/SegmentVol.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Existant/src/Status.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Existant/src/Stockage.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Existant/src/Temperature.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Existant/src/TypeAck.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Existant/src/TypeAppareil.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Existant/src/TypeCommande.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Existant/src/TypeMisEtat.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Existant/src/serialib.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Nouveau/defs/Librairie.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Nouveau/defs/Sauvegarde.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Nouveau/defs/Surveillance.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Nouveau/src/Sauvegarde.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Nouveau/src/Surveillance.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="mainTest.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>
