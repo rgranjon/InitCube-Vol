@@ -12,12 +12,24 @@ Surveillance::~Surveillance() {
 //////////TEST APPEL METHODE//////////
 
 void Surveillance::surveillerConstantes() {
-    cout << "TEST-VALIDE : APPEL DE METHODE" << endl;
+    cout << "TEST-1 : APPEL METHODE" << endl;
 }
+
+//////////TEST RETOUR VALEURS//////////
+
+//void Surveillance::surveillerConstantes() {
+//    cout << "TEST-2 : RETOUR VALEURS" << endl;
+//    cout << "TEST : APPEL DE METHODE" << endl;
+//    cout << "TempP-Pi : " << ordinateur->getTemperatureProcessor() << endl;
+//    cout << "TempBatt : " << batterie->getTemperature() << endl;
+//    cout << "OccupRam : " << stockage->getOccupationRAM() << endl;
+//    cout << "MemoiRam : " << stockage->getMemoireRAM() << endl;
+//}
 
 //////////TEST TEMPERATURE R-PI//////////
 
 //void Surveillance::surveillerConstantes() {
+//    cout << "TEST-3 : TEMPERATURE R-PI" << endl;
 //    etatThread = true;
 //    while (etatThread) {
 //        sleep(1);
@@ -33,6 +45,7 @@ void Surveillance::surveillerConstantes() {
 //////////TEST CONDITIONS//////////
 
 //void Surveillance::surveillerConstantes() { // AJOUTER POUR MAGNETO ET POUR DEMANDE UTILISATEUR
+//    cout << "TEST-4 : CONDITIONS" << endl;
 //    etatThread = true;
 //    while (etatThread) {
 //        sleep(1);

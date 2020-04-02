@@ -29,6 +29,8 @@ build/Debug/GNU-Linux/_ext/fbbc2f4/SegmentSol.o: \
  ../Existant/src/../defs/../../Nouveau/defs/Surveillance.h \
  ../Existant/src/../defs/../../Nouveau/defs/Librairie.h \
  ../Existant/src/../defs/../../Nouveau/defs/../../Existant/defs/Ordinateur.h \
+ ../Existant/src/../defs/../../Nouveau/defs/../../Existant/defs/Batterie.h \
+ ../Existant/src/../defs/../../Nouveau/defs/../../Existant/defs/Stockage.h \
  ../Existant/src/../defs/Message.h ../Existant/src/../defs/SegmentVol.h \
  ../Existant/src/../defs/serialib.h ../Existant/src/../defs/Protocole.h \
  ../Existant/src/../defs/Message.h
@@ -106,6 +108,10 @@ build/Debug/GNU-Linux/_ext/fbbc2f4/SegmentSol.o: \
 ../Existant/src/../defs/../../Nouveau/defs/Librairie.h:
 
 ../Existant/src/../defs/../../Nouveau/defs/../../Existant/defs/Ordinateur.h:
+
+../Existant/src/../defs/../../Nouveau/defs/../../Existant/defs/Batterie.h:
+
+../Existant/src/../defs/../../Nouveau/defs/../../Existant/defs/Stockage.h:
 
 ../Existant/src/../defs/Message.h:
 

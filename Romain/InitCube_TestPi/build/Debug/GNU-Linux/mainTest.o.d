@@ -25,7 +25,9 @@ build/Debug/GNU-Linux/mainTest.o: mainTest.cpp \
  ../Existant/defs/TypeAppareil.h ../Existant/defs/Reboot.h \
  ../Existant/defs/../../Nouveau/defs/Surveillance.h \
  ../Existant/defs/../../Nouveau/defs/Librairie.h \
- ../Existant/defs/../../Nouveau/defs/../../Existant/defs/Ordinateur.h
+ ../Existant/defs/../../Nouveau/defs/../../Existant/defs/Ordinateur.h \
+ ../Existant/defs/../../Nouveau/defs/../../Existant/defs/Batterie.h \
+ ../Existant/defs/../../Nouveau/defs/../../Existant/defs/Stockage.h
 
 ../Nouveau/defs/Librairie.h:
 
@@ -104,3 +106,7 @@ build/Debug/GNU-Linux/mainTest.o: mainTest.cpp \
 ../Existant/defs/../../Nouveau/defs/Librairie.h:
 
 ../Existant/defs/../../Nouveau/defs/../../Existant/defs/Ordinateur.h:
+
+../Existant/defs/../../Nouveau/defs/../../Existant/defs/Batterie.h:
+
+../Existant/defs/../../Nouveau/defs/../../Existant/defs/Stockage.h:

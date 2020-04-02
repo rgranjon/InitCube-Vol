@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=InitCube_TestPI
+PROJECTNAME=InitCube_TestPi
 
 # Active Configuration
 DEFAULTCONF=Debug

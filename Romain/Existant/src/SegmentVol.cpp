@@ -184,6 +184,8 @@ void SegmentVol::setIdentifiant(unsigned char id) {
     identifiant = id;
 }
 
+//AJOUTE
+
 void SegmentVol::surveillerConstantes() {
     surveillance->surveillerConstantes();
 }

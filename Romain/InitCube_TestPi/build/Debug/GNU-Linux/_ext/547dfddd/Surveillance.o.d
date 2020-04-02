@@ -5,7 +5,10 @@ build/Debug/GNU-Linux/_ext/547dfddd/Surveillance.o: \
  ../Nouveau/src/../defs/../../Existant/defs/../../Nouveau/defs/Librairie.h \
  ../Nouveau/src/../defs/../../Existant/defs/Stockage.h \
  ../Nouveau/src/../defs/../../Existant/defs/../defs/Reboot.h \
- ../Nouveau/src/../defs/../../Existant/defs/../defs/../../Nouveau/defs/Librairie.h
+ ../Nouveau/src/../defs/../../Existant/defs/../defs/../../Nouveau/defs/Librairie.h \
+ ../Nouveau/src/../defs/../../Existant/defs/Batterie.h \
+ ../Nouveau/src/../defs/../../Existant/defs/I2C.h \
+ ../Nouveau/src/../defs/../../Existant/defs/Stockage.h
 
 ../Nouveau/src/../defs/Surveillance.h:
 
@@ -20,3 +23,9 @@ build/Debug/GNU-Linux/_ext/547dfddd/Surveillance.o: \
 ../Nouveau/src/../defs/../../Existant/defs/../defs/Reboot.h:
 
 ../Nouveau/src/../defs/../../Existant/defs/../defs/../../Nouveau/defs/Librairie.h:
+
+../Nouveau/src/../defs/../../Existant/defs/Batterie.h:
+
+../Nouveau/src/../defs/../../Existant/defs/I2C.h:
+
+../Nouveau/src/../defs/../../Existant/defs/Stockage.h:
