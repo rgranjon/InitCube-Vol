@@ -53,6 +53,12 @@ void SegmentVol::lancerMission() {
     segmentSol->envoyerMission();
 }
 
+//AJOUTE
+
+void SegmentVol::surveillerConstantes() {
+    surveillance->surveillerConstantes();
+}
+
 void SegmentVol::arretMission() {
     short delay = mission->getDuration();
     this_thread::sleep_for(chrono::minutes(delay));
@@ -182,10 +188,4 @@ unsigned char SegmentVol::getIdentifiant() {
 
 void SegmentVol::setIdentifiant(unsigned char id) {
     identifiant = id;
-}
-
-//AJOUTE
-
-void SegmentVol::surveillerConstantes() {
-    surveillance->surveillerConstantes();
 }

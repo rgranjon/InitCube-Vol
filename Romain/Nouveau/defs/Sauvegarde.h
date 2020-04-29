@@ -19,4 +19,3 @@ private:
 };
 
 #endif /* SAUVEGARDE_H */
-

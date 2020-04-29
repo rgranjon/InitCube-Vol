@@ -53,13 +53,44 @@ void Surveillance::surveillerConstantes() {
 //            etatThread = false;
 //            reboot->systemeReboot();
 //        } else if (batterie->getTemperature() > tempBattAcceptable) {
+//            etatThread = false;
 //            reboot->systemeReboot();
 //        } else if (tauxRadia > tauxRadiaAcceptable) { // ou (magnetometre->getTauxRadia() > tauxRadiaAcceptable)
+//            etatThread = false;
 //            reboot->systemeReboot();
 //        } else if (stockage->getOccupationRAM() > stockage->getMemoireRAM()) {
+//            etatThread = false;
 //            reboot->systemeReboot();
 //        } else if (demandeReboot = true) {
+//            etatThread = false;
 //            reboot->systemeReboot();
 //        }
 //    }
+//}
+
+//////////TEST CONDITIONS + SAUVEGARDE//////////
+
+//void Surveillance::surveillerConstantes() { // AJOUTER POUR MAGNETO ET POUR DEMANDE UTILISATEUR
+//    cout << "TEST-5 : CONDITIONS + SAUVEGARDE" << endl;
+//    etatThread = true;
+//    while (etatThread) {
+//        sleep(1);
+//        if (ordinateur->getTemperatureProcessor() > tempProcessAcceptable) {
+//            probleme();
+//        } else if (batterie->getTemperature() > tempBattAcceptable) {
+//            probleme();
+//        } else if (tauxRadia > tauxRadiaAcceptable) { // à remplacer par (magnetometre->getTauxRadia() > tauxRadiaAcceptable) quand la classe concernant le magnétomètre sera déclarée
+//            probleme();
+//        } else if (stockage->getOccupationRAM() > stockage->getMemoireRAM()) {
+//            probleme();
+//        } else if (demandeReboot = true) { // voir avec Louis pour se mettre d'accord
+//            probleme();
+//        }
+//    }
+//}
+//
+//void Surveillance::probleme() {
+//    sauvegarde->enregistrerMesure(/**/);
+//    etatThread = false;
+//    reboot->systemeReboot();
 //}

@@ -6,6 +6,7 @@
 #include "../../Existant/defs/Ordinateur.h"
 #include "../../Existant/defs/Batterie.h"
 #include "../../Existant/defs/Stockage.h"
+#include "Sauvegarde.h"
 
 #define tempProcessAcceptable 40 // 70 OU 85 MAIS 40 POUR TEST
 #define tempBattAcceptable 45 // OU 59
@@ -17,9 +18,12 @@ public:
     Surveillance(const Surveillance& orig);
     virtual ~Surveillance();
     void surveillerConstantes();
+    void demandeReboot();
+    void probleme();
 private:
     bool etatThread;
-//    float tauxRadia;
+    Sauvegarde* sauvegarde;
+    float tauxRadia;
     Reboot* reboot;
     Ordinateur* ordinateur;
     Batterie* batterie;
