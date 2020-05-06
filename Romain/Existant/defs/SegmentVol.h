@@ -16,7 +16,7 @@
 #include "TypeAppareil.h"
 #include "Reboot.h"
 #include "../../Nouveau/defs/Surveillance.h"
-//#include "../../Nouveau/defs/Sauvegarde.h"
+#include "../../Nouveau/defs/Sauvegarde.h"
 
 class SegmentSol;
 
@@ -65,7 +65,7 @@ private:
     SegmentSol* segmentSol;
     Reboot* reboot;
     Surveillance* surveillance;
-//    Sauvegarde* sauvegarde;
+    Sauvegarde* sauvegarde;
     Etat* etat;
     bool etatThread;
 };

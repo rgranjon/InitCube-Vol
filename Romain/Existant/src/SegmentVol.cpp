@@ -12,7 +12,7 @@ SegmentVol::SegmentVol() {
     etat = new Etat();
     reboot = new Reboot();
     surveillance = new Surveillance();
-    //    sauvegarde = new Sauvegarde();
+    sauvegarde = new Sauvegarde();
 }
 
 SegmentVol::~SegmentVol() {

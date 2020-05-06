@@ -4,7 +4,6 @@
 #include "Librairie.h"
 
 #include "../../Existant/defs/Mesure.h"
-#include "../../Existant/defs/SegmentVol.h"
 
 class Sauvegarde {
 public:
@@ -14,8 +13,6 @@ public:
     bool enregistrerMesure(Mesure mesure);
     bool ajouterAMission(Mesure mesure);
     unsigned char lireID();
-private:
-    SegmentVol* segmentVol;
 };
 
 #endif /* SAUVEGARDE_H */

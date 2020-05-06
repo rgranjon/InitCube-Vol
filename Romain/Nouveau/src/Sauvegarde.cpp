@@ -18,6 +18,5 @@ bool Sauvegarde::ajouterAMission(Mesure mesure) {
 }
 
 unsigned char Sauvegarde::lireID() {
-//    segmentVol->getIdentifiant();
     return 0;
 }
