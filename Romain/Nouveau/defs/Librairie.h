@@ -14,16 +14,16 @@ using namespace std;
 #include <list>
 #include <mutex>
 // #include <pugixml> // N'est pas trouvée // XML
+//#include "../../../pugixml-1.9/src/pugiconfig.hpp" // A inclure en plus de pugixml ou non ?
+#include "../../../pugixml-1.9/src/pugixml.hpp"
 #include <sstream>
 #include <stdexcept>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string>
 #include <string.h>
-//#include <tinyxml.h> // N'est pas trouvée // XML
 #include <thread>
 #include <unistd.h> // erreur sur le include lors de la compilation sous Windows
 #include <vector>
-//#include <xmllite.h> // N'est pas trouvée // XML
 
 #endif /* LIBRAIRIE_H */
