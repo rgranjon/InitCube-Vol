@@ -11,7 +11,7 @@ public:
     Sauvegarde(const Sauvegarde& orig);
     virtual ~Sauvegarde();
     bool is_readable(const string & file);
-    bool enregistrerMesure(string textetest);
+    bool enregistrerMesure();
 //    bool enregistrerMesure(Mesure mesure);
     bool ajouterAMission(Mesure mesure);
     unsigned char lireID();

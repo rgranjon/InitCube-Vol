@@ -13,7 +13,7 @@ Surveillance::~Surveillance() {
 
 void Surveillance::surveillerConstantes() { // AJOUTER POUR MAGNETO ET POUR DEMANDE UTILISATEUR
     cout << "TEST-5 : SAUVEGARDE" << endl;
-    sauvegarde->enregistrerMesure("test_reussi");
+    sauvegarde->enregistrerMesure();
     cout << "Reboot du système après la sauvegarde (appel de la fonction reboot->systemeReboot());" << endl;
 }
 
