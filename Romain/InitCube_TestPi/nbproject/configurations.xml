@@ -55,7 +55,6 @@
       <itemPath>../Existant/src/Ordinateur.cpp</itemPath>
       <itemPath>../Existant/src/Protocole.cpp</itemPath>
       <itemPath>../Existant/src/Reboot.cpp</itemPath>
-      <itemPath>SURVEILLANCE</itemPath>
       <itemPath>../Nouveau/src/Sauvegarde.cpp</itemPath>
       <itemPath>../Existant/src/SegmentSol.cpp</itemPath>
       <itemPath>../Existant/src/SegmentVol.cpp</itemPath>
@@ -67,7 +66,9 @@
       <itemPath>../Existant/src/TypeAppareil.cpp</itemPath>
       <itemPath>../Existant/src/TypeCommande.cpp</itemPath>
       <itemPath>../Existant/src/TypeMisEtat.cpp</itemPath>
-      <itemPath>XML_aide</itemPath>
+      <itemPath>aide_SAUVEGARDE</itemPath>
+      <itemPath>aide_SURVEILLANCE</itemPath>
+      <itemPath>aide_XML</itemPath>
       <itemPath>mainTest.cpp</itemPath>
       <itemPath>../Existant/src/serialib.cpp</itemPath>
     </logicalFolder>
@@ -212,9 +213,11 @@
       </item>
       <item path="MAIN" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="SURVEILLANCE" ex="false" tool="3" flavor2="0">
+      <item path="aide_SAUVEGARDE" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="XML_aide" ex="false" tool="3" flavor2="0">
+      <item path="aide_SURVEILLANCE" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="aide_XML" ex="false" tool="3" flavor2="0">
       </item>
       <item path="mainTest.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -355,9 +358,11 @@
       </item>
       <item path="MAIN" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="SURVEILLANCE" ex="false" tool="3" flavor2="0">
+      <item path="aide_SAUVEGARDE" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="XML_aide" ex="false" tool="3" flavor2="0">
+      <item path="aide_SURVEILLANCE" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="aide_XML" ex="false" tool="3" flavor2="0">
       </item>
       <item path="mainTest.cpp" ex="false" tool="1" flavor2="0">
       </item>
