@@ -157,22 +157,22 @@ bool Sauvegarde::enregistrerMesure() {
 }
 
 /////////*SOLUTION 4*/ Utilise les variables 'xmlFile' et 'commande'
-// COMPILATION NON
-// FICHIER TROUVE ?
-// OUVERTURE DU FICHIER ?
+// COMPILATION OUI
+// FICHIER TROUVE OUI
+// OUVERTURE DU FICHIER OUI
 // NOM DE FICHIER AUTOMATIQUE OUI
 
 bool Sauvegarde::enregistrerMesure() {
     pugi::xml_document doc;
-    char* commande[256];
-    char* ouvertureFichier[] = "sudo nano";
-    char* xmlFile[] = "initcube.xml"; // POUR TEST VALIDE
+    char commande[256];
+    char ouvertureFichier[] = "sudo nano";
+    char xmlFile[] = "initcube.xml"; // POUR TEST VALIDE
     //    char* xmlFile[] = "nomDuFichierInexistant.xml"; // POUR TEST ERREUR
     sprintf(commande, "%s %s", ouvertureFichier, xmlFile);
     if (doc.load_file(xmlFile)) { // Si le fichier existe
         cout << "Le fichier initcube.xml est présent dans le répertoire contenant l'exécutable du projet" << endl;
         //OUVRIR LE FICHIER XML
-        system(commande); // ERREUR DE COMPILATION
+        system(commande);
         //INSERER LES VALEURS DANS LE FICHIER XML
         //SAUVEGARDER LE FICHIER XML
         //FERMER LE FICHIER XML

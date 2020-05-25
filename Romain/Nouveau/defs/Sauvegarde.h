@@ -13,7 +13,8 @@ public:
     bool is_readable(const string & file);
     bool enregistrerMesure();
 //    bool enregistrerMesure(Mesure mesure);
-    bool ajouterAMission(Mesure mesure);
+    bool ajouterAMission();
+//    bool ajouterAMission(Mesure mesure);
     unsigned char lireID();
 };
 
