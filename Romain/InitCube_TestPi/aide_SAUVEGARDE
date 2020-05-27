@@ -3,72 +3,23 @@
 
 CE FICHIER SERT UNIQUEMENT POUR INCLURE DES TESTS CONCERNANT LA SAUVEGARDE AFIN DE NE PAS SURCHARGER 'SAUVEGARDE.CPP'
 
-
-
-/////////*ALGO SAUVEGARDE*/
+////////////////////////////////////////////////////////////////////////////////
+//////////ALGO SAUVEGARDE///////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
 
     Fichier présent ?
-        si oui : Ouvrir le fichier XML
-        si non : Créer le fichier XML et son arborescence
+        si oui : Ecrire que le fichier XML est présent
+        si non : Ecrire que le fichier XML est présent
+                 Créer le fichier XML et son arborescence
+    Ouvrir le fichier XML
     Ecrire chacune des valeurs dans le fichier XML
     Sauvegarder le fichier XML
     Fermer le fichier XML
+////////////////////////////////////////////////////////////////////////////////
+//////////ENREGISTRERMESURE()///////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
 
-/////////*TEST 1*/
-
-/////////*SOLUTION 1*/
-
-bool Sauvegarde::enregistrerMesure() {
-    pugi::xml_document doc;
-    pugi::xml_parse_result result = doc.load_file("initcube.xml");
-    cout << "La variable 'result' contient : " << result << endl;
-    if (result == "No error") {
-        cout << "NO ERROR" << endl;
-        return true; // Pour retourner un booléen
-    }
-    if (result != "No error") {
-        cout << "ERROR" << endl;
-        return false; // Pour retourner un booléen
-    }
-    if (result == 0) {
-        cout << "resultat == 0" << endl;
-        return true; // Pour retourner un booléen
-    }
-    if (result == 1) {
-        cout << "resultat == 1" << endl;
-        return true; // Pour retourner un booléen
-    }
-}
-
-/////////*SOLUTION 2*/
-
-bool Sauvegarde::enregistrerMesure() {
-    pugi::xml_document doc;
-    pugi::xml_parse_result result = doc.load_file("initcube.xml");
-    const char* resultat;
-    resultat = result.description();
-    cout << "La variable 'resultat' contient : " << resultat << endl;
-    if (resultat == "No error") {
-        cout << "NO ERROR" << endl;
-        return true; // Pour retourner un booléen
-    }
-    if (resultat != "No error") {
-        cout << "ERROR" << endl;
-        return false; // Pour retourner un booléen
-    }
-    if (resultat == 0) {
-        cout << "resultat == 0" << endl;
-        return true; // Pour retourner un booléen
-    }
-    if (resultat == 1) {
-        cout << "resultat == 1" << endl;
-        return true; // Pour retourner un booléen
-    }
-}
-
-/////////*TEST 2*/
-
-/////////*SOLUTION 1*/ Utilise le nom du fichier xml
+//////////SOLUTION 1 | Utilise le nom du fichier xml
 // COMPILATION OUI
 // FICHIER TROUVE OUI
 // OUVERTURE DU FICHIER OUI
@@ -95,7 +46,7 @@ bool Sauvegarde::enregistrerMesure() {
     }
 }
 
-/////////*SOLUTION 2*/ Utilise la variable 'xmlFile'
+//////////SOLUTION 2 | Utilise la variable 'xmlFile'
 // COMPILATION NON
 // FICHIER TROUVE OUI
 // OUVERTURE DU FICHIER NON
@@ -128,7 +79,7 @@ bool Sauvegarde::enregistrerMesure() {
     }
 }
 
-/////////*SOLUTION 3*/ Utilise la variable 'commande'
+//////////SOLUTION 3 | Utilise la variable 'commande'
 // COMPILATION OUI
 // FICHIER TROUVE OUI
 // OUVERTURE DU FICHIER OUI
@@ -156,7 +107,7 @@ bool Sauvegarde::enregistrerMesure() {
     }
 }
 
-/////////*SOLUTION 4*/ Utilise les variables 'xmlFile' et 'commande'
+//////////SOLUTION 4 | Utilise les variables 'xmlFile' et 'commande'
 // COMPILATION OUI
 // FICHIER TROUVE OUI
 // OUVERTURE DU FICHIER OUI
@@ -186,6 +137,96 @@ bool Sauvegarde::enregistrerMesure() {
         //FERMER LE FICHIER XML
         return false;
     }
+}
+
+//////////SOLUTION 5 | Solution 4 mais plus plus concis
+// COMPILATION OUI
+// FICHIER TROUVE OUI
+// OUVERTURE DU FICHIER OUI
+// NOM DE FICHIER AUTOMATIQUE OUI
+
+bool Sauvegarde::enregistrerMesure() {
+    pugi::xml_document doc;
+    char commandeCreer[256]; // OK
+    char commandeOuvrir[256]; // OK
+//    char commandeInserer[256]; // PAS OK
+//    char commandeSauvegarder[256]; // PAS OK
+//    char commandeFermer[256]; // PAS OK
+    char xmlFile[] = "initcube.xml"; // POUR TEST VALIDE
+    char ouvertureFichier[] = "sudo nano";
+    //    char* xmlFile[] = "nomDuFichierInexistant.xml"; // POUR TEST ERREUR
+    sprintf(commandeCreer, "touch %s", xmlFile);
+    sprintf(commandeOuvrir, "%s %s", ouvertureFichier, xmlFile);
+    if (doc.load_file(xmlFile)) { // Si le fichier existe
+        cout << "Le fichier " << xmlFile << " est présent dans le répertoire contenant l'exécutable du projet" << endl;
+    } else {
+        cout << "Le fichier " << xmlFile << " n'est pas présent dans le répertoire contenant l'exécutable du projet" << endl;
+        //CREER LE FICHIER XML
+        system(commandeCreer);
+    }
+    //OUVRIR LE FICHIER XML
+        system(commandeOuvrir);
+    //LIRE ID DANS LE FICHIER XML
+        lireID();
+    //INSERER LES VALEURS DANS LE FICHIER XML
+//    system(commandeInserer);
+    //SAUVEGARDER LE FICHIER XML
+//    system(commandeSauvegarder);
+    //FERMER LE FICHIER XML
+//    system(commandeFermer);
+    return true;
+}
+
+//////////SOLUTION FINALE
+// COMPILATION OUI
+// FICHIER TROUVE OUI
+// NOM DE FICHIER AUTOMATIQUE OUI
+
+bool Sauvegarde::enregistrerMesure() {
+    pugi::xml_document doc;
+    char commandeCreer[256]; // OK
+    char xmlFile[] = "initcube.xml"; // POUR TEST VALIDE
+    sprintf(commandeCreer, "touch %s", xmlFile);
+    if (doc.load_file(xmlFile)) { // Si le fichier existe
+        cout << "Le fichier " << xmlFile << " est présent dans le répertoire contenant l'exécutable du projet" << endl;
+    } else {
+        cout << "Le fichier " << xmlFile << " n'est pas présent dans le répertoire contenant l'exécutable du projet" << endl;
+        //CREER LE FICHIER XML
+        system(commandeCreer);
+    }
+    //OUVRIR LE FICHIER XML
+    //LIRE ID DANS LE FICHIER XML
+        lireID();
+    //INSERER LES VALEURS DANS LE FICHIER XML
+    //SAUVEGARDER LE FICHIER XML
+    //FERMER LE FICHIER XML
+    return true;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+//////////AJOUTERAMISSION///////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
+//////////SOLUTION 1 | 
+// COMPILATION OUI
+
+bool Sauvegarde::ajouterAMission() {
+    return 0;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+//////////LIREID////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
+//////////SOLUTION 1 | 
+// COMPILATION OUI
+// ID TROUVE NON
+
+unsigned char Sauvegarde::lireID() {
+    unsigned char cubeId;
+    //LIRE L'ID DU CUBE DANS LE FICHIER XML
+    //    cubeId = (unsigned char)valeur de l'id dans le fichier xml
+    return cubeId;
 }
 
 //CREER UN FICHIER XML
