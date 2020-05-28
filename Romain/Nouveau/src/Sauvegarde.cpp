@@ -9,10 +9,9 @@ Sauvegarde::Sauvegarde(const Sauvegarde& orig) {
 Sauvegarde::~Sauvegarde() {
 }
 
-/////////*SOLUTION 4*/ Utilise les variables 'xmlFile' et 'commande'
+//////////SOLUTION FINALE
 // COMPILATION OUI
 // FICHIER TROUVE OUI
-// OUVERTURE DU FICHIER OUI
 // NOM DE FICHIER AUTOMATIQUE OUI
 
 bool Sauvegarde::enregistrerMesure() {
@@ -41,9 +40,10 @@ bool Sauvegarde::ajouterAMission() {
 }
 
 unsigned char Sauvegarde::lireID() {
+    pugi::xml_document doc;
     unsigned char cubeId;
-    // change node name
     //LIRE L'ID DU CUBE DANS LE FICHIER XML
-    //    cubeId = (unsigned char)valeur de l'id dans le fichier xml
+    cubeId = (unsigned char) doc.child("initcube").child("description").child("id").value();
+    cout << "L'InitCube à pour ID le numéro " << cubeId << endl;
     return cubeId;
 }

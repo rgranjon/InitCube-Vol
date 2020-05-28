@@ -196,7 +196,7 @@ bool Sauvegarde::enregistrerMesure() {
     }
     //OUVRIR LE FICHIER XML
     //LIRE ID DANS LE FICHIER XML
-        lireID();
+    lireID();
     //INSERER LES VALEURS DANS LE FICHIER XML
     //SAUVEGARDER LE FICHIER XML
     //FERMER LE FICHIER XML
@@ -219,13 +219,15 @@ bool Sauvegarde::ajouterAMission() {
 ////////////////////////////////////////////////////////////////////////////////
 
 //////////SOLUTION 1 | 
-// COMPILATION OUI
+// COMPILATION NON (conversion de 'const char_t*' en 'unsigned char' impossible)
 // ID TROUVE NON
 
 unsigned char Sauvegarde::lireID() {
+    pugi::xml_document doc;
     unsigned char cubeId;
     //LIRE L'ID DU CUBE DANS LE FICHIER XML
-    //    cubeId = (unsigned char)valeur de l'id dans le fichier xml
+    cubeId = (unsigned char) doc.child("initcube").child("description").child("id").value();
+    cout << "L'InitCube à pour ID le numéro " << cubeId << endl;
     return cubeId;
 }
 
