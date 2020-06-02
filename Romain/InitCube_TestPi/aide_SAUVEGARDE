@@ -195,8 +195,6 @@ bool Sauvegarde::enregistrerMesure() {
         system(commandeCreer);
     }
     //OUVRIR LE FICHIER XML
-    //LIRE ID DANS LE FICHIER XML
-    lireID();
     //INSERER LES VALEURS DANS LE FICHIER XML
     //SAUVEGARDER LE FICHIER XML
     //FERMER LE FICHIER XML

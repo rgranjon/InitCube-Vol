@@ -27,8 +27,6 @@ bool Sauvegarde::enregistrerMesure() {
         system(commandeCreer);
     }
     //OUVRIR LE FICHIER XML
-    //LIRE ID DANS LE FICHIER XML
-    lireID();
     //INSERER LES VALEURS DANS LE FICHIER XML
     //SAUVEGARDER LE FICHIER XML
     //FERMER LE FICHIER XML
@@ -41,9 +39,11 @@ bool Sauvegarde::ajouterAMission() {
 
 unsigned char Sauvegarde::lireID() {
     pugi::xml_document doc;
+    pugi::xpath_node nodeId = doc.select_node("//initcube/description/id");
     unsigned char cubeId;
+    char intermediateId;
     //LIRE L'ID DU CUBE DANS LE FICHIER XML
-    cubeId = (unsigned char) doc.child("initcube").child("description").child("id").value();
+    cubeId = (unsigned char) intermediateId = (char) nodeId.node().child_value();
     cout << "L'InitCube à pour ID le numéro " << cubeId << endl;
     return cubeId;
 }
