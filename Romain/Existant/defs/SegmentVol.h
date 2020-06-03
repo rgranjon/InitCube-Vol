@@ -53,6 +53,7 @@ public:
     unsigned char getIdentifiant();
     void setIdentifiant(unsigned char id);
     void surveillerConstantes();
+    void demandeManuelleReboot();
 private:
     unsigned char identifiant;
     Horloge* horloge;

@@ -59,6 +59,11 @@ void SegmentVol::surveillerConstantes() {
     surveillance->surveillerConstantes();
 }
 
+void SegmentVol::demandeManuelleReboot() {
+    sauvegarde->enregistrerMesure();
+    reboot->systemeReboot();
+}
+
 void SegmentVol::arretMission() {
     short delay = mission->getDuration();
     this_thread::sleep_for(chrono::minutes(delay));

@@ -7,13 +7,11 @@ class Reboot {
 public:
     Reboot();
     Reboot(int anbreReboot, string adateHeure);
-    //Reboot(const Reboot& orig);
     virtual ~Reboot();
     int getNumber();
     string getDateHour();
     void setDateHour(string adateHour);
     void setNumber(int anumber);
-    //void surveillerConstantes();
     void systemeReboot();
 private:
     string dateHour;

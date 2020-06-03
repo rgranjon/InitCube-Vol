@@ -10,7 +10,6 @@
 
 #define tempProcessAcceptable 40 // 70 OU 85 MAIS 40 POUR TEST
 #define tempBattAcceptable 45 // OU 59
-#define tauxRadiaAcceptable 4800 // A MODIFIER
 
 class Surveillance {
 public:
@@ -19,16 +18,14 @@ public:
     virtual ~Surveillance();
     void surveillerConstantes();
     void demandeReboot();
-    void probleme();
+    void valeurIncompatible();
 private:
     bool etatThread;
     Sauvegarde* sauvegarde;
-    float tauxRadia;
     Reboot* reboot;
     Ordinateur* ordinateur;
     Batterie* batterie;
     Stockage* stockage;
-//    Magnetometre* magnetometre;
     
 };
 

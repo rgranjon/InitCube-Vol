@@ -68,33 +68,53 @@ void Surveillance::surveillerConstantes() { // AJOUTER POUR MAGNETO ET POUR DEMA
 
 void Surveillance::surveillerConstantes() { // AJOUTER POUR MAGNETO ET POUR DEMANDE UTILISATEUR
     cout << "TEST-5 : SAUVEGARDE" << endl;
-    sauvegarde->enregistrerMesure("test_reussi");
-    cout << "Reboot du système après la sauvegarde : reboot->systemeReboot();" << endl;
-}
-
-//////////TEST CONDITIONS + SAUVEGARDE//////////
-
-void Surveillance::surveillerConstantes() { // AJOUTER POUR MAGNETO ET POUR DEMANDE UTILISATEUR
-    cout << "TEST-6 : CONDITIONS + SAUVEGARDE" << endl;
+    void Surveillance::surveillerConstantes() { // AJOUTER POUR DEMANDE REBOOT DE L'UTILISATEUR
     etatThread = true;
     while (etatThread) {
         sleep(1);
-        if (ordinateur->getTemperatureProcessor() > tempProcessAcceptable) {
-            probleme();
-        } else if (batterie->getTemperature() > tempBattAcceptable) {
-            probleme();
-        } else if (tauxRadia > tauxRadiaAcceptable) { // à remplacer par (magnetometre->getTauxRadia() > tauxRadiaAcceptable) quand la classe concernant le magnétomètre sera déclarée
-            probleme();
-        } else if (stockage->getOccupationRAM() > stockage->getMemoireRAM()) {
-            probleme();
-        } else if (demandeReboot = true) { // voir avec Louis pour se mettre d'accord
-            probleme();
+//        if (ordinateur->getTemperatureProcessor() > tempProcessAcceptable) {
+//            valeurIncompatible();
+//        } else if (batterie->getTemperature() > tempBattAcceptable) {
+//            valeurIncompatible();
+//        } else if (stockage->getOccupationRAM() > stockage->getMemoireRAM()) {
+//            valeurIncompatible();
+//        } else if (demandeReboot = true) { // VOIR AVEC M.TAILLEFER (SOL-IHM)
+//            valeurIncompatible();
+//        }
+        if (etatThread == true) {
+            valeurIncompatible();
         }
     }
 }
 
-void Surveillance::probleme() {
+void Surveillance::valeurIncompatible() {
+//    etatThread = false;
     sauvegarde->enregistrerMesure();
+//    reboot->systemeReboot();
+}
+    cout << "Reboot du système après la sauvegarde : reboot->systemeReboot();" << endl;
+}
+
+//////////SOLUTION FINALE//////////
+
+void Surveillance::surveillerConstantes() { // AJOUTER POUR DEMANDE REBOOT DE L'UTILISATEUR
+    etatThread = true;
+    while (etatThread) {
+        sleep(1);
+        if (ordinateur->getTemperatureProcessor() > tempProcessAcceptable) {
+            valeurIncompatible();
+        } else if (batterie->getTemperature() > tempBattAcceptable) {
+            valeurIncompatible();
+        } else if (stockage->getOccupationRAM() > stockage->getMemoireRAM()) {
+            valeurIncompatible();
+        } else if (demandeReboot = true) { // VOIR AVEC M.TAILLEFER (SOL-IHM)
+            valeurIncompatible();
+        }
+    }
+}
+
+void Surveillance::valeurIncompatible() {
     etatThread = false;
+    sauvegarde->enregistrerMesure();
     reboot->systemeReboot();
 }

@@ -13,8 +13,6 @@ using namespace std;
 #include <iterator>
 #include <list>
 #include <mutex>
-// #include <pugixml> // N'est pas trouvée // XML
-//#include "../../../pugixml-1.9/src/pugiconfig.hpp" // A inclure en plus de pugixml ou non ?
 #include "../../../pugixml-1.9/src/pugixml.hpp"
 #include <sstream>
 #include <stdexcept>
@@ -23,7 +21,7 @@ using namespace std;
 #include <string>
 #include <string.h>
 #include <thread>
-#include <unistd.h> // erreur sur le include lors de la compilation sous Windows
+#include <unistd.h> // PAS COMPATIBLE AVEC WINDOWS
 #include <vector>
 
 #endif /* LIBRAIRIE_H */
