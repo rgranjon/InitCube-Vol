@@ -1,27 +1,25 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0"?>
 <initcube>
 	<description>
 		<id>1</id>
 		<proprietaire>CNES</proprietaire>
 		<mission>	Promouvoir les activités spatiales auprès des étudiants de l’enseignement supérieur.</mission>
 	</description>
-
 	<trame>
 		<format>
-			<champ></champ>
-			<champ></champ>
+			<champ />
+			<champ />
 		</format>
-		<periode></periode>
-	</trame>	
-
+		<periode />
+	</trame>
 	<etat>
 		<date>2019-02-13 12:12:36</date>
-    <bord>
-		   <temperature unite="°C" seuilAlerteHaut="90" seuilAlerteBas="-50">45</temperature>
-    </bord>
-    <processeur>
-       <temperature unite="°C" seuilAlerteHaut="70" seuilAlerteBas="-50">45</temperature>
-    </processeur>
+		<bord>
+			<temperature unite="°C" seuilAlerteHaut="90" seuilAlerteBas="-50">45</temperature>
+		</bord>
+		<processeur>
+			<temperature unite="°C" seuilAlerteHaut="70" seuilAlerteBas="-50">45</temperature>
+		</processeur>
 		<batterie>
 			<capacite unite="mAh">10000</capacite>
 			<niveauCharge unite="%" seuilAlerte="10">65</niveauCharge>
@@ -37,12 +35,12 @@
 			<id>123BCD</id>
 			<type>camera infrarouge</type>
 			<role>mesurer une temperature</role>
-		</description>		
+		</description>
 		<etat>
-			<actif>true</actif>			
+			<actif>true</actif>
 			<temperature unite="°C" SeuilALerteHaut="90" SeuilALerteBas="-50">25</temperature>
-			<courant unite="mA" SeuilALerte="1500">200</courant>	
-			<erreur></erreur>
+			<courant unite="mA" SeuilALerte="1500">200</courant>
+			<erreur />
 		</etat>
 		<mesure id="1">
 			<date>"2019-02-13 10:52:25"</date>
@@ -52,5 +50,5 @@
 			<date>"2019-02-13 11:12:46"</date>
 			<valeur unite="°C">15</valeur>
 		</mesure>
-  </instrument>    
+	</instrument>
 </initcube>

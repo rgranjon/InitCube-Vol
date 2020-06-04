@@ -32,20 +32,17 @@ bool Sauvegarde::enregistrerMesure() {
     //LIRE ID DANS LE FICHIER XML
     lireID();
     //INSERER LES VALEURS DANS LE FICHIER XML
+    pugi::xpath_node nodeVal = doc.select_node("//initcube/etat/bord/temperature");
+    nodeVal.node().attribute("seuilAlerteHaut").set_value(90);
+    cout << "Nv seuilAlerteHaut est : " << nodeVal.node().attribute("seuilAlerteHaut").value() << nodeVal.node().attribute("unite").value() << endl;
     //SAUVEGARDER LE FICHIER XML
-    //FERMER LE FICHIER XML
+    doc.save_file(xmlFile);
     return true;
 }
 
-bool Sauvegarde::ajouterAMission() {
+bool Sauvegarde::ajouterAMission() { // Décrit quand démarre mesure / périodicité / type de mesure (quel est la mission en cours)
     return 0;
 }
-
-//////////SOLUTION FINALE | 
-// COMPILATION OUI
-// ID TROUVE OUI
-// AFFICHAGE DE L'ID OUI
-// CONVERSION EN UNSIGNED CHAR OUI
 
 unsigned char Sauvegarde::lireID() {
     pugi::xml_document doc;
@@ -54,12 +51,11 @@ unsigned char Sauvegarde::lireID() {
     if (doc.load_file(xmlFile)) {
         pugi::xpath_node nodeId = doc.select_node("//initcube/description/id");
         string intermediateId = nodeId.node().child_value();
-        cout << "L'InitCube a pour ID le numéro (string): " << intermediateId << endl;
         istringstream iss(intermediateId);
         int nb;
         iss >> nb;
         cubeId = (unsigned char) nb;
-        cout << "L'InitCube a pour ID le numéro (int): " << (int) cubeId << endl;
+        cout << "L'InitCube a pour ID le numéro : " << (int) cubeId << endl;
     } else {
         cout << "L'InitCube n'a pas d'Id" << endl;
         cubeId = 0;
