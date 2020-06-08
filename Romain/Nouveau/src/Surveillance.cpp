@@ -29,7 +29,7 @@ void Surveillance::surveillerConstantes() { // AJOUTER POUR DEMANDE REBOOT DE L'
 //}
 
 void Surveillance::valeurIncompatible() {
-//    etatThread = false;
+    etatThread = false;
     sauvegarde->enregistrerMesure();
 //    reboot->systemeReboot();
 }

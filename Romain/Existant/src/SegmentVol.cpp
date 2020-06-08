@@ -30,14 +30,20 @@ thread SegmentVol::tArretMission() {
     });
 }
 
-//AJOUTE
-
 thread SegmentVol::tSurveillerConstantes() {
     return thread([this] {
         surveillerConstantes();
     });
 }
 
+void SegmentVol::surveillerConstantes() {
+    surveillance->surveillerConstantes();
+}
+
+void SegmentVol::demandeManuelleReboot() {
+    sauvegarde->enregistrerMesure();
+    reboot->systemeReboot();
+}
 void SegmentVol::lancerMission() {
     short interval = mission->getPeriodicity();
     etatThread = true;
@@ -51,17 +57,6 @@ void SegmentVol::lancerMission() {
     }
     activerModuleEmission();
     segmentSol->envoyerMission();
-}
-
-//AJOUTE
-
-void SegmentVol::surveillerConstantes() {
-    surveillance->surveillerConstantes();
-}
-
-void SegmentVol::demandeManuelleReboot() {
-    sauvegarde->enregistrerMesure();
-    reboot->systemeReboot();
 }
 
 void SegmentVol::arretMission() {
