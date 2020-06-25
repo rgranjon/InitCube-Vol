@@ -1,5 +1,9 @@
 ﻿Version 2020 : Partie Granjon ( Reboot / Sauvegarde )
 
+Choses manquantes :
+	- méthode 'bool Sauvegarde::enregistrerMesure()'
+	- méthode 'bool Sauvegarde::ajouterAMission()'
+
 Ce fichier contient : 
 	- la ligne de commande pour compiler le SegmentVol (ma partie personnelle et la version 2019)
 	- l'arborescence de ma partie personnelle (InitCube_TestPi) (non compatible avec la version 2019)
