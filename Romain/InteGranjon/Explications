@@ -2,8 +2,8 @@
 
 Ce fichier contient : 
 	- la ligne de commande pour compiler le SegmentVol (ma partie personnelle et la version 2019)
-	- l'arborescence de ma partie personnelle (non compatible avec la version 2019) (InitCube_TestPi)
-	- l'arborescence de ma partie personnelle (compatible avec la version 2019) (InteGranjon)
+	- l'arborescence de ma partie personnelle (InitCube_TestPi) (non compatible avec la version 2019)
+	- l'arborescence de ma partie personnelle (InteGranjon) (compatible avec la version 2019)
 	- les modifications du programme principale (ajout d'un thread)
 	- les modifications de classes existantes
 	- l'ajout d'une nouvelle classe
@@ -28,7 +28,7 @@ InteGranjon (contient toute ma partie personnelle et la version 2019)
   |____	lib (contient les bibliothèques)
   |____	Makefile
   |____	nbproject
-  |____	src (contient les .cpp des classes et du programme principal)
+  |____	src (contient les .cpp des classes et le programme principal)
 
 __________________________________________________
 Modifications programme principal
