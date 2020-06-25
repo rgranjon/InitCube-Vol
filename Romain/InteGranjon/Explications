@@ -1,0 +1,202 @@
+﻿Version 2020 : Partie Granjon ( Reboot / Sauvegarde )
+
+Ce fichier contient : 
+	- la ligne de commande pour compiler le SegmentVol (ma partie personnelle et la version 2019)
+	- l'arborescence de ma partie personnelle (non compatible avec la version 2019) (InitCube_TestPi)
+	- l'arborescence de ma partie personnelle (compatible avec la version 2019) (InteGranjon)
+	- les modifications du programme principale (ajout d'un thread)
+	- les modifications de classes existantes
+	- l'ajout d'une nouvelle classe
+
+__________________________________________________
+Ligne de compilation
+__________________________________________________
+
+- Se déplacer dans le répertoire InteGranjon
+- Entrer la ligne de commande :
+	g++ src/*.cpp lib/pugixml-1.9/src/pugixml.cpp -lpthread -std=c++11 -o bin/mainSegmentVol
+
+__________________________________________________
+Arborescence
+__________________________________________________
+
+InitCube_TestPi (contient toute ma partie personnelle avec quelques commentaires mais non compatible avec la version 2019)
+
+InteGranjon (contient toute ma partie personnelle et la version 2019)
+  |____	bin (contient l'exécutable du SegmentVol)
+  |____	defs (contient les .h des classes)
+  |____	lib (contient les bibliothèques)
+  |____	Makefile
+  |____	nbproject
+  |____	src (contient les .cpp des classes et du programme principal)
+
+__________________________________________________
+Modifications programme principal
+__________________________________________________
+
+--------main.cpp :
+		thread t0 = segmentVol->tSurveillerConstantes();
+		t0.join();
+
+__________________________________________________
+Modifications classes
+__________________________________________________
+
+--------reboot.h :
+		void systemeReboot();
+
+--------reboot.cpp :
+		void Reboot::systemeReboot() {
+			system("sudo reboot");
+		}
+~~~~~~~~~~~~~~~~~~~~~~~~~
+--------sauvegarde.h :
+	(En public)
+		bool enregistrerMesure();
+		bool ajouterAMission();
+		unsigned char lireID();
+		Mesure mesure;
+
+--------sauvegarde.cpp :
+		#include <climits>
+		#include <sstream>
+		#include "../lib/pugixml-1.9/src/pugixml.hpp"
+		#include "../defs/Sauvegarde.h"
+
+		bool Sauvegarde::enregistrerMesure() {
+		    pugi::xml_document doc;
+		    char commandeCreer[256];
+		    char xmlFile[] = "initcube.xml";
+		    sprintf(commandeCreer, "touch %s", xmlFile);
+		    if (doc.load_file(xmlFile)) {
+		        lireID();
+		        pugi::xpath_node nodeVal = doc.select_node("//initcube/etat/bord/temperature");
+		        nodeVal.node().attribute("seuilAlerteHaut").set_value(90);
+		        doc.save_file(xmlFile);
+		        return true;
+		    } else {
+		        return false;
+		    }
+		}
+
+		bool Sauvegarde::ajouterAMission() {
+		    return 0;
+		}
+		
+		unsigned char Sauvegarde::lireID() {
+		    pugi::xml_document doc;
+		    char xmlFile[] = "initcube.xml";
+		    unsigned char cubeId;
+		    if (doc.load_file(xmlFile)) {
+		        pugi::xpath_node nodeId = doc.select_node("//initcube/description/id");
+		        string intermediateId = nodeId.node().child_value();
+		        istringstream iss(intermediateId);
+		        int nb;
+		        iss >> nb;
+		        cubeId = (unsigned char) nb;
+		    } else {
+		        cubeId = 0;
+		    }
+		    return cubeId;
+		}
+~~~~~~~~~~~~~~~~~~~~~~~~~
+--------SegmentVol.h :
+		#include "Reboot.h"
+		#include "Surveillance.h"
+		#include "Sauvegarde.h"
+
+	(En public)
+		thread tSurveillerConstantes();
+		void surveillerConstantes();
+		void demandeManuelleReboot();
+	(En private)
+		Reboot* reboot;
+		Surveillance* surveillance;
+		Sauvegarde* sauvegarde;
+
+--------SegmentVol.cpp :
+	(Dans la méthode SegmentVol())
+		reboot = new Reboot();
+		surveillance = new Surveillance();
+		sauvegarde = new Sauvegarde();
+		thread SegmentVol::tSurveillerConstantes() {
+		    return thread([this] {
+        		surveillerConstantes();
+		    });
+		}
+
+		void SegmentVol::surveillerConstantes() {
+		    surveillance->surveillerConstantes();
+		}
+		
+		void SegmentVol::demandeManuelleReboot() {
+		    sauvegarde->enregistrerMesure();
+		    reboot->setNumber(reboot->getNumber()+1);
+		    reboot->setDateHour(horloge->getDateHeure());
+		    reboot->systemeReboot();
+		}
+__________________________________________________
+	Nouvelle classe
+__________________________________________________
+
+--------Surveillance.h :
+		#include "Ordinateur.h"
+		#include "Batterie.h"
+		#include "Stockage.h"
+		#include "Sauvegarde.h"
+		#include "Horloge.h"
+		
+		#define tempProcessAcceptable 40
+		#define tempBattAcceptable 45
+		
+		class Surveillance {
+		public:
+		    Surveillance();
+		    Surveillance(const Surveillance& orig);
+		    virtual ~Surveillance();
+		    void surveillerConstantes();
+		    void demandeReboot();
+		    void valeurIncompatible();
+		private:
+		    bool etatThread;
+		    Sauvegarde* sauvegarde;
+		    Reboot* reboot;
+		    Ordinateur* ordinateur;
+		    Batterie* batterie;
+		    Stockage* stockage;
+		    Horloge* horloge;
+		};
+
+--------Surveillance.cpp :
+		#include "../defs/Surveillance.h"
+		
+		Surveillance::Surveillance() {
+		}
+		
+		Surveillance::Surveillance(const Surveillance& orig) {
+		}
+		
+		Surveillance::~Surveillance() {
+		}
+		
+		void Surveillance::surveillerConstantes() {
+		    etatThread = true;
+		    while (etatThread) {
+		        sleep(1);
+		        if (ordinateur->getTemperatureProcessor() > tempProcessAcceptable) {
+		            valeurIncompatible();
+		        } else if (batterie->getTemperature() > tempBattAcceptable) {
+		            valeurIncompatible();
+		        } else if (stockage->getOccupationRAM() > stockage->getMemoireRAM()) {
+		            valeurIncompatible();
+		        }
+		    }
+		}
+		
+		void Surveillance::valeurIncompatible() {
+		    etatThread = false;
+		    sauvegarde->enregistrerMesure();
+		    reboot->setNumber(reboot->getNumber()+1);
+		    reboot->setDateHour(horloge->getDateHeure());
+		    reboot->systemeReboot();
+		}
