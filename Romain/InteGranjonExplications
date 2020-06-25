@@ -7,6 +7,7 @@ Ce fichier contient :
 	- les modifications du programme principale (ajout d'un thread)
 	- les modifications de classes existantes
 	- l'ajout d'une nouvelle classe
+	- une autre modification
 
 __________________________________________________
 Ligne de compilation
@@ -200,3 +201,16 @@ __________________________________________________
 		    reboot->setDateHour(horloge->getDateHeure());
 		    reboot->systemeReboot();
 		}
+
+__________________________________________________
+Autre modification
+__________________________________________________
+
+La méthode obtenirStatus() de la classe Instrument retournait une erreur lors de la compilation du SegmentVol.
+Pour y remédier, j'ai tout simplement ajouté 'return 0' à la fin de la méthode.
+
+int Instrument::obtenirStatus() {
+    obtenirMode();
+    obtenirTempInst();
+    return 0;
+}
